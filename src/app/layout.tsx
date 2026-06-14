@@ -1,11 +1,17 @@
 import "./globals.css";
 import Link from "next/link";
-import { ConfigProvider, Layout, Menu } from "antd";
+import { ConfigProvider, Layout, Menu, Flex, Input, Button } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 
 const items = [
-	{ key: 0, label: <Link href="/">Главная</Link> },
-	{ key: 1, label: <Link href="/genres">Жанры</Link> },
+  {
+    key: 1,
+    label: <Link href="/">Главная</Link>,
+  },
+  {
+    key: 2,
+    label: <Link href="/genres">Жанры</Link>
+  },
 ];
 
 export default function RootLayout({
@@ -19,7 +25,7 @@ export default function RootLayout({
       className=' h-full antialiased'
     >
       <body className="min-h-full flex flex-col">
-        <ConfigProvider 
+        <ConfigProvider
           theme={{
             components: {
               Menu: {
@@ -39,17 +45,41 @@ export default function RootLayout({
             className="layout"
           >
             <Header>
-              <Menu
-                mode="horizontal"
-                items={items}
-                defaultSelectedKeys={['0']}
-                classNames={{
-                  itemContent: 'header-menu'
-                }}
-              />
+              <Flex
+                gap='80px'
+              >
+                <Link
+                  href='/'
+                  className="link-logo"
+                >
+                  Маруся
+                </Link>
+                <Flex>
+                  <Menu
+                    mode="horizontal"
+                    items={items}
+                    defaultSelectedKeys={['1']}
+                    classNames={{
+                      root: 'header-menu',
+                      item: 'header-menu__item',
+                      itemContent: 'header-menu__item-text'
+                    }}
+                    styles={{
+                      
+                    }}
+                  >
+                  </Menu>
+                  <Input>
+                  
+                  </Input>
+                </Flex>
+                <Button>
+                  
+                </Button>
+              </Flex>
             </Header>
             <Content>
-               <div>{children}</div>
+              <div>{children}</div>
             </Content>
             <Footer>
 

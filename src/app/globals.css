@@ -30,7 +30,15 @@ body {
 }
 
 .header-menu {
+  @apply w-53 flex
+}
+
+.header-menu__item-text {
   @apply text-white
+}
+
+.link-logo {
+  @apply w-16
 }
 
 
