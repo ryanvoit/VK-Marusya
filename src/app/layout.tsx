@@ -1,18 +1,8 @@
 import "./globals.css";
 import Link from "next/link";
-import { ConfigProvider, Layout, Menu, Flex, Input, Button } from "antd";
+import { ConfigProvider, Layout, Flex, Button } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
-
-const items = [
-  {
-    key: 1,
-    label: <Link href="/">Главная</Link>,
-  },
-  {
-    key: 2,
-    label: <Link href="/genres">Жанры</Link>
-  },
-];
+import Image from "next/image";
 
 export default function RootLayout({
   children,
@@ -28,15 +18,23 @@ export default function RootLayout({
         <ConfigProvider
           theme={{
             components: {
-              Menu: {
-                horizontalItemSelectedColor: '#DC5DFC',
-                itemBg: 'transparent',
-                itemColor: '#FFFFFF',
-                itemHoverColor: '#ffffff',
-              },
               Layout: {
                 headerBg: 'transparent',
-                footerBg: 'transparent'
+                footerBg: 'transparent',
+                headerPadding: '0 80px',
+                headerHeight: 96
+              },
+              Button: {
+                defaultHoverBg: 'transparent',
+                defaultHoverBorderColor: 'transparent',
+                defaultBorderColor: 'transparent',
+                defaultBg: 'transparent',
+                defaultColor: 'white',
+                defaultActiveBg: 'transparent',
+                defaultActiveBorderColor: 'transparent',
+                defaultActiveColor: 'transparent',
+                defaultShadow: 'none',
+                defaultHoverColor: 'white'
               }
             }
           }}
@@ -44,37 +42,44 @@ export default function RootLayout({
           <Layout
             className="layout"
           >
-            <Header>
+            <Header className="header">
               <Flex
                 gap='80px'
+                align="center"
               >
-                <Link
-                  href='/'
-                  className="link-logo"
-                >
-                  Маруся
+                <Link href='/' className="header-link">
+                   <Image
+                      src={'/marusya.svg'}
+                      alt={'marusya'}
+                      width={144}
+                      height={32}
+                      className="header-link__img"
+                    />
                 </Link>
-                <Flex>
-                  <Menu
-                    mode="horizontal"
-                    items={items}
-                    defaultSelectedKeys={['1']}
-                    classNames={{
-                      root: 'header-menu',
-                      item: 'header-menu__item',
-                      itemContent: 'header-menu__item-text'
-                    }}
-                    styles={{
-                      
-                    }}
-                  >
-                  </Menu>
-                  <Input>
-                  
-                  </Input>
+                <Flex
+                  gap='40px'
+                  align="center"
+                >
+                  <Link href='/' className="header-link header-link--routing">
+                    Главная
+                  </Link>
+                  <Link href='/genres' className="header-link header-link--routing">
+                    Жанры
+                  </Link>
+                  <div className="header-search">
+                    <input className="header-search__input" placeholder="Поиск">
+                    </input>
+                    <Image
+                      src={'/search.svg'}
+                      alt={'search'}
+                      width={24}
+                      height={24}
+                      className="header-search__icon"
+                    />
+                  </div>
                 </Flex>
-                <Button>
-                  
+                <Button className="header-link">
+                  Войти
                 </Button>
               </Flex>
             </Header>
@@ -82,7 +87,6 @@ export default function RootLayout({
               <div>{children}</div>
             </Content>
             <Footer>
-
             </Footer>
           </Layout>
         </ConfigProvider>

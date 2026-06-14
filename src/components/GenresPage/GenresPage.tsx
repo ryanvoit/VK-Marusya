@@ -1,10 +1,11 @@
 export default function GenresPage() {
     return (
-        <div>
+        <div className="pl-[80px]">
             <h1 
-                className="text-amber-400"
+                className='text-[36px] text-white '
             >
-                Genres Page</h1>
+                Genres Page
+            </h1>
         </div>
     );
 }

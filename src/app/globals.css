@@ -5,6 +5,16 @@
   --foreground: #171717;
 }
 
+@font-face {
+  font-family: "Play";
+  src: url("../fonts/Play-Bold.ttf")
+}
+
+@font-face {
+  font-family: "Play";
+  src: url('../fonts/Play-Regular.ttf') 
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -22,23 +32,43 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .layout {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(39, 36, 36, 0.7) 100%);;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(39, 36, 36, 0.7) 100%);
+  font-family: 'Play', 'Arial', sans-serif;
 }
 
-.header-menu {
-  @apply w-53 flex
+.header {
+  @apply mb-[30px]
 }
 
-.header-menu__item-text {
-  @apply text-white
+.header-link {
+  font-family: 'Play', 'Arial', sans-serif;
+  @apply text-white text-[24px] flex items-center gap-[12px] bg-transparent border-none hover:text-white
 }
 
-.link-logo {
-  @apply w-16
+.header-link--routing {
+  @apply relative 
 }
 
+.header-link--routing::before {
+  @apply absolute w-full content-[''] bg-[#DC5DFC] h-[2px] bottom-[24px]
+}
 
+.header-search {
+  @apply relative
+}
+
+.header-search__input {
+  @apply w-[655px] h-[48px] bg-[#393B3C] relative p-[12px] pr-[16px] pl-[52px] rounded-lg placeholder:text-[18px]
+  focus-visible:outline-none text-[18px] text-white
+}
+
+.header-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.5)
+}
+
+.header-search__icon {
+  @apply absolute top-[50%] transform-[translateY(-50%)] left-[16px] 
+}

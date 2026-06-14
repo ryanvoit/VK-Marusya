@@ -2,9 +2,9 @@ import { Color } from "antd/es/color-picker";
 
 export default function MainPage() {
     return (
-        <div>
+        <div className="pl-[80px]">
             <h1 
-                className="text-amber-400"
+                className='text-[36px] text-white '
             >
                 Main Page
             </h1>
