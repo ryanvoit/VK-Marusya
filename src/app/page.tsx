@@ -1,7 +1,7 @@
-export default function MainPage() {
+import MainPage from "@/components/MainPage/MainPage";
+
+export default function Page() {
   return (
-    <div className="bg-green-600">
-			<h1>Main Page</h1>
-		</div>
+    <MainPage></MainPage>
   );
 }

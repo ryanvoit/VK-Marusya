@@ -1,7 +1,7 @@
 import "./globals.css";
 import Link from "next/link";
 import { ConfigProvider, Layout, Menu } from "antd";
-import { Footer, Header, Content } from "antd/es/layout/layout";
+import { Content, Footer, Header } from "antd/es/layout/layout";
 
 const items = [
 	{ key: 0, label: <Link href="/">Главная</Link> },
@@ -23,28 +23,36 @@ export default function RootLayout({
           theme={{
             components: {
               Menu: {
-                horizontalItemSelectedColor: 'red'
+                horizontalItemSelectedColor: '#DC5DFC',
+                itemBg: 'transparent',
+                itemColor: '#FFFFFF',
+                itemHoverColor: '#ffffff',
+              },
+              Layout: {
+                headerBg: 'transparent',
+                footerBg: 'transparent'
               }
             }
           }}
         >
-          <Layout>
+          <Layout
+            className="layout"
+          >
             <Header>
               <Menu
                 mode="horizontal"
                 items={items}
+                defaultSelectedKeys={['0']}
                 classNames={{
-                  root: 'header-menu',
-                  item: 'header-menu__item'
+                  itemContent: 'header-menu'
                 }}
               />
             </Header>
             <Content>
-              <div>{children}</div>
+               <div>{children}</div>
             </Content>
-            <Footer
-              className='footer-menu'
-            >
+            <Footer>
+
             </Footer>
           </Layout>
         </ConfigProvider>

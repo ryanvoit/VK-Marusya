@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: transparent;
   --foreground: #171717;
 }
 
@@ -25,12 +25,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.header-menu {
-  @apply bg-amber-300
+.layout {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(39, 36, 36, 0.7) 100%);;
 }
 
-.footer-menu {
-  @apply bg-green-500
+.header-menu {
+  @apply text-white
 }
 
 

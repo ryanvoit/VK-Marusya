@@ -1,7 +1,7 @@
-export default function Genres() {
+import GenresPage from "@/components/GenresPage/GenresPage";
+
+export default function Page() {
   return (
-    <div className="bg-fuchsia-600">
-			<h1>Жанры</h1>
-		</div>
+    <GenresPage></GenresPage>
   )
 }
