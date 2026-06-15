@@ -1,14 +1,12 @@
-import { Flex, Button, Row, Col } from "antd"
+import { Button } from "antd"
 import Link from "next/link"
 import Image from "next/image"
 import './headerComponent.css'
+import MainNav from "../MainNav/MainNav"
 
 export default function HeaderComponent() {
-
     return (
-        <div
-            className="header-base"
-        >
+        <div className="header-base">
             <Link href='/' className="header-link">
                 <Image
                     src={'/marusya.svg'}
@@ -19,27 +17,13 @@ export default function HeaderComponent() {
                 />
             </Link>
             <div className="header-center">
-                <Link href='/' className="header-link header-link--routing">
-                    Главная
-                </Link>
-                <Link href='/genres' className="header-link header-link--routing">
-                    Жанры
-                </Link>
+                <MainNav /> 
                 <div className="header-search">
                     <input className="header-search__input" placeholder="Поиск" />
-                    <Image
-                        src={'/search.svg'}
-                        alt={'search'}
-                        width={24}
-                        // [655px]
-                        height={24}
-                        className="header-search__icon"
-                    />
+                    <Image src={'/search.svg'} alt={'search'} width={24} height={24} className="header-search__icon" />
                 </div>
             </div>
-            <Button className="header-link">
-                Войти
-            </Button>
+            <Button className="header-link">Войти</Button>
         </div>
     )
 }
