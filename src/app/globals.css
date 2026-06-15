@@ -42,38 +42,3 @@ body {
 .header {
   @apply mb-[30px]
 }
-
-.header-link {
-  font-family: 'Play', 'Arial', sans-serif;
-  @apply text-white text-[24px] flex items-center gap-[12px] bg-transparent border-none hover:text-white
-}
-
-.header-link--routing {
-  @apply relative 
-}
-
-.header-link--routing::before {
-  @apply absolute w-full content-[''] bg-[#DC5DFC] h-[2px] bottom-[24px]
-}
-
-.header-search {
-  @apply relative
-}
-
-.header-search__input {
-  @apply w-[655px] h-[48px] bg-[#393B3C] relative p-[12px] pr-[16px] pl-[52px] rounded-lg placeholder:text-[18px]
-  focus-visible:outline-none text-[18px] text-white
-}
-
-.header-search__input::placeholder {
-  color: rgba(255, 255, 255, 0.5)
-}
-
-.header-search__icon {
-  @apply absolute top-[50%] transform-[translateY(-50%)] left-[16px] 
-}
-
-.social-link {
-  border: solid 1px rgba(255, 255, 255, 0.8);
-  @apply w-[36px] h-[36px] border-1 border-solid rounded-[8px] hover:border-white
-}

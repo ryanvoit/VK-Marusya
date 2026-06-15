@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+.header-link {
+  font-family: 'Play', 'Arial', sans-serif;
+  @apply text-white text-[24px] flex items-center gap-[12px] bg-transparent border-none hover:text-white p-0
+}
+
+.header-link--routing {
+  @apply relative 
+}
+
+.header-link--routing::before {
+  @apply absolute w-full content-[''] bg-[#DC5DFC] h-[2px] bottom-[24px]
+}
+
+.header-search {
+  @apply relative
+}
+
+.header-search__input {
+  @apply h-[48px] bg-[#393B3C] p-[12px] pr-[16px] pl-[52px] rounded-lg placeholder:text-[18px]
+  focus-visible:outline-none text-[18px] text-white w-full
+}
+
+.header-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.5)
+}
+
+.header-search__icon {
+  @apply absolute top-[50%] transform-[translateY(-50%)] left-[16px]
+}
+
+.header-center {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 93px 79px 1fr;
+}
+
+.header-base {
+  display: grid;
+  gap: 80px;
+  align-items: center;
+  grid-template-columns: 144px 1fr 69px;
+}
