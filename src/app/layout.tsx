@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ConfigProvider, Layout, Flex, Button } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import Image from "next/image";
+import FooterComponent from "@/components/FooterComponent/FooterComponent";
 
 export default function RootLayout({
   children,
@@ -22,7 +23,8 @@ export default function RootLayout({
                 headerBg: 'transparent',
                 footerBg: 'transparent',
                 headerPadding: '0 80px',
-                headerHeight: 96
+                headerHeight: 96,
+                footerPadding: '40px 80px'
               },
               Button: {
                 defaultHoverBg: 'transparent',
@@ -48,13 +50,13 @@ export default function RootLayout({
                 align="center"
               >
                 <Link href='/' className="header-link">
-                   <Image
-                      src={'/marusya.svg'}
-                      alt={'marusya'}
-                      width={144}
-                      height={32}
-                      className="header-link__img"
-                    />
+                  <Image
+                    src={'/marusya.svg'}
+                    alt={'marusya'}
+                    width={144}
+                    height={32}
+                    className="header-link__img"
+                  />
                 </Link>
                 <Flex
                   gap='40px'
@@ -87,6 +89,7 @@ export default function RootLayout({
               <div>{children}</div>
             </Content>
             <Footer>
+              <FooterComponent />
             </Footer>
           </Layout>
         </ConfigProvider>
