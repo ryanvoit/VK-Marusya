@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .header-link--routing {
-  @apply relative 
+  @apply relative flex justify-center
 }
 
 .header-link--routing::before {

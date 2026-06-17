@@ -1,12 +1,13 @@
 import { Button } from "antd"
 import Link from "next/link"
 import Image from "next/image"
+// import './headerComponent.scss'
 import './headerComponent.css'
 import MainNav from "../MainNav/MainNav"
 
 export default function HeaderComponent() {
     return (
-        <div className="header-base">
+        <div className="header-base containner">
             <Link href='/' className="header-link">
                 <Image
                     src={'/marusya.svg'}
@@ -19,11 +20,11 @@ export default function HeaderComponent() {
             <div className="header-center">
                 <MainNav /> 
                 <div className="header-search">
-                    <input className="header-search__input" placeholder="Поиск" />
+                    <input className="header-search__input" placeholder="Search" />
                     <Image src={'/search.svg'} alt={'search'} width={24} height={24} className="header-search__icon" />
                 </div>
             </div>
-            <Button className="header-link">Войти</Button>
+            <Button className="header-link">Log in</Button>
         </div>
     )
 }

@@ -10,10 +10,10 @@ export default function MainNav() {
     return (
         <>
             <Link href='/' className={router == '/' ? 'header-link header-link--routing header-link--active' : 'header-link header-link--routing'}>
-                Главная
+                Home
             </Link>
             <Link href='/genres' className={router == '/genres' ? 'header-link header-link--routing header-link--active' : 'header-link header-link--routing'}>
-                Жанры
+                Genres
             </Link>
         </>
     )

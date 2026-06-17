@@ -42,3 +42,8 @@ body {
 .header {
   @apply mb-[30px]
 }
+
+.containner {
+  width: 100%;
+  padding: 0 80px;
+}

@@ -25,7 +25,7 @@
 .header-center {
   display: grid;
   gap: 40px;
-  grid-template-columns: 93px 79px 1fr;
+  grid-template-columns: 80px 80px 1fr;
 }
 
 .header-base {

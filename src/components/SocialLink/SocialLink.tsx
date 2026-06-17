@@ -14,8 +14,6 @@ export const SocialLink: FC<SocialLinkProps> = ({ socialLinkInfo }) => {
     const onMouseEnter = () => setIsHovered(true)
     const onMouseLeave = () => setIsHovered(false)
 
-    // https://stackoverflow.com/questions/68025173/how-to-change-image-on-hover-with-nextjs-and-tailwindcss
-
     return (
         <div className="social-link" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             {

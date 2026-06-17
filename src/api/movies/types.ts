@@ -10,28 +10,21 @@ const movieScheme = z.object({
     genres: z.array(z.string()),
     plot: z.string(),
     runtime: z.number(), //integer
-
     budget: z.string().nullable(),
     revenue: z.string().nullable(),
-
     homepage: z.string(),
     status: z.string(),
-    posterUrl: z.string(),
-
+    posterUrl: z.string().nullable(),
     backdropUrl: z.string().nullable(),
-
     trailerUrl: z.string(),
     trailerYouTubeId: z.string(),
     tmdbRating: z.number(), //integer
     searchL: z.string(),
-
     keywords: z.array(z.string()),
     countriesOfOrigin: z.array(z.string()),
     languages: z.array(z.string()),
     cast: z.array(z.string()),
-
-    director: z.string(),
-
+    director: z.string().nullable(),
     production: z.string().nullable(),
     awardsSummary: z.string().nullable(),
 });

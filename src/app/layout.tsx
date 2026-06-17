@@ -45,7 +45,7 @@ export default function RootLayout({
               <HeaderComponent />
             </Header>
             <Content>
-              <div>{children}</div>
+              <div className="containner">{children}</div>
             </Content>
             <Footer>
               <FooterComponent />
