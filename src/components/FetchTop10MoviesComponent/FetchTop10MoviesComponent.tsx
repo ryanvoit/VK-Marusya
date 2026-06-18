@@ -1,11 +1,9 @@
 'use client'
 
 import { useQuery } from "@tanstack/react-query"
-import { RandomMovieComponent } from "../RandomMovieComponent/RandomMovieComponent";
 import { useQueryClient } from "@tanstack/react-query";
 import { fetchTop10Movies } from "@/api/movies/fetches";
 import { Top10MoviesComponent } from "../Top10MoviesComponent/Top10MoviesComponent";
-const _ = require('lodash/number');
 
 export default function FetchTop10MoviesComponent() {
     const queryClient = useQueryClient()
@@ -15,8 +13,8 @@ export default function FetchTop10MoviesComponent() {
             queryFn: () => fetchTop10Movies(),
             queryKey: ['top10']
         },
-        queryClient
-    )
+        queryClient)
+
 
     switch (movieListQuery.status) {
         case 'pending':
@@ -24,7 +22,7 @@ export default function FetchTop10MoviesComponent() {
         case 'success':
             return (
                 <div >
-                    <Top10MoviesComponent movies={movieListQuery.data}   />
+                    <Top10MoviesComponent movies={movieListQuery.data} />
                 </div>
             )
         case 'error':
@@ -35,7 +33,11 @@ export default function FetchTop10MoviesComponent() {
                     <button className='text-white' onClick={() => movieListQuery.refetch()}>
                         Повторить запрос
                     </button>
-                </div>
+                </div >
             )
     }
+
+    // const movies: MovieList = await fetchTop10Movies();
+    // return <Top10MoviesComponent movies={movies} />;
 }
+

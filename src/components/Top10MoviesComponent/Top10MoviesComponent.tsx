@@ -19,7 +19,7 @@ export const Top10MoviesComponent: FC<MovieProps> = ({ movies }) => {
             <h2 className="text-[40px]/[48px] font-bold text-white mb-[64px]">Top 10 Movies</h2>
             <Flex wrap gap={40}>
                 {movies.map((movie, index) => (
-                    <Link href='/' >
+                    <Link href='/genres' key={movie.id} >
                         <div className='relative before:absolute before:w-[62px] before:h-[48px] before:flex before:justify-center 
                         before:items-center before:text-[24px]/[32px] before:top-[-12px] before:left-[-12px] before:rounded-[50px]
                         before:bg-white before:text-[#6A5DC2] font-bold'>

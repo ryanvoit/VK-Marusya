@@ -21,7 +21,7 @@ export const RandomMovieComponent: FC<MovieProps> = ({ movie, renewFn }) => {
         <Flex align="center" className="relative min-h-[400px]" gap={20}>
             <Flex className="w-[580px]" gap={60} vertical>
                 <Flex vertical gap={16}>
-                    
+
                     <Flex className="text-[18px] text-[#FFFFFFB2]" gap={16}>
                         <Flex gap={4} className={`${colorRating(movie.tmdbRating)} w-[70px] rounded-[16px]`} justify="center" align="center">
                             <Image
@@ -50,9 +50,11 @@ export const RandomMovieComponent: FC<MovieProps> = ({ movie, renewFn }) => {
                     </button>
                 </Flex>
             </Flex>
-            {movie.backdropUrl && (
-                <img src={movie.backdropUrl} width={680} height={552} className="absolute top-0 left-[600px] rounded-[16px]"></img>
-            )}
+            <>
+                {movie.backdropUrl && (
+                    <img src={movie.backdropUrl} width={680} height={552} className="absolute top-0 left-[600px] rounded-[16px]"></img>
+                )}
+            </>
         </Flex>
     )
 }
