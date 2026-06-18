@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.social-link {
+  border: solid 1px rgba(255, 255, 255, 0.8);
+  @apply w-[36px] h-[36px] border-1 border-solid rounded-[8px] hover:border-white flex justify-center items-center
+}

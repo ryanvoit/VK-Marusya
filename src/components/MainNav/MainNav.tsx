@@ -1,0 +1,20 @@
+'use client'
+
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import './mainNav.css'
+
+export default function MainNav() {
+    const router = usePathname()
+
+    return (
+        <>
+            <Link href='/' className={router == '/' ? 'header-link header-link--routing header-link--active' : 'header-link header-link--routing'}>
+                Home
+            </Link>
+            <Link href='/genres' className={router == '/genres' ? 'header-link header-link--routing header-link--active' : 'header-link header-link--routing'}>
+                Genres
+            </Link>
+        </>
+    )
+}
