@@ -1,41 +1,35 @@
 'use client'
 
 import { useQuery, useQueryClient } from "@tanstack/react-query"
-import fetchMovieList from "@/api/movies/fetches";
+import { fetchRandomMovie } from "@/api/movies/fetches";
 import { RandomMovieComponent } from "../RandomMovieComponent/RandomMovieComponent";
-import { useState } from "react";
-const _ = require('lodash/number')
 
 export default function FetchRandomMovieComponent() {
     const queryClient = useQueryClient()
 
-    const movieListQuery = useQuery(
+    const movieQuery = useQuery(
         {
-            queryFn: () => fetchMovieList(),
-            queryKey: ['movies']
+            queryFn: () => fetchRandomMovie(),
+            queryKey: ['randomMovie']
         },
         queryClient
     )
 
-    const [movieNumber, setMovieNumber] = useState(_.random(0, 49))
+    function renewMovie (): void { movieQuery.refetch() }
 
-    const renewMovie = () => {
-        setMovieNumber(_.random(0, 49))
-    }
-
-    switch (movieListQuery.status) {
+    switch (movieQuery.status) {
         case 'pending':
             return (<p className='text-white'>Loading...</p>)
         case 'success':
             return (
-                <RandomMovieComponent movie={movieListQuery.data[movieNumber]} renewFn={renewMovie}  />
+                <RandomMovieComponent movie={movieQuery.data} renewFn={renewMovie}  />
             )
         case 'error':
             return (
                 <div>
                     <span className='text-white'>Произошла ошибка:</span>
 
-                    <button className='text-white' onClick={() => movieListQuery.refetch()}>
+                    <button className='text-white' onClick={() => movieQuery.refetch()}>
                         Повторить запрос
                     </button>
                 </div>

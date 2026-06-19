@@ -3,7 +3,6 @@ import Link from "next/link"
 import { SocialLink } from "../SocialLink/SocialLink"
 
 export default function FooterComponent() {
-
     return (
         <Flex justify="flex-end" gap={24}>
             <Link href='/'>

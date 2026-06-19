@@ -1,6 +1,6 @@
 import z from "zod"
 
-const movieScheme = z.object({
+export const movieScheme = z.object({
     id: z.number(), //integer
     title: z.string(),
     originalTitle: z.string(),

@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+.top-10 {
+    @apply mb-[120px]
+}
+
+.top-10__title {
+    @apply text-[40px]/[48px] font-bold text-white mb-[64px]
+}
+
+.top-10__inner {
+    @apply gap-y-[64px] gap-x-[40px]
+}
+
+.top-10__picture {
+    @apply relative w-[224px] h-[336px]
+}
+
+.top-10__number {
+    @apply absolute w-[62px] h-[48px] flex justify-center  items-center text-[24px]/[32px] top-[-12px] left-[-12px] 
+    rounded-[50px] bg-white text-[#6A5DC2] font-bold
+} 
+
+.top-10__img {
+    @apply rounded-[16px]
+}
+
+.top-10__movie-name {
+    @apply w-full h-full text-[20px] bg-white flex items-center justify-center text-black rounded-[16px]
+}
+

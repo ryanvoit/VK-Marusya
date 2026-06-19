@@ -1,20 +1,31 @@
+'use client'
+
 import "./globals.css";
 import { ConfigProvider, Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import FooterComponent from "@/components/FooterComponent/FooterComponent";
-import HeaderComponent from "@/components/HeaderComponent/HeaderComponent";
+import { HeaderComponent } from "@/components/HeaderComponent/HeaderComponent";
+import { LoginComponent } from "@/components/LoginComponent/LoginComponent";
+import { useState } from "react";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [loginWindow, setLoginWindow] = useState(false)
+
+  function LoginOn ():void {
+    setLoginWindow(true)
+  }
+
+  function LoginOff ():void {
+    setLoginWindow(false)
+  } 
+
   return (
-    <html
-      lang="en"
-      className=' h-full antialiased'
-    >
-      <body className="min-h-full flex flex-col">
+    <html lang="en">
+      <body>
         <ConfigProvider
           theme={{
             components: {
@@ -40,9 +51,9 @@ export default function RootLayout({
             }
           }}
         >
-          <Layout className="layout">
+          <Layout className={loginWindow ? "layout" : "layout layout--loginOff"}>
             <Header className="header">
-              <HeaderComponent />
+              <HeaderComponent loginOn={LoginOn}/>
             </Header>
             <Content>
               <div className="containner">{children}</div>
@@ -50,6 +61,7 @@ export default function RootLayout({
             <Footer>
               <FooterComponent />
             </Footer>
+            <LoginComponent loginWindow={loginWindow} loginOff={LoginOff}/>
           </Layout>
         </ConfigProvider>
       </body>

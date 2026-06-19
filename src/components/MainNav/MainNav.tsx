@@ -9,10 +9,10 @@ export default function MainNav() {
 
     return (
         <>
-            <Link href='/' className={router == '/' ? 'header-link header-link--routing header-link--active' : 'header-link header-link--routing'}>
+            <Link href='/' className={router == '/' ? 'header__link header__link--routing header__link--active' : 'header__link header__link--routing'}>
                 Home
             </Link>
-            <Link href='/genres' className={router == '/genres' ? 'header-link header-link--routing header-link--active' : 'header-link header-link--routing'}>
+            <Link href='/genres' className={router == '/genres' ? 'header__link header__link--routing header__link--active' : 'header__link header__link--routing'}>
                 Genres
             </Link>
         </>
