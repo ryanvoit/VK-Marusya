@@ -1,23 +1,25 @@
-'use client'
-
 import { useQuery } from "@tanstack/react-query"
-import { fetchRandomMovie } from "@/api/movies/fetches";
-import { RandomMovieComponent } from "../RandomMovieComponent/RandomMovieComponent";
+import { fetchGenreMovie } from "@/api/movies/fetches";
+import { FC } from "react"
+import { GenreCard } from "../GenreCard/GenreCard";
 
-export default function FetchRandomMovieComponent() {
+export interface MovieGenreProps {
+    genre: string,
+    index: number,
+}
+
+export const FetchGenreItemComponent: FC<MovieGenreProps> = ({ genre, index }) => {
     const movieQuery = useQuery({
-            queryFn: () => fetchRandomMovie(),
-            queryKey: ['randomMovie']
-        })
-
-    function renewMovie (): void { movieQuery.refetch() }
+        queryFn: () => fetchGenreMovie(genre),
+        queryKey: ['genreMovie', genre]
+    })
 
     switch (movieQuery.status) {
         case 'pending':
             return (<p className='text-white'>Loading...</p>)
         case 'success':
             return (
-                <RandomMovieComponent movie={movieQuery.data} renewFn={renewMovie}  />
+                <GenreCard genre={genre} src={movieQuery.data[index].backdropUrl as string} />
             )
         case 'error':
             return (

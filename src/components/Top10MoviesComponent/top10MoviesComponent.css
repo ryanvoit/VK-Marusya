@@ -9,15 +9,19 @@
 }
 
 .top-10__inner {
-    @apply gap-y-[64px] gap-x-[40px]
+    @apply gap-y-[64px] flex flex-wrap justify-start gap-x-[40px]
+}
+
+.top-10__link {
+    width: calc(20% - 32px);
 }
 
 .top-10__picture {
-    @apply relative w-[224px] h-[336px]
+    @apply relative bg-transparent rounded-[24px] h-full w-full
 }
 
 .top-10__number {
-    @apply absolute w-[62px] h-[48px] flex justify-center  items-center text-[24px]/[32px] top-[-12px] left-[-12px] 
+    @apply absolute w-[62px] h-[48px] flex justify-center items-center text-[24px]/[32px] top-[-12px] left-[-12px] 
     rounded-[50px] bg-white text-[#6A5DC2] font-bold
 } 
 

@@ -20,7 +20,7 @@ export const Top10MoviesComponent: FC<MovieProps> = ({ movies }) => {
             <h2 className="top-10__title">Top 10 Movies</h2>
             <Flex className="top-10__inner" wrap justify="space-between">
                 {movies.map((movie, index) => (
-                    <Link href='/genres' key={movie.id} >
+                    <Link className='top-10__link' href='/genres' key={movie.id} >
                         <div className='top-10__picture' >
                             <div className="top-10__number">
                                 {index + 1}

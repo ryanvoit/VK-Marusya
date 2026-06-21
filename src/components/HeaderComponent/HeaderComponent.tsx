@@ -10,7 +10,7 @@ export interface HeaderProps {
 
 export const HeaderComponent: FC<HeaderProps> = ({ loginOn }) => {
     return (
-        <div className="header__base containner">
+        <div className="header__base">
             <Link href='/' className="header__link">
                 <Image src={'/marusya.svg'} alt={'marusya'} width={144} height={32} className="header__link-img" />
             </Link>
