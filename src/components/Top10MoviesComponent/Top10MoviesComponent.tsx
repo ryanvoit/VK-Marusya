@@ -3,7 +3,6 @@ import { FC } from "react";
 import '../../app/globals.css'
 import { Flex } from "antd";
 import Link from "next/link";
-const _ = require('lodash/math');
 import './top10MoviesComponent.css'
 
 export interface MovieProps {
@@ -11,10 +10,6 @@ export interface MovieProps {
 }
 
 export const Top10MoviesComponent: FC<MovieProps> = ({ movies }) => {
-    const ty = () => {
-        console.log('ftghuthdgiutrf');
-    }
-
     return (
         <div className="top-10">
             <h2 className="top-10__title">Top 10 Movies</h2>
