@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
-.header-link--routing {
+.header__link--routing {
   @apply relative flex justify-center
 }
 
-.header-link--routing::before {
+.header__link--routing::before {
   transition: opacity 0.3s ease-in-out;
   @apply absolute w-full content-[''] bg-[#DC5DFC] h-[2px] bottom-[24px] opacity-0 
 }
 
-.header-link--routing:hover::before, .header-link--active::before  {
+.header__link--routing:hover::before, 
+.header__link--active::before  {
   @apply opacity-100
 }

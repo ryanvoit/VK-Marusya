@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+.random-movie {
+    @apply relative min-h-[400px]
+}
+
+.random-movie__content {
+    @apply w-[665px]
+}
+
+.random-movie__basic-info {
+    @apply text-[18px] text-[#FFFFFFB2]
+}
+
+.random-movie__rating {
+    @apply w-[70px] rounded-[16px]
+}
+
+.random-movie__title {
+    @apply font-bold text-[48px]/[56px] text-white
+}
+
+.random-movie__plot {
+    @apply text-[24px]/[32px] text-[#FFFFFFB2]
+}
+
+.random-movie__btns {
+    @apply h-[56px]
+}
+
+.random-movie__btn {
+    @apply bg-[#333333] rounded-[28px] font-bold text-white text-[18px] border-[#00000066] border-[1px] hover:bg-[#67A5EB] transition-[background-color] transition-[300] ease-in
+}
+
+.random-movie__btn--1 {
+    @apply w-[171px]
+}
+
+.random-movie__btn--2 { 
+    @apply w-[183px] 
+}
+
+.random-movie__btn--3 {
+    @apply w-[68px] flex justify-center 
+}
+
+.random-movie__image {
+    @apply absolute top-0 left-[685px] rounded-[16px]
+}
+
+

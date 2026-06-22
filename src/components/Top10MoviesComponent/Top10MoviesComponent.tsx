@@ -4,6 +4,7 @@ import '../../app/globals.css'
 import { Flex } from "antd";
 import Link from "next/link";
 const _ = require('lodash/math');
+import './top10MoviesComponent.css'
 
 export interface MovieProps {
     movies: MovieList
@@ -15,18 +16,19 @@ export const Top10MoviesComponent: FC<MovieProps> = ({ movies }) => {
     }
 
     return (
-        <div className="mb-[120px]">
-            <h2 className="text-[40px]/[48px] font-bold text-white mb-[64px]">Top 10 Movies</h2>
-            <Flex wrap gap={40}>
+        <div className="top-10">
+            <h2 className="top-10__title">Top 10 Movies</h2>
+            <Flex className="top-10__inner" wrap justify="space-between">
                 {movies.map((movie, index) => (
-                    <Link href='/' >
-                        <div className='relative before:absolute before:w-[62px] before:h-[48px] before:flex before:justify-center 
-                        before:items-center before:text-[24px]/[32px] before:top-[-12px] before:left-[-12px] before:rounded-[50px]
-                        before:bg-white before:text-[#6A5DC2] font-bold'>
+                    <Link className='top-10__link' href='/genres' key={movie.id} >
+                        <div className='top-10__picture' >
+                            <div className="top-10__number">
+                                {index + 1}
+                            </div>
                             {movie.posterUrl ? (
-                                <img src={movie.posterUrl} width={224} height={336} className="rounded-[16px] " />
+                                <img className="top-10__img" src={movie.posterUrl} width={224} height={336} />
                             ) : (
-                                <div className="w-[224px] h-[336px] text-[20px] bg-white flex items-center justify-center text-black rounded-[16px] ">
+                                <div className="top-10__movie-name">
                                     <span>{movie.title}</span>
                                 </div>
                             )}
