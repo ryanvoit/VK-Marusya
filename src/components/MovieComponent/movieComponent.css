@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 .movie {
-    @apply relative min-h-[400px]
+    @apply relative min-h-[400px] 
 }
 
 .movie__content {
-    @apply w-[665px]
+    @apply w-[665px] flex-col
 }
 
 .movie__basic-info {
@@ -45,6 +45,7 @@
 }
 
 .movie__image {
+    object-fit: cover;
     @apply absolute top-0 left-[685px] rounded-[16px]
 }
 

@@ -26,7 +26,7 @@ export const MovieComponent: FC<MovieProps> = ({ movie, renewFn, role }) => {
 
     return (
         <Flex className="movie" align="center" gap={20}>
-            <Flex className="movie__content" gap={60} vertical>
+            <Flex className="movie__content" gap={60}>
                 <Flex className="movie__info" vertical gap={16}>
                     <Flex className="movie__basic-info" gap={16}>
                         <Flex gap={4} className='movie__rating' style={ratingColor} justify="center" align="center">
@@ -55,11 +55,9 @@ export const MovieComponent: FC<MovieProps> = ({ movie, renewFn, role }) => {
                     )}
                 </Flex>
             </Flex>
-            <>
-                {movie.backdropUrl && (
-                    <img src={movie.backdropUrl} width={680} height={552} className="movie__image"></img>
-                )}
-            </>
+            {movie.backdropUrl && (
+                <img src={movie.backdropUrl} className="movie__image" width={680}></img>
+            )}
         </Flex>
     )
 }

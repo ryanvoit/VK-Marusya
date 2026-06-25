@@ -15,9 +15,7 @@ export default function FetchTop10MoviesComponent() {
             return (<p className='text-white'>Loading...</p>)
         case 'success':
             return (
-                <div >
-                    <Top10MoviesComponent movies={movieListQuery.data} />
-                </div>
+                <Top10MoviesComponent movies={movieListQuery.data} />
             )
         case 'error':
             return (

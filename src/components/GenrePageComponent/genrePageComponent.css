@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+.genre-page {
+    @apply flex flex-col gap-[64px]
+}
+
+.genre-page__link {
+    @apply flex gap-[16px]
+}
+
+.genre-page__title {
+    @apply font-bold text-[48px] text-white m-0 shrink
+}
+
+.genre-page__list {
+    @apply flex flex-wrap gap-y-[64px] gap-x-[40px] justify-between
+}
+
+.genre-page__item {
+    width: calc(20% - 32px)
+}
+
+.genre-page__image {
+    object-fit: cover;
+    height: auto;
+    @apply rounded-[16px]
+}
+
+.genre-page__inner {
+    @apply h-full
+}
+
+.genre-page__name {
+    @apply w-full h-full text-[20px] bg-white flex items-center justify-center text-black rounded-[16px]
+}
