@@ -1,6 +1,6 @@
 import { MovieList } from "@/api/movies/types";
 import { FC } from "react";
-import '../../app/globals.css'
+import '../../../../app/globals.css'
 import { Flex } from "antd";
 import Link from "next/link";
 import './top10MoviesComponent.css'

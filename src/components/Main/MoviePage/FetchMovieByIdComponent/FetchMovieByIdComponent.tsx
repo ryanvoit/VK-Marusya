@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import { fetchMovieById } from "@/api/movies/fetches";
-import { MovieComponent } from "../MovieComponent/MovieComponent";
+import { MovieComponent } from "../../MainPage/MovieComponent/MovieComponent";
 import { FC } from "react";
 import { AboutMovieComponent } from "../AboutMovieComponent/AboutMovieComponent";
 

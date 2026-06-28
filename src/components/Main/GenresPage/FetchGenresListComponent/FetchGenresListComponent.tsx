@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import { fetchMovieGenres } from "@/api/movies/fetches";
-import { MovieGenresComponent } from "../MovieGenresComponent/MovieGenresComponent";
+import { MovieGenresComponent } from "../MovieGenresComponent/MovieGenresComponent"
 
 export default function FetchGenresListComponent() {
     const movieQuery = useQuery({

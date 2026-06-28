@@ -1,6 +1,6 @@
 'use client'
 
-import { FetchMovieByIdComponent } from "@/components/FetchMovieById/FetchMovieById";
+import { FetchMovieByIdComponent } from "@/components/Main/MoviePage/FetchMovieByIdComponent/FetchMovieByIdComponent";
 import { useParams } from "next/navigation"
 import { QueryClientProvider } from "@tanstack/react-query";
 import { client } from '@/utils/client'

@@ -1,6 +1,6 @@
 import { Movie } from "@/api/movies/types";
 import { FC } from "react";
-import '../../app/globals.css'
+import '../../../../app/globals.css';
 import { Flex } from "antd";
 import Image from "next/image";
 import runtimeConvertion from "@/utils/runtime";

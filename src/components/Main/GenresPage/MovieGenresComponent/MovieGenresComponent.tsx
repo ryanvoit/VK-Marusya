@@ -10,9 +10,9 @@ export interface MovieProps {
 
 export const MovieGenresComponent: FC<MovieProps> = ({ genres }) => {
     return (
-            <ul className="genres-list">
+            <ul className="genres-page__list">
                 { genres.map((genre, index) => (
-                    <li className="genres-list__item" key={genre}>
+                    <li className="genres-page__item" key={genre}>
                         <FetchGenreItemComponent genre={genre} index={index}  />
                     </li>
                 ))}

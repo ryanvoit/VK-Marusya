@@ -3,9 +3,9 @@
 import "./globals.css";
 import { ConfigProvider, Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
-import FooterComponent from "@/components/FooterComponent/FooterComponent";
-import { HeaderComponent } from "@/components/HeaderComponent/HeaderComponent";
-import { LoginComponent } from "@/components/LoginComponent/LoginComponent";
+import FooterComponent from "@/components/Footer/FooterComponent/FooterComponent";
+import { HeaderComponent } from "@/components/Header/HeaderComponent/HeaderComponent";
+import { LoginComponent } from "@/components/Main/LoginComponent/LoginComponent";
 import { useState } from "react";
 
 export default function RootLayout({

@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { MovieList } from "@/api/movies/types"
 import Link from "next/link"
-import './genrePageComponent.css'
+import './genrePageComponent.css';
 import Image from "next/image"
 
 export interface GenrePageProps {

@@ -9,7 +9,7 @@
 }
 
 .genre-page__title {
-    @apply font-bold text-[48px] text-white m-0 shrink
+    @apply font-bold text-[48px] text-white m-0 
 }
 
 .genre-page__list {

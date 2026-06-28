@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
-.genres-list {
+.genres-page__list {
     @apply flex flex-wrap gap-[40px] gap-y-[64px] mb-[160px]
 }
 
-.genres-list__item {
+.genres-page__item {
     width: calc(25% - 30px);
 }

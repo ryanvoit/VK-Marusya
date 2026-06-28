@@ -1,7 +1,7 @@
-import GenresPage from "@/components/GenresPage/GenresPage";
+import GenresPageComponent from "@/components/Main/GenresPage/GenresPageComponent/GenresPageComponent";
 
 export default function Page() {
   return (
-    <GenresPage />
+    <GenresPageComponent />
   )
 }
