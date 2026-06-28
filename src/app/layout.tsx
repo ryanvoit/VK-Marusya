@@ -5,7 +5,7 @@ import { ConfigProvider, Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import FooterComponent from "@/components/Footer/FooterComponent/FooterComponent";
 import { HeaderComponent } from "@/components/Header/HeaderComponent/HeaderComponent";
-import { LoginComponent } from "@/components/Main/LoginComponent/LoginComponent";
+import { AuthComponent } from "@/components/Auth/AuthComponent/AuthComponent";
 import { useState } from "react";
 
 export default function RootLayout({
@@ -13,14 +13,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [loginWindow, setLoginWindow] = useState(false)
+  const [authWindow, setAuthWindow] = useState(false)
 
-  function LoginOn ():void {
-    setLoginWindow(true)
+  function authOn ():void {
+    setAuthWindow(true)
   }
 
-  function LoginOff ():void {
-    setLoginWindow(false)
+  function authOff ():void {
+    setAuthWindow(false)
   } 
 
   return (
@@ -51,9 +51,9 @@ export default function RootLayout({
             }
           }}
         >
-          <Layout className={loginWindow ? "layout" : "layout layout--loginOff"}>
+          <Layout className={authWindow ? "layout" : "layout layout--authOff"}>
             <Header className="header">
-              <HeaderComponent loginOn={LoginOn}/>
+              <HeaderComponent loginOn={authOn}/>
             </Header>
             <Content>
               <div className="containner">{children}</div>
@@ -61,7 +61,7 @@ export default function RootLayout({
             <Footer>
               <FooterComponent />
             </Footer>
-            <LoginComponent loginWindow={loginWindow} loginOff={LoginOff}/>
+            <AuthComponent authWindow={authWindow} authOff={authOff}/>
           </Layout>
         </ConfigProvider>
       </body>

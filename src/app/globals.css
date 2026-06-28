@@ -42,10 +42,10 @@ body {
 .layout {
   background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(39, 36, 36, 0.7) 100%), linear-gradient(180deg, rgba(39, 135, 245, 0.9) 0%, rgba(163, 147, 245, 0.9) 100%);
   font-family: 'Play', 'Arial', sans-serif;
-  @apply before:w-[100vw] before:h-[100%] relative before:absolute before:z-1 before:bg-[#00000080] before:top-0 before:left-0 before:opacity-100
+  @apply before:w-[100vw] before:h-[100%] relative before:absolute before:z-1 before:bg-[#00000080] before:top-0 before:left-0 before:opacity-100 before:content-['']
 }
 
-.layout--loginOff {
+.layout--authOff {
   @apply before:opacity-0 before:z-[-1]
 }
 
