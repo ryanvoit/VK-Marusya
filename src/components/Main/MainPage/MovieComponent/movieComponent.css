@@ -1,19 +1,23 @@
 @import "tailwindcss";
 
 .movie {
-    @apply relative min-h-[400px] 
+    @apply relative min-h-[400px] flex items-center gap-[20px]
 }
 
 .movie__content {
-    @apply w-[665px] flex-col
+    @apply w-[665px] flex-col flex gap-[60px]
+}
+
+.movie__info {
+    @apply flex flex-col gap-[16px]
 }
 
 .movie__basic-info {
-    @apply text-[18px] text-[#FFFFFFB2]
+    @apply text-[18px] text-[#FFFFFFB2] flex gap-[16px]
 }
 
 .movie__rating {
-    @apply w-[70px] rounded-[16px]
+    @apply w-[70px] rounded-[16px] flex gap-[4px] justify-center items-center
 }
 
 .movie__title {
@@ -25,7 +29,7 @@
 }
 
 .movie__btns {
-    @apply h-[56px]
+    @apply h-[56px] flex gap-[16px]
 }
 
 .movie__btn {

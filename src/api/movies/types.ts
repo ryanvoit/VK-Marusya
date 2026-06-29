@@ -1,33 +1,34 @@
 import z from "zod"
 
 export const movieScheme = z.object({
-    id: z.number(), //integer
+    id: z.number(),
     title: z.string(),
-    originalTitle: z.string(),
-    language: z.string(),
-    releaseYear: z.number(), //integer
-    releaseDate: z.string(),
-    genres: z.array(z.string()),
-    plot: z.string(),
-    runtime: z.number(), //integer
-    budget: z.string().nullable(),
-    revenue: z.string().nullable(),
-    homepage: z.string(),
-    status: z.string(),
-    posterUrl: z.string().nullable(),
-    backdropUrl: z.string().nullable(),
-    trailerUrl: z.string(),
-    trailerYouTubeId: z.string(),
-    tmdbRating: z.number(), //integer
-    searchL: z.string(),
-    keywords: z.array(z.string()),
-    countriesOfOrigin: z.array(z.string()),
-    languages: z.array(z.string()),
-    cast: z.array(z.string()),
-    director: z.string().nullable(),
-    production: z.string().nullable(),
-    awardsSummary: z.string().nullable(),
+    originalTitle: z.string().nullable().optional(),
+    language: z.string().nullable().optional(),
+    releaseYear: z.number().nullable().optional(),
+    releaseDate: z.string().nullable().optional(),
+    genres: z.array(z.string()).default([]),
+    plot: z.string().nullable().optional(),
+    runtime: z.number().catch(0), // если придет некорректное число, вернет 0
+    budget: z.string().nullable().optional(),
+    revenue: z.string().nullable().optional(),
+    homepage: z.string().nullable().optional(),
+    status: z.string().nullable().optional(),
+    posterUrl: z.string().nullable().optional(), // Важно: может быть null
+    backdropUrl: z.string().nullable().optional(),
+    trailerUrl: z.string().nullable().optional(),
+    trailerYouTubeId: z.string().nullable().optional(),
+    tmdbRating: z.number().catch(0),
+    searchL: z.string().nullable().optional(),
+    keywords: z.array(z.string()).default([]),
+    countriesOfOrigin: z.array(z.string()).default([]),
+    languages: z.array(z.string()).default([]),
+    cast: z.array(z.string()).default([]),
+    director: z.string().nullable().optional(),
+    production: z.string().nullable().optional(),
+    awardsSummary: z.string().nullable().optional(),
 });
+
 
 export type Movie = z.infer<typeof movieScheme>
 

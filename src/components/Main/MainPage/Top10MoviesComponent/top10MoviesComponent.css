@@ -9,7 +9,7 @@
 }
 
 .top-10__inner {
-    @apply gap-y-[64px] flex flex-wrap justify-between gap-x-[40px]
+    @apply gap-y-[64px] flex flex-wrap justify-between gap-x-[40px] flex-wrap
 }
 
 .top-10__link {

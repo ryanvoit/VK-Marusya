@@ -1,7 +1,6 @@
 import { MovieList } from "@/api/movies/types";
 import { FC } from "react";
 import '../../../../app/globals.css'
-import { Flex } from "antd";
 import Link from "next/link";
 import './top10MoviesComponent.css'
 
@@ -13,7 +12,7 @@ export const Top10MoviesComponent: FC<MovieProps> = ({ movies }) => {
     return (
         <div className="top-10">
             <h2 className="top-10__title">Top 10 Movies</h2>
-            <Flex className="top-10__inner" wrap justify="space-between">
+            <div className="top-10__inner">
                 {movies.map((movie, index) => (
                     <Link className='top-10__link' href={`/${movie.id}`} key={movie.id} >
                         <div className='top-10__picture'>
@@ -30,7 +29,7 @@ export const Top10MoviesComponent: FC<MovieProps> = ({ movies }) => {
                         </div>
                     </Link>
                 ))}
-            </Flex>
+            </div>
         </div>
     )
 }

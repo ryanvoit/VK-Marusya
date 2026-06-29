@@ -7,6 +7,8 @@ export interface AboutMovieProps {
 }
 
 export const AboutMovieComponent: FC<AboutMovieProps> = ({ movie }) => {
+    // const names = ['The original language', 'The budget', 'The revenue', 'The Director', 'The Awards']
+    // const values = [movie.language, movie.budget, movie.revenue, movie.director, movie.production]
 
     return (
         <div className="about">
