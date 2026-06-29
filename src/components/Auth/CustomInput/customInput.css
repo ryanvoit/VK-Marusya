@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+.custom-input {
+    @apply relative 
+}
+
+.custom-input__field {
+    @apply w-full h-[56px] border-[1px] border-[#00000066] rounded-[8px] py-[16px] px-[16px] pl-[52px] hover:border-[#67A5EB]
+    focus-visible:outline-[#67A5EB] focus-visible:outline-[2px]
+}
+
+.custom-input__field:hover + .custom-input__image {
+    @apply text-[#67A5EB]
+}

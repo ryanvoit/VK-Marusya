@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.custom-input__image {
+    @apply absolute top-[50%] translate-y-[-50%] left-[12px] text-[#00000066]
+}

@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+.auth__form, .auth__wrapper {
+    @apply flex flex-col w-full gap-[24px] items-center
+}
+
+.auth__fields {
+    @apply flex flex-col gap-[12px] w-full
+}
+
+.auth__btn {
+    @apply flex justify-center items-center w-full text-[18px]/[24px] bg-[#67A5EB] h-[56px] rounded-[28px] text-white
+}
+
+.auth__btn--link {
+    @apply h-[24px] bg-transparent text-black
+}
+
+.auth__title {
+    @apply text-[24px] font-bold
+}
+
+.auth__content {
+    @apply text-[18px] text-center
+}

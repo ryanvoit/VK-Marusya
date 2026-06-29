@@ -1,19 +1,20 @@
-import Image from "next/image"
-import './formLogin.css'
+import '../authInner.css'
+import { CustomInput } from "../CustomInput/CustomInput"
+import { FC } from "react"
 
-export const FormLogin = () => {
-    // <input type="email" id="email" placeholder="Email" className="custom-input__field"/>
-                  //   <Image src={'/email.svg'} alt="email" width={24} height={24} />
+export interface FormLoginProps {
+    stateChangeFn: () => void
+}
+
+export const FormLogin:FC<FormLoginProps> = ({ stateChangeFn }) => {
     return (
-            <form className="auth__form">
-                <div className="custom-input">
-                    <input type="email" id="email" placeholder="Email" className="custom-input__field"/>
-                    <Image src={'/email.svg'} alt='email' width={24} height={24} className="custom-input__image" />
-                </div>
-                <div className="custom-input">
-                    <input type="password" id="password" placeholder="Password" className="custom-input__field"/>
-                    <Image src={'/pasword.svg'} alt='pasword' width={24} height={24} className="custom-input__image" />
-                </div>
-            </form>
+        <form className="auth__form">
+            <div className="auth__fields">
+                <CustomInput role='email' btnType='email' id='email' placeholder="Email" />
+                <CustomInput role='password' btnType='password' id='password' placeholder="Password" />
+            </div>
+            <button className="auth__btn" type="submit">Войти</button>
+            <button className="auth__btn auth__btn--link" type="button" onClick={stateChangeFn}>Регистрация</button>
+        </form>
     )
 }

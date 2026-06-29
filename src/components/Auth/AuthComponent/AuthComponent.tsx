@@ -16,15 +16,25 @@ export interface LoginProps {
 export const AuthComponent: FC<LoginProps> = ({ authWindow, authOff }) => {
     const [authState, setAuthState] = useState<'login' | 'register' | 'success'>('login')
 
+    function changeToRegistState () {
+        setAuthState('register')
+    }
+    function changeToLoginState () {
+        setAuthState('login')
+    }
+    function changeToSuccessState () {
+        setAuthState('success')
+    }
+
     return (
         <div className={authWindow ? "auth" : "auth auth--off"}>
             <Image src={'/marusya-black.svg'} alt={'marusya-black'} width={157} height={35} className='auth__img' />
             {authState == 'login' ? (
-                <FormLogin />
+                <FormLogin stateChangeFn={changeToRegistState} />
             ) : authState == 'register' ? (
-                <FormRegister />
+                <FormRegister stateChangeFn={changeToLoginState} />
             ) : (
-                <SuccessWindow />
+                <SuccessWindow stateChangeFn={changeToLoginState}/>
             )}
             <button onClick={authOff} className="auth__exit">
                 <Image src={'/cross.svg'} alt={'cross'} width={24} height={24} className='auth__exit-icon' />
