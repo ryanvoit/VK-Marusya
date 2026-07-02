@@ -1,27 +1,31 @@
 import { Movie } from "@/api/movies/types";
 import { FC } from "react";
-import '../../../../app/globals.css';
 import Image from "next/image";
 import runtimeConvertion from "@/utils/runtime";
 import colorRating from "@/utils/colorRating";
 const _ = require('lodash/math');
-import './movieComponent.css'
 import Link from "next/link";
+import { fetchRandomMovie } from "@/api/movies/fetches";
 
 export interface MovieProps {
-    movie: Movie,
-    renewFn?: () => void,
     role: 'random' | 'about'
 }
 
-export const MovieComponent: FC<MovieProps> = ({ movie, renewFn, role }) => {
-    const ty = () => {
-        console.log('ftghuthdgiutrf');
-    }
+const getMovie = async(): Promise<Movie> => {
+    const data = fetchRandomMovie()
+    return data
+}
+
+export const MovieComponent: FC<MovieProps> = async ({ role }) => {
+    const movie = await getMovie()
 
     const ratingColor: React.CSSProperties = {
         backgroundColor: `${colorRating(movie.tmdbRating)}`
     }
+
+   //  <button className="movie__btn movie__btn--3" onClick={getMovie}>
+                          //   <Image src={'/new.svg'} alt={'new'} width={24} height={24} />
+                        // </button>
 
     return (
         <div className="movie">
@@ -40,15 +44,15 @@ export const MovieComponent: FC<MovieProps> = ({ movie, renewFn, role }) => {
                     <p className="movie__plot">{movie.plot}</p>
                 </div>
                 <div className="movie__btns">
-                    <button className="movie__btn movie__btn--1" onClick={ty}>Trailer</button>
+                    <button className="movie__btn movie__btn--1">Trailer</button>
                     {role == 'random' && (
                         <Link href={`${movie.id}`} className="movie__btn movie__btn--2">About the movie</Link>
                     )}
-                    <button className="movie__btn movie__btn--3" onClick={ty}>
+                    <button className="movie__btn movie__btn--3">
                         <Image src={'/heart.svg'} alt={'heart'} width={24} height={24} />
                     </button>
                     {role == 'random' && (
-                        <button className="movie__btn movie__btn--3" onClick={renewFn}>
+                        <button className="movie__btn movie__btn--3">
                             <Image src={'/new.svg'} alt={'new'} width={24} height={24} />
                         </button>
                     )}

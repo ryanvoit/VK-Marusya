@@ -1,5 +1,0 @@
-@import "tailwindcss";
-
-.genres-page__title {
-    @apply text-[48px]/[56px] text-white mb-[64px] font-bold cursor-default
-}

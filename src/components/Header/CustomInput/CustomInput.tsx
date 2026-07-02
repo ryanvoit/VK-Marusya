@@ -1,5 +1,3 @@
-import Image from "next/image"
-import './customInput.css'
 import { FC } from "react"
 import { Icon } from "../Icon/Icon"
 

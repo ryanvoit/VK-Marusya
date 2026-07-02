@@ -1,6 +1,5 @@
 import { Movie } from "@/api/movies/types"
 import { FC } from "react"
-import './aboutMovieComponent.css'
 
 export interface AboutMovieProps {
     movie: Movie,

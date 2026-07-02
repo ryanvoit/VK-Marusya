@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import './mainNav.css'
 
 export default function MainNav() {
     const router = usePathname()

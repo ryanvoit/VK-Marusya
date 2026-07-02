@@ -1,28 +1,14 @@
-'use client'
-
-import "./globals.css";
+import "@/styles/styles.css"
 import { ConfigProvider, Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import FooterComponent from "@/components/Footer/FooterComponent/FooterComponent";
 import { HeaderComponent } from "@/components/Header/HeaderComponent/HeaderComponent";
-import { AuthComponent } from "@/components/Auth/AuthComponent/AuthComponent";
-import { useState } from "react";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [authWindow, setAuthWindow] = useState(false)
-
-  function authOn ():void {
-    setAuthWindow(true)
-  }
-
-  function authOff ():void {
-    setAuthWindow(false)
-  } 
-
   return (
     <html lang="en">
       <body>
@@ -51,17 +37,16 @@ export default function RootLayout({
             }
           }}
         >
-          <Layout className={authWindow ? "layout" : "layout layout--authOff"}>
+          <Layout className="layout">
             <Header className="header">
-              <HeaderComponent loginOn={authOn}/>
+              <HeaderComponent />
             </Header>
             <Content>
               <div className="containner">{children}</div>
             </Content>
-            <Footer>
+            <Footer className="footer">
               <FooterComponent />
             </Footer>
-            <AuthComponent authWindow={authWindow} authOff={authOff}/>
           </Layout>
         </ConfigProvider>
       </body>

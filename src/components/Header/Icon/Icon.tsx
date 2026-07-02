@@ -1,4 +1,3 @@
-import './icon.css'
 import { FC } from "react"
 
 export interface IconProps {

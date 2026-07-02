@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.header {
+  @apply mb-[30px]
+}
+
 .header__link {
   font-family: 'Play', 'Arial', sans-serif;
   @apply text-white text-[24px] flex items-center gap-[12px] bg-transparent border-none hover:text-white p-0
@@ -33,4 +37,24 @@
   gap: 80px;
   align-items: center;
   grid-template-columns: 144px 1fr 69px;
+  @apply before:w-[100vw] before:h-[100vh] before:absolute before:z-10 before:bg-[#00000080] before:top-0 before:left-0 
+  before:opacity-0 before:content-[''] before:pointer-events-none before:transition-opacity before:duration-300
+}
+
+.header__base:has(.auth:target) {
+  @apply before:opacity-100 before:pointer-events-auto
+}
+
+.header__link--routing {
+  @apply relative flex justify-center
+}
+
+.header__link--routing::before {
+  transition: opacity 0.3s ease-in-out;
+  @apply absolute w-full content-[''] bg-[#DC5DFC] h-[2px] bottom-[24px] opacity-0 
+}
+
+.header__link--routing:hover::before, 
+.header__link--active::before  {
+  @apply opacity-100
 }

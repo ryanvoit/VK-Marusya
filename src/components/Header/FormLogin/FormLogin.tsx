@@ -1,4 +1,3 @@
-import '../authInner.css'
 import { CustomInput } from "../CustomInput/CustomInput"
 import { FC } from "react"
 

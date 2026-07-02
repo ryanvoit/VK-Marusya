@@ -1,5 +1,4 @@
 import { FC } from "react"
-import "./GenreCard.css"
 import Link from "next/link"
 
 export interface GenreCardProps {

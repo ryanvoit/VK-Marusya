@@ -1,5 +1,4 @@
 import { FC } from "react"
-import '../authInner.css'
 
 export interface SuccessWindowProps {
     stateChangeFn: () => void

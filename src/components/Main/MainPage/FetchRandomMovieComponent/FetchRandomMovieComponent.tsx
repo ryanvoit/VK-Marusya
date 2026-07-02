@@ -17,7 +17,7 @@ export default function FetchRandomMovieComponent() {
             return (<p className='text-white'>Loading...</p>)
         case 'success':
             return (
-                <MovieComponent movie={movieQuery.data} renewFn={renewMovie} role="random"  />
+                <MovieComponent role="random"  />
             )
         case 'error':
             return (

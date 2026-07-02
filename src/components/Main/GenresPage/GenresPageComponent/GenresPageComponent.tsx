@@ -3,7 +3,6 @@
 import { client } from '@/utils/client'
 import { QueryClientProvider } from '@tanstack/react-query';
 import FetchGenresListComponent from '../FetchGenresListComponent/FetchGenresListComponent';
-import './GenrePageComponent.css'
 
 export default function GenresPageComponent() {
     return (

@@ -4,7 +4,7 @@ import { SocialLink } from "../SocialLink/SocialLink"
 
 export default function FooterComponent() {
     return (
-        <Flex justify="flex-end" gap={24}>
+        <div className="footer__wrapper">
             <Link href='/'>
                 <SocialLink socialLinkInfo={{alt: 'vk', width: 18, height: 10 }} />
             </Link>
@@ -17,6 +17,6 @@ export default function FooterComponent() {
             <Link href='https://t.me/ryanvoit'>
                 <SocialLink socialLinkInfo={{alt: 'telegram', width: 17, height: 14 }} />
             </Link>
-        </Flex>
+        </div>
     )
 }

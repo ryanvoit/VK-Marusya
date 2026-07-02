@@ -1,7 +1,6 @@
 import { MovieGenres } from "@/api/movies/types";
 import { FC } from "react";
 import { FetchGenreItemComponent } from "../FetchGenreItemComponent/FetchGenreItemComponent";
-import './MovieGenresComponent.css'
 
 
 export interface MovieProps {

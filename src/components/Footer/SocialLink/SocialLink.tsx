@@ -3,7 +3,6 @@
 import { FC } from "react"
 import Image from "next/image"
 import { useState } from "react"
-import "./socialLink.css"
 
 export interface SocialLinkProps {
     socialLinkInfo: socialLinkIcon

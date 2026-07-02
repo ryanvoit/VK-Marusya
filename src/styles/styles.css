@@ -1,0 +1,30 @@
+/* Global */
+/* ------------------------------------ */
+
+/* @import "global/_normalize"; */
+/* @import "global/_variables"; */
+/* @import "global/_mixins"; */
+/* @import "global/_fonts"; */
+/* @import "global/_reboot"; */
+/* @import "global/_container"; */
+
+
+@import "./global/reboot.css"; 
+@import "./global/visually-hidden.css"; 
+
+/* Components */
+/* ------------------------------------ */
+
+@import "./components/header.css";  
+@import "./components/auth.css";
+@import "./components/custom-input.css";
+@import "./components/footer.css";
+@import "./components/social-link.css";
+@import "./components/movie.css";
+@import "./components/top-10.css"; 
+@import "./components/genres-page.css";
+@import "./components/genre-card.css";
+@import "./components/genre-page.css";
+@import "./components/about.css"
+
+
