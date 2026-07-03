@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 .header {
-  @apply mb-[30px];
+  @apply mb-[30px] bg-transparent px-[80px] h-[96px];
 
   &__base {
     grid-template-columns: 144px 1fr 69px;
-    @apply items-center grid gap-[80px];
+    @apply items-center grid gap-[80px] h-full w-full;
     
     &::before {
       @apply w-[100vw] h-[100%] absolute z-10 bg-black-40-custom top-0 left-0 opacity-0 content-[''] pointer-events-none 
@@ -26,7 +26,7 @@
 
       &::before {
         transition: opacity $transition;
-        @apply absolute w-full content-[''] bg-heliotrope h-[2px] bottom-[24px] opacity-0
+        @apply absolute w-full content-[''] bg-heliotrope h-[2px] bottom-0 opacity-0
       }
 
       &:hover::before {

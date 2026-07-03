@@ -1,6 +1,6 @@
 'use client'
 
-import { client } from '@/utils/client'
+import { client } from '@/api/client'
 import { QueryClientProvider } from '@tanstack/react-query';
 import FetchGenresListComponent from '../FetchGenresListComponent/FetchGenresListComponent';
 

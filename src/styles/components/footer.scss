@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 .footer {
+    @apply bg-transparent px-[80px] py-[40px];
+
     &__wrapper {
         @apply flex justify-end gap-[24px] 
     }
