@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 .genre-card {
-    @apply rounded-[24px] overflow-hidden flex flex-col items-center
-}
+    @apply rounded-[24px] overflow-hidden flex flex-col items-center;
 
-.genre-card__img {
-    @apply w-full
-}
+    &__img {
+        @apply w-full
+    }
 
-.genre-card__name {
-    @apply flex justify-center items-center h-[84px] text-[24px] bg-black font-bold text-white w-full
+    &__name {
+        @apply flex justify-center items-center h-[84px] text-[24px] bg-black-custom font-bold text-white-custom w-full
+    }
 }

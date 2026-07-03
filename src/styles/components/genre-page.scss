@@ -1,35 +1,34 @@
 @import "tailwindcss";
 
 .genre-page {
-    @apply flex flex-col gap-[64px]
-}
+    @apply flex flex-col gap-[64px];
 
-.genre-page__link {
-    @apply flex gap-[16px]
-}
+    &__link {
+        @apply flex gap-[16px]
+    }
 
-.genre-page__title {
-    @apply font-bold text-[48px] text-white m-0 
-}
+    &__title {
+        @apply font-bold text-[48px] text-white-custom m-0;
+    }
 
-.genre-page__list {
-    @apply flex flex-wrap gap-y-[64px] gap-x-[40px] justify-between
-}
+    &__list {
+        @apply flex flex-wrap gap-y-[64px] gap-x-[40px] justify-between;
+    }
 
-.genre-page__item {
-    width: calc(20% - 32px)
-}
+    &__item {
+        width: calc(20% - 32px)
+    }
 
-.genre-page__image {
-    object-fit: cover;
-    height: auto;
-    @apply rounded-[16px]
-}
+    &__inner {
+        @apply h-full
+    }
 
-.genre-page__inner {
-    @apply h-full
-}
+    &__image {
+        object-fit: cover;
+        @apply rounded-[16px] h-auto
+    }
 
-.genre-page__name {
-    @apply w-full h-full text-[20px] bg-white flex items-center justify-center text-black rounded-[16px]
+    &__name {
+        @apply w-full h-full text-[20px] bg-white flex items-center justify-center text-black rounded-[16px]
+    }
 }

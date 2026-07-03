@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
-.footer__wrapper {
-    @apply flex justify-end gap-[24px] 
+.footer {
+    &__wrapper {
+        @apply flex justify-end gap-[24px] 
+    }
 }

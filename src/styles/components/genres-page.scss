@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
-.genres-page__title {
-    @apply text-[48px]/[56px] text-white mb-[64px] font-bold cursor-default
-}
+.genres-page {
+    &__title {
+        @apply text-[48px]/[56px] text-white-custom mb-[64px] font-bold cursor-default
+    }
 
-.genres-page__list {
-    @apply flex flex-wrap gap-[40px] gap-y-[64px] mb-[160px]
-}
+    &__list {
+        @apply flex flex-wrap gap-[40px] gap-y-[64px] mb-[160px]
+    }
 
-.genres-page__item {
-    width: calc(25% - 30px);
+    &__item {
+        width: calc(25% - 30px);
+    }
 }

@@ -1,54 +1,56 @@
 @import "tailwindcss";
 
 .movie {
-    @apply relative min-h-[400px] flex items-center gap-[20px]
-}
+    @apply relative min-h-[400px] flex items-center gap-[20px];
 
-.movie__content {
-    @apply w-[665px] flex-col flex gap-[60px]
-}
+    &__content {
+        @apply w-[665px] flex-col flex gap-[60px]
+    }
 
-.movie__info {
-    @apply flex flex-col gap-[16px]
-}
+    &__info {
+        @apply flex flex-col gap-[16px]
+    }
 
-.movie__basic-info {
-    @apply text-[18px] text-[#FFFFFFB2] flex gap-[16px]
-}
+    &__basic-info {
+        @apply text-[18px] text-white-70-custom flex gap-[16px]
+    }
 
-.movie__rating {
-    @apply w-[70px] rounded-[16px] flex gap-[4px] justify-center items-center
-}
+    &__rating {
+        @apply w-[70px] rounded-[16px] flex gap-[4px] justify-center items-center
+    }
 
-.movie__title {
-    @apply font-bold text-[48px]/[56px] text-white
-}
+    &__title {
+        @apply font-bold text-[48px]/[56px] text-white-custom
+    }
 
-.movie__plot {
-    @apply text-[24px]/[32px] text-[#FFFFFFB2]
-}
+    &__plot {
+        @apply text-[24px]/[32px] text-white-70-custom
+    }
 
-.movie__btns {
-    @apply h-[56px] flex gap-[16px]
-}
+    &__btns {
+        @apply h-[56px] flex gap-[16px]
+    }
 
-.movie__btn {
-    @apply bg-[#333333] rounded-[28px] font-bold text-white text-[18px] border-[#00000066] border-[1px] hover:bg-[#67A5EB] transition-[background-color] transition-[300] ease-in
-}
+    &__btn {
+        transition: background-color $transition;
+        @apply bg-[#333333] rounded-[28px] font-bold text-white-custom text-[18px] border-black-40-custom border-[1px] 
+        hover:bg-cornflower-blue;
 
-.movie__btn--1 {
-    @apply w-[171px]
-}
+        &--1 {
+            @apply w-[171px]
+        }
 
-.movie__btn--2 { 
-    @apply w-[183px] flex justify-center items-center hover:text-white
-}
+        &--2 {
+            @apply w-[183px] flex justify-center items-center hover:text-white-custom
+        }
 
-.movie__btn--3 {
-    @apply w-[68px] flex justify-center 
-}
+        &--3 {
+            @apply w-[68px] flex justify-center
+        }
+    }
 
-.movie__image {
-    object-fit: cover;
-    @apply absolute top-0 left-[685px] rounded-[16px]
+    &__image {
+        object-fit: cover;
+        @apply absolute top-0 left-[685px] rounded-[16px]
+    }
 }

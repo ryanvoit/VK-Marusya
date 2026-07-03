@@ -1,31 +1,30 @@
 @import "tailwindcss";
 
 .custom-input {
-    @apply relative h-[56px]
-}
+    @apply relative h-[56px];
 
-.custom-input__field {
-    transition: border 0.3s ease, outline 0.3s ease;
-    @apply w-full h-[100%] border-[1px] border-[#00000066] rounded-[8px] py-[16px] px-[16px] pl-[52px] hover:border-[#67A5EB]
-    focus-visible:outline-[#67A5EB] focus-visible:outline-[2px] absolute top-0 left-0 
-}
+    &__field {
+        transition: border $transition, outline $transition;
+        @apply w-full h-[100%] border-[1px] border-black-40-custom rounded-[8px] py-[16px] px-[16px] pl-[52px] 
+        hover:border-cornflower-blue focus-visible:outline-cornflower-blue focus-visible:outline-[2px] absolute top-0 left-0;
 
-.custom-input__field::placeholder {
-    transition: color 0.3s ease;
-}
+        &::placeholder {
+            transition: color $transition;
+        }
 
-.custom-input__image {
-    transition: color 0.3s ease;
-}
+        &:hover {
+            +.custom-input__image {
+                @apply text-cornflower-blue
+            }
 
-.custom-input__field:hover + .custom-input__image {
-    @apply text-[#67A5EB]
-}
+            &::placeholder {
+                @apply text-cornflower-blue
+            }
+        }
+    }
 
-.custom-input__field:hover::placeholder {
-    @apply text-[#67A5EB]
-}
-
-.custom-input__image {
-    @apply absolute top-[50%] translate-y-[-50%] left-[12px] text-[#00000066] pointer-events-none;
+    &__image {
+        transition: color $transition;
+        @apply absolute top-[50%] translate-y-[-50%] left-[12px] text-black-40-custom pointer-events-none;
+    }
 }

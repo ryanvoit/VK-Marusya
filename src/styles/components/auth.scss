@@ -1,72 +1,45 @@
 @import "tailwindcss";
 
-.auth__form, .auth__wrapper {
-    @apply flex flex-col w-full gap-[24px] items-center
-}
-
-.auth__fields {
-    @apply flex flex-col gap-[12px] w-full
-}
-
-.auth__btn {
-    @apply flex justify-center items-center w-full text-[18px]/[24px] bg-[#67A5EB] h-[56px] rounded-[28px] text-white
-}
-
-.auth__btn--link {
-    @apply h-[24px] bg-transparent text-black
-}
-
-.auth__title {
-    @apply text-[24px] font-bold
-}
-
-.auth__content {
-    @apply text-[18px] text-center
-}
-
 .auth {
-  position: fixed;
-  inset: 0;
-  z-index: 20;
-  margin: auto;
-  width: 420px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: center;
-  height: fit-content;
-  background-color: white;
-  border-radius: 12px;
-  padding: 64px 40px;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: scale(0.95);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-}
+    transform: scale(0.95) translateY(50%) translateX(-50%);
+    transition: opacity $transition, transform $transition, visibility $transition;
+    @apply fixed z-[20] w-[420px] flex flex-col gap-[40px] items-center h-fit bg-white-custom rounded-[12px] py-[64px] px-[40px] 
+    opacity-0 invisible pointer-events-none top-[50%] left-[50%];
 
-.auth:target {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: scale(1);
-}
+    &:target {
+        transform: scale(1) translateY(-50%) translateX(-50%);
+        @apply opacity-100 visible pointer-events-auto
+    }
 
-.auth__exit {
-  position: absolute;
-  top: 0;
-  right: -72px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  transition: background-color 0.3s ease;
-}
+    &__exit {
+        transition: background-color $transition;
+        @apply absolute top-0 right-[-72px] cursor-pointer flex items-center justify-center w-[48px] h-[48px] rounded-[50%] 
+        bg-white-custom hover:bg-white-25-custom
+    }
 
-.auth__exit:hover {
-    background-color: #ffffffaa;
+    &__form,
+    &__wrapper {
+        @apply flex flex-col w-full gap-[24px] items-center
+    }
+
+    &__fields {
+        @apply flex flex-col gap-[12px] w-full
+    }
+
+    &__btn {
+        @apply flex justify-center items-center w-full text-[18px]/[24px] bg-cornflower-blue h-[56px] rounded-[28px] 
+        text-white-custom;
+
+        &--link {
+            @apply h-[24px] bg-transparent text-black-custom
+        }
+    }
+
+    &__title {
+        @apply text-[24px] font-bold
+    }
+
+    &__content {
+        @apply text-[18px] text-center
+    }
 }

@@ -15,7 +15,6 @@ export const GenrePageComponent: FC<GenrePageProps> = ({ movies, genre }) => {
                 <Image src='/back.svg' alt="back" width={40} height={40}></Image>
                 <h1 className="genre-page__title">{genre[0].toUpperCase() + genre.slice(1)}</h1>
             </Link>
-
             <ul className="genre-page__list">
                 {movies.map((movie) => (
                     <li className="genre-page__item" key={movie.id}>
