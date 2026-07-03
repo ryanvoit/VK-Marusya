@@ -1,4 +1,3 @@
-
 import MoviePageComponent from "@/components/Main/MoviePage/MoviePageComponent/MoviePageComponent"
 
 interface PageProps {

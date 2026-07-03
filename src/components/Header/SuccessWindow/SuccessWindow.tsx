@@ -4,7 +4,7 @@ export interface SuccessWindowProps {
     stateChangeFn: () => void
 }
 
-export const SuccessWindow :FC<SuccessWindowProps> = ({ stateChangeFn }) => {
+export const SuccessWindow:FC<SuccessWindowProps> = ({ stateChangeFn }) => {
     return (
         <div className="auth__wrapper">
             <h2 className="auth__title">Регистрация завершена</h2>

@@ -5,7 +5,7 @@ import runtimeConvertion from "@/utils/runtime";
 import colorRating from "@/utils/colorRating";
 const _ = require('lodash/math');
 import Link from "next/link";
-import { fetchRandomMovie, fetchMovieById } from "@/api/movies/fetches";
+import { fetchRandomMovie } from "@/api/movies/fetches";
 
 export type MovieProps =
     | { role: 'random' }
@@ -26,8 +26,8 @@ export const MovieComponent: FC<MovieProps> = async (props) => {
 
    //  <button className="movie__btn movie__btn--3" 
    // onClick={getMovie}>
-                          //   <Image src={'/new.svg'} alt={'new'} width={24} height={24} />
-                        // </button>
+    //   <Image src={'/new.svg'} alt={'new'} width={24} height={24} />
+  // </button>
 
     return (
         <div className="movie">
@@ -47,7 +47,7 @@ export const MovieComponent: FC<MovieProps> = async (props) => {
                 </div>
                 <div className="movie__btns">
                     <button className="movie__btn movie__btn--1">Trailer</button>
-                    {props.role == 'random' && (
+                    {props.role !== 'about' && (
                         <Link href={`${movie.id}`} className="movie__btn movie__btn--2">About the movie</Link>
                     )}
                     <button className="movie__btn movie__btn--3">

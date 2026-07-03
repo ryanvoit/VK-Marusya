@@ -6,8 +6,6 @@ import { usePathname } from "next/navigation"
 export default function MainNav() {
     const router = usePathname()
 
-    // Redux - router - useState
-
     return (
         <>
             <Link href='/' className={router == '/' || router.slice(0,2) == '/1' ||

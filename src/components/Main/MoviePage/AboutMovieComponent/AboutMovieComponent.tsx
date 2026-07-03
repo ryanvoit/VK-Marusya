@@ -1,6 +1,5 @@
 import { Movie } from "@/api/movies/types"
 import { FC } from "react"
-import { fetchMovieById } from "@/api/movies/fetches"
 
 export interface AboutMovieProps {
     movie: Movie
@@ -13,7 +12,6 @@ export const AboutMovieComponent: FC<AboutMovieProps> = async({ movie }) => {
     return (
         <div className="about">
             <h2 className="about__title">About the movie</h2>
-
             <ul className="about__content-list">
                 <li className="about__content-item">
                     <div className="about__line">

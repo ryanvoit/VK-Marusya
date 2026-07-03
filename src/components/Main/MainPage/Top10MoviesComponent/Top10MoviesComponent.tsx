@@ -1,5 +1,4 @@
 import { MovieList } from "@/api/movies/types";
-// import { FC } from "react";
 import Link from "next/link";
 import { fetchTop10Movies } from "@/api/movies/fetches";
 
