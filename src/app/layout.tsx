@@ -1,4 +1,4 @@
-import "@/styles/styles.css"
+import "@/styles/styles.scss"
 import { ConfigProvider, Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import FooterComponent from "@/components/Footer/FooterComponent/FooterComponent";

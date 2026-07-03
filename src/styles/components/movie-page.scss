@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.movie-page {
+    @apply flex flex-col gap-[40px]
+}

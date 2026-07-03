@@ -30,6 +30,7 @@ export function fetchGenreMovie(genre: string): Promise<MovieList> {
 }
 
 export function fetchMovieById(id: string): Promise<Movie> {
+    console.log('fetchMovieById called with id:', id) // временно
     return (
         axios.get(`https://cinemaguide.skillbox.cc/movie/${id}`)
             .then((response) => movieScheme.parse(response.data))

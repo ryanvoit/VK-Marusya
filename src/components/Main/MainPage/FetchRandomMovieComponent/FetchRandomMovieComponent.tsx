@@ -2,7 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query"
 import { fetchRandomMovie } from "@/api/movies/fetches";
-import { MovieComponent } from "../MovieComponent/MovieComponent";
+import { MovieComponent } from "../../../Common/MovieComponent/MovieComponent";
 
 export default function FetchRandomMovieComponent() {
     const movieQuery = useQuery({

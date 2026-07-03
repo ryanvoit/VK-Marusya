@@ -1,0 +1,29 @@
+/* Global */
+/* ------------------------------------ */
+
+@import "./global/variables.scss";
+@import "./global/fonts.scss";
+@import "./global/mixins.scss";
+@import "./global/normalize.scss";
+@import "./global/visually-hidden.scss"; 
+@import "./global/container.scss";
+@import "./global/reboot.scss"; 
+
+/* Components */
+/* ------------------------------------ */
+
+@import "./components/header.scss";  
+@import "./components/auth.scss";
+@import "./components/custom-input.scss";
+@import "./components/footer.scss";
+@import "./components/social-link.scss";
+@import "./components/main-page.scss";
+@import "./components/movie.scss";
+@import "./components/top-10.scss"; 
+@import "./components/genres-page.scss";
+@import "./components/genre-card.scss";
+@import "./components/genre-page.scss";
+@import "./components/about.scss";
+@import "./components/movie-page.scss";
+
+

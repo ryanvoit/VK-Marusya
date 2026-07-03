@@ -5,25 +5,27 @@ import runtimeConvertion from "@/utils/runtime";
 import colorRating from "@/utils/colorRating";
 const _ = require('lodash/math');
 import Link from "next/link";
-import { fetchRandomMovie } from "@/api/movies/fetches";
+import { fetchRandomMovie, fetchMovieById } from "@/api/movies/fetches";
 
-export interface MovieProps {
-    role: 'random' | 'about'
-}
+export type MovieProps =
+    | { role: 'random' }
+    | { role: 'about', movie: Movie }
 
-const getMovie = async(): Promise<Movie> => {
+const getRandomMovie = async(): Promise<Movie> => {
     const data = fetchRandomMovie()
     return data
 }
 
-export const MovieComponent: FC<MovieProps> = async ({ role }) => {
-    const movie = await getMovie()
+export const MovieComponent: FC<MovieProps> = async (props) => {
+
+    const movie = props.role=='random' ? await getRandomMovie() : props.movie
 
     const ratingColor: React.CSSProperties = {
         backgroundColor: `${colorRating(movie.tmdbRating)}`
     }
 
-   //  <button className="movie__btn movie__btn--3" onClick={getMovie}>
+   //  <button className="movie__btn movie__btn--3" 
+   // onClick={getMovie}>
                           //   <Image src={'/new.svg'} alt={'new'} width={24} height={24} />
                         // </button>
 
@@ -45,13 +47,13 @@ export const MovieComponent: FC<MovieProps> = async ({ role }) => {
                 </div>
                 <div className="movie__btns">
                     <button className="movie__btn movie__btn--1">Trailer</button>
-                    {role == 'random' && (
+                    {props.role == 'random' && (
                         <Link href={`${movie.id}`} className="movie__btn movie__btn--2">About the movie</Link>
                     )}
                     <button className="movie__btn movie__btn--3">
                         <Image src={'/heart.svg'} alt={'heart'} width={24} height={24} />
                     </button>
-                    {role == 'random' && (
+                    {props.role == 'random' && (
                         <button className="movie__btn movie__btn--3">
                             <Image src={'/new.svg'} alt={'new'} width={24} height={24} />
                         </button>

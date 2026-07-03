@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  @apply absolute w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden whitespace-nowrap border-none
+}

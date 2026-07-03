@@ -1,14 +1,15 @@
 import { Movie } from "@/api/movies/types"
 import { FC } from "react"
+import { fetchMovieById } from "@/api/movies/fetches"
 
 export interface AboutMovieProps {
-    movie: Movie,
+    movie: Movie
 }
 
-export const AboutMovieComponent: FC<AboutMovieProps> = ({ movie }) => {
+export const AboutMovieComponent: FC<AboutMovieProps> = async({ movie }) => {
     // const names = ['The original language', 'The budget', 'The revenue', 'The Director', 'The Awards']
     // const values = [movie.language, movie.budget, movie.revenue, movie.director, movie.production]
-
+    
     return (
         <div className="about">
             <h2 className="about__title">About the movie</h2>

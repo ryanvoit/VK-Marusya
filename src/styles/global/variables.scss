@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+// Colors
+
+$color-white: #ffffff;
+$color-white-25: rgba(255, 255, 255, 0.25);
+$color-black: #000000;
+$color-nero-70: rgba(39, 36, 36, 0.7);
+$color-dodger-blue-90: rgba(39, 135, 245, 0.9);
+$color-biloba-flower-90: rgba(163, 147, 245, 0.9);
+
+@theme {
+    --color-white-custom: #FFFFFF;
+}
+
+$color-burnt-orange: #FC6D3E;
+$color-burnt-orange-25: rgba(252, 109, 62, 0.25);
+$color-white-smoke: #F5F5F5;
+$color-dark-gray: #A4A4A4;
+$color-dark-gray2: #AAAAAA;
+$color-tangaroa: #11253D;
+$color-mercury: #E8E8E8;
+$color-silver: #C4C4C4;
+$color-spring-green: #00fa9a;
+$color-green-pea: #20603d;
+$color-maroon: #800000;
+$color-mona-lisa: #ff9999;
+
+// Typography
+
+$ff-play: 'Play', 'Arial', sans-serif;
+
+// Viewport
+
+$vp-tablet: 1023px;
+$vp-mobile: 767px;
+
+// Transition
+$transition: ease-in 0.3s;
+$transition-animation: ease-in 1s

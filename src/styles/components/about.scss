@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+.about {
+    @apply flex flex-col gap-[64px];
+
+    &__title {
+        @apply text-[40px] text-white-custom font-bold;
+    }
+
+    &__content-list {
+        @apply flex flex-col gap-[24px];
+    }
+
+    &__line {
+        @apply flex items-center relative bg-transparent;
+
+        &::before {
+            background-image: linear-gradient(90deg, $color-white-25 50%, transparent 50%);
+            background-size: 5px 1px;
+            @apply absolute top-[65%] w-[313px] h-[1.5px] left-[7px] z-0 content-[''];
+        }
+    }
+
+    &__name {
+        background: inherit;
+        @apply relative z-3 pr-[7px];
+    }
+
+    &__value {
+        @apply absolute left-[320px] w-full bg-transparent z-3 pl-[7px]
+    }
+
+    &__name,
+    &__value {
+        @apply text-[18px] text-white-custom;
+    }
+}
