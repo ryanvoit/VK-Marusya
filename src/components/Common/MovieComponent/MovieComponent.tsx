@@ -1,11 +1,11 @@
 import { Movie } from "@/api/movies/types";
 import { FC } from "react";
-import Image from "next/image";
 import runtimeConvertion from "@/utils/runtime";
 import colorRating from "@/utils/colorRating";
 const _ = require('lodash/math');
 import Link from "next/link";
 import { fetchRandomMovie } from "@/api/movies/fetches";
+import { Icon } from "../Icon/Icon";
 
 export type MovieProps =
     | { role: 'random' }
@@ -26,7 +26,7 @@ export const MovieComponent: FC<MovieProps> = async (props) => {
 
    //  <button className="movie__btn movie__btn--3" 
    // onClick={getMovie}>
-    //   <Image src={'/new.svg'} alt={'new'} width={24} height={24} />
+    //   <Image src={'/renew.svg'} alt={'new'} width={24} height={24} />
   // </button>
 
     return (
@@ -35,7 +35,7 @@ export const MovieComponent: FC<MovieProps> = async (props) => {
                 <div className="movie__info">
                     <div className="movie__basic-info">
                         <div className='movie__rating' style={ratingColor}>
-                            <Image src={'/star.svg'} alt={'star'} width={16} height={16} />
+                            <Icon role='star' />
                             <p>{_.round(movie.tmdbRating, 1)}</p>
                         </div>
                         <p>{movie.releaseYear}</p>
@@ -51,11 +51,11 @@ export const MovieComponent: FC<MovieProps> = async (props) => {
                         <Link href={`${movie.id}`} className="movie__btn movie__btn--2">About the movie</Link>
                     )}
                     <button className="movie__btn movie__btn--3">
-                        <Image src={'/heart.svg'} alt={'heart'} width={24} height={24} />
+                        <Icon role='heart' />
                     </button>
                     {props.role == 'random' && (
                         <button className="movie__btn movie__btn--3">
-                            <Image src={'/new.svg'} alt={'new'} width={24} height={24} />
+                            <Icon role='renew' />
                         </button>
                     )}
                 </div>

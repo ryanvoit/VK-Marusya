@@ -5,60 +5,35 @@ export interface AboutMovieProps {
     movie: Movie
 }
 
-export const AboutMovieComponent: FC<AboutMovieProps> = async({ movie }) => {
-    // const names = ['The original language', 'The budget', 'The revenue', 'The Director', 'The Awards']
-    // const values = [movie.language, movie.budget, movie.revenue, movie.director, movie.production]
+const AboutItem = ({ name, value }: { name: string; value?: string | number }) => {
+    if (!value) return null
+    return (
+        <li className="about__content-item">
+            <div className="about__line">
+                <span className="about__name">{name}</span>
+                <span className="about__value">{value}</span>
+            </div>
+        </li>
+    )
+}
+
+export const AboutMovieComponent: FC<AboutMovieProps> = ({ movie }) => {
+    const items = [
+        { name: 'The original language', value: movie.language ?? undefined },
+        { name: 'The budget',            value: movie.budget ? `${movie.budget} $` : undefined  },
+        { name: 'The revenue',           value: movie.revenue ? `${movie.revenue} $` : undefined },
+        { name: 'The Director',          value: movie.director ?? undefined },
+        { name: 'The Production',        value: movie.production ?? undefined },
+        { name: 'The Awards',            value: movie.awardsSummary ?? undefined },
+    ]
     
     return (
         <div className="about">
             <h2 className="about__title">About the movie</h2>
             <ul className="about__content-list">
-                <li className="about__content-item">
-                    <div className="about__line">
-                        <span className="about__name">The original language</span>
-                        <span className="about__value">{movie.language}</span>
-                    </div>
-                </li>
-                {movie.budget && (
-                    <li className="about__content-item">
-                        <div className="about__line">
-                            <span className="about__name">The budget</span>
-                            <span className="about__value">{movie.budget} $</span>
-                        </div>
-                    </li>
-                )}
-                {movie.revenue && (
-                    <li className="about__content-item">
-                        <div className="about__line">
-                            <span className="about__name">The revenue</span>
-                            <span className="about__value">{movie.revenue} $</span>
-                        </div>
-                    </li>
-                )}
-                {movie.director && (
-                    <li className="about__content-item">
-                        <div className="about__line">
-                            <span className="about__name">The Director</span>
-                            <span className="about__value">{movie.director}</span>
-                        </div>
-                    </li>
-                )}
-                {movie.production && (
-                    <li className="about__content-item">
-                        <div className="about__line">
-                            <span className="about__name">The Production</span>
-                            <span className="about__value">{movie.production}</span>
-                        </div>
-                    </li>
-                )}
-                {movie.awardsSummary && (
-                    <li className="about__content-item">
-                        <div className="about__line">
-                            <span className="about__name">The Awards</span>
-                            <span className="about__value">{movie.awardsSummary}</span>
-                        </div>
-                    </li>
-                )}
+               {items.map(({ name, value }) => (
+                    <AboutItem key={name} name={name} value={value} />
+                ))}
             </ul>
         </div>
     )

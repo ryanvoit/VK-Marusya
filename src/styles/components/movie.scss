@@ -12,11 +12,11 @@
     }
 
     &__basic-info {
-        @apply text-[18px] text-white-70-custom flex gap-[16px]
+        @apply text-[18px] text-white-70-custom flex gap-[16px] items-center
     }
 
     &__rating {
-        @apply w-[70px] rounded-[16px] flex gap-[4px] justify-center items-center
+        @apply w-[70px] rounded-[16px] flex gap-[4px] justify-center items-center h-[32px] text-white-custom
     }
 
     &__title {
@@ -34,7 +34,7 @@
     &__btn {
         transition: background-color $transition;
         @apply bg-[#333333] rounded-[28px] font-bold text-white-custom text-[18px] border-black-40-custom border-[1px] 
-        hover:bg-cornflower-blue;
+        hover:bg-cornflower-blue flex justify-center items-center;
 
         &--1 {
             @apply w-[171px]
