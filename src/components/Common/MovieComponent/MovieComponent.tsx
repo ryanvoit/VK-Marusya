@@ -2,10 +2,11 @@ import { Movie } from "@/api/movies/types";
 import { FC } from "react";
 import runtimeConvertion from "@/utils/runtime";
 import colorRating from "@/utils/colorRating";
-const _ = require('lodash/math');
 import Link from "next/link";
 import { fetchRandomMovie } from "@/api/movies/fetches";
 import { Icon } from "../Icon/Icon";
+import round from 'lodash/round'
+import { Button } from "@/components/Common/Button/Button";
 
 export type MovieProps =
     | { role: 'random' }
@@ -24,11 +25,6 @@ export const MovieComponent: FC<MovieProps> = async (props) => {
         backgroundColor: `${colorRating(movie.tmdbRating)}`
     }
 
-   //  <button className="movie__btn movie__btn--3" 
-   // onClick={getMovie}>
-    //   <Image src={'/renew.svg'} alt={'new'} width={24} height={24} />
-  // </button>
-
     return (
         <div className="movie">
             <div className="movie__content">
@@ -36,7 +32,7 @@ export const MovieComponent: FC<MovieProps> = async (props) => {
                     <div className="movie__basic-info">
                         <div className='movie__rating' style={ratingColor}>
                             <Icon role='star' />
-                            <p>{_.round(movie.tmdbRating, 1)}</p>
+                            <p>{round(movie.tmdbRating, 1)}</p>
                         </div>
                         <p>{movie.releaseYear}</p>
                         <p>{movie.genres[0]}</p>
@@ -53,11 +49,7 @@ export const MovieComponent: FC<MovieProps> = async (props) => {
                     <button className="movie__btn movie__btn--3">
                         <Icon role='heart' />
                     </button>
-                    {props.role == 'random' && (
-                        <button className="movie__btn movie__btn--3">
-                            <Icon role='renew' />
-                        </button>
-                    )}
+                    {props.role == 'random' && <Button role='renew' /> }
                 </div>
             </div>
             {movie.backdropUrl && (

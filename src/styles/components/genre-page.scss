@@ -4,7 +4,7 @@
     @apply flex flex-col gap-[64px];
 
     &__link {
-        @apply flex gap-[16px] items-center
+        @apply flex gap-[16px] items-center cursor-pointer
     }
 
     &__icon {

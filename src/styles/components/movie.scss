@@ -34,7 +34,7 @@
     &__btn {
         transition: background-color $transition;
         @apply bg-[#333333] rounded-[28px] font-bold text-white-custom text-[18px] border-black-40-custom border-[1px] 
-        hover:bg-cornflower-blue flex justify-center items-center;
+        hover:bg-cornflower-blue flex justify-center items-center cursor-pointer;
 
         &--1 {
             @apply w-[171px]
