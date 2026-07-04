@@ -2,5 +2,11 @@
 
 .social-link {
   border: solid 1px $color-white-80;
-  @apply w-[36px] h-[36px] border-1 border-solid rounded-[8px] hover:border-white-custom flex justify-center items-center
+  transition: border-color $transition, color $transition;
+  @apply w-[36px] h-[36px] border-1 text-white-80-custom border-solid rounded-[8px] border-white-custom flex justify-center 
+  items-center;
+
+  &:hover {
+    @apply border-white-custom text-white-custom
+  }
 }

@@ -5,16 +5,16 @@ export default function FooterComponent() {
     return (
         <div className="footer__wrapper">
             <Link href='/'>
-                <SocialLink socialLinkInfo={{alt: 'vk', width: 18, height: 10 }} />
+                <SocialLink socialLinkInfo='vk' />
             </Link>
             <Link href='/'>
-                <SocialLink socialLinkInfo={{alt: 'youtube', width: 16, height: 11 }} />
+                <SocialLink socialLinkInfo='youtube' />
             </Link>
             <Link href='/'>
-                <SocialLink socialLinkInfo={{alt: 'ok', width: 11, height: 18 }} />
+                <SocialLink socialLinkInfo='ok' />
             </Link>
             <Link href='https://t.me/ryanvoit'>
-                <SocialLink socialLinkInfo={{alt: 'telegram', width: 17, height: 14 }} />
+                <SocialLink socialLinkInfo='telegram' />
             </Link>
         </div>
     )

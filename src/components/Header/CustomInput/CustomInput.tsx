@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Icon } from "../Icon/Icon"
+import { Icon } from "../../Common/Icon/Icon"
 
 export interface CustomInputProps {
     btnType: 'email' | 'password' | 'text',
