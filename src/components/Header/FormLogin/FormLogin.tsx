@@ -1,4 +1,4 @@
-import { CustomInput } from "../CustomInput/CustomInput"
+import { CustomInput } from "../../Common/CustomInput/CustomInput"
 import { FC } from "react"
 
 export interface FormLoginProps {

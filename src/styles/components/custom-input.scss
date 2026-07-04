@@ -5,8 +5,7 @@
 
     &__field {
         transition: border $transition, outline $transition;
-        @apply w-full h-[100%] border-[1px] border-black-40-custom rounded-[8px] py-[16px] px-[16px] pl-[52px] 
-        hover:border-cornflower-blue focus-visible:outline-cornflower-blue focus-visible:outline-[2px] absolute top-0 left-0;
+        @apply w-full h-[100%] border-[1px] border-black-40-custom rounded-[8px] p-[16px] pl-[52px] hover:border-cornflower-blue focus-visible:outline-cornflower-blue focus-visible:outline-[2px] absolute top-0 left-0;
 
         &::placeholder {
             transition: color $transition;
@@ -26,5 +25,33 @@
     &__image {
         transition: color $transition;
         @apply absolute top-[50%] translate-y-[-50%] left-[12px] text-black-40-custom pointer-events-none;
+    }
+
+    &--search {
+        @apply h-[48px];
+
+        .custom-input__field {
+            transition: none;
+            @apply bg-montana py-[12px] placeholder:text-[18px] focus-visible:outline-none text-[18px] text-white-custom border-none hover:border-none;
+
+            &::placeholder {
+                @apply text-white-50-custom
+            }
+
+            &:hover {
+                +.custom-input__image {
+                    @apply text-white-50-custom
+                }
+
+                &::placeholder {
+                    @apply text-white-50-custom
+                }
+            }
+        }
+
+        .custom-input__image {
+            transition: none;
+            @apply text-white-50-custom
+        }
     }
 }

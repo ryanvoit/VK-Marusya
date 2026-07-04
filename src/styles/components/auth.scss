@@ -14,7 +14,7 @@
     &__exit {
         transition: background-color $transition;
         @apply absolute top-0 right-[-72px] cursor-pointer flex items-center justify-center w-[48px] h-[48px] rounded-[50%] 
-        bg-white-custom hover:bg-white-25-custom
+        bg-white-custom hover:bg-white-25-custom text-black-custom
     }
 
     &__form,

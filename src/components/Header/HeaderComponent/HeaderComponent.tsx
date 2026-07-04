@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import MainNav from "../MainNav/MainNav"
 import { AuthComponent } from "@/components/Header/AuthComponent/AuthComponent"
+import { CustomInput } from "../../Common/CustomInput/CustomInput"
 
 export const HeaderComponent = () => {
     return (
@@ -11,10 +12,7 @@ export const HeaderComponent = () => {
             </Link>
             <div className="header__center">
                 <MainNav />
-                <div className="header__search">
-                    <input className="header__search-input" placeholder="Search" />
-                    <Image src={'/search.svg'} alt={'search'} width={24} height={24} className="header__search-icon" />
-                </div>
+                <CustomInput btnType="text" role="search" placeholder="Search" id="search"/>
             </div>
             <a href="#auth" className="header__link">Log in</a>
             <AuthComponent />

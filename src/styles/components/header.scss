@@ -6,12 +6,11 @@
   &__base {
     grid-template-columns: 144px 1fr 69px;
     @apply items-center grid gap-[80px] h-full w-full;
-    
+
     &::before {
-      @apply w-[100vw] h-[100%] absolute z-10 bg-black-40-custom top-0 left-0 opacity-0 content-[''] pointer-events-none 
-      transition-opacity duration-300;
+      @apply w-[100vw] h-[100%] absolute z-10 bg-black-40-custom top-0 left-0 opacity-0 content-[''] pointer-events-none transition-opacity duration-300;
     }
-    
+
     &:has(.auth:target)::before {
       @apply opacity-100 pointer-events-auto
     }
@@ -42,22 +41,5 @@
   &__center {
     grid-template-columns: 80px 80px 1fr;
     @apply grid gap-[40px]
-  }
-
-  &__search {
-    @apply relative
-  }
-
-  &__search-input {
-    @apply h-[48px] bg-montana p-[12px] pr-[16px] pl-[52px] rounded-lg placeholder:text-[18px] focus-visible:outline-none 
-    text-[18px] text-white-custom w-full;
-
-    &::placeholder {
-      @apply text-white-50-custom
-    }
-  }
-
-  &__search-icon {
-    @apply absolute top-[50%] transform-[translateY(-55%)] left-[16px]
   }
 }

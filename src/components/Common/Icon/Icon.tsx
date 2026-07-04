@@ -1,70 +1,89 @@
 import { FC } from "react"
 
 export interface IconProps {
-    role: 'email' | 'password' | 'user' | 'telegram' | 'vk' | 'ok' | 'youtube' | 'star' | 'heart' | 'renew'
+    role: 'email' | 'password' | 'user' | 'telegram' | 'vk' | 'ok' | 'youtube' | 'star' | 'heart' | 'renew' |
+    'back' | 'cross' | 'search'
 }
 
 export const Icon: FC<IconProps> = ({ role }) => {
     switch (role) {
         case 'email':
             return (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="custom-input__image">
+                <svg className="custom-input__image" aria-label="email" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 3C21.5523 3 22 3.44772 22 4V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V19H20V7.3L12 14.5L2 5.5V4C2 3.44772 2.44772 3 3 3H21ZM8 15V17H0V15H8ZM5 10V12H0V10H5ZM19.5659 5H4.43414L12 11.8093L19.5659 5Z" fill="currentColor" />
                 </svg>
             )
         case 'password':
             return (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="custom-input__image">
+                <svg className="custom-input__image" aria-label="password" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12.917 13C12.441 15.8377 9.973 18 7 18C3.68629 18 1 15.3137 1 12C1 8.68629 3.68629 6 7 6C9.973 6 12.441 8.16229 12.917 11H23V13H21V17H19V13H17V17H15V13H12.917ZM7 16C9.20914 16 11 14.2091 11 12C11 9.79086 9.20914 8 7 8C4.79086 8 3 9.79086 3 12C3 14.2091 4.79086 16 7 16Z" fill="currentColor" />
                 </svg>
             )
         case 'user':
             return (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="custom-input__image">
+                <svg className="custom-input__image" aria-label="user" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z" fill="currentColor" />
+                </svg>
+            )
+        case 'search':
+            return (
+                <svg className="custom-input__image" aria-label="search" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z" fill="currentColor" />
                 </svg>
             )
         case 'telegram':
             return (
-                <svg width="17" height="14" viewBox="0 0 17 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="social-link__icon">
+                <svg className="social-link__icon" aria-label="telegram" width="17" height="14" viewBox="0 0 17 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.248522 6.33899C1.93187 5.41175 3.81095 4.63787 5.56667 3.86003C8.58719 2.58599 11.6197 1.33403 14.6828 0.168471C15.2788 -0.0301292 16.3496 -0.224349 16.4546 0.658851C16.3972 1.90901 16.1606 3.15185 15.9984 4.39469C15.5866 7.12781 15.1107 9.85157 14.6466 12.5757C14.4867 13.4831 13.35 13.9528 12.6227 13.3721C10.8748 12.1915 9.11339 11.0223 7.38779 9.81425C6.82253 9.23987 7.34669 8.41505 7.85153 8.00489C9.29117 6.58613 10.8179 5.38073 12.1823 3.88865C12.5504 2.99987 11.4629 3.74891 11.1043 3.97841C9.13337 5.33657 7.21073 6.77765 5.13281 7.97129C4.07141 8.55557 2.83433 8.05625 1.77341 7.73021C0.822158 7.33637 -0.571774 6.93959 0.248426 6.33905L0.248522 6.33899Z" fill="currentColor" />
                 </svg>
             )
         case 'vk':
             return (
-                <svg width="19" height="11" viewBox="0 0 19 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="social-link__icon">
+                <svg className="social-link__icon" aria-label="vk" width="19" height="11" viewBox="0 0 19 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd" d="M18.2795 0.699502C18.4182 0.30493 18.2795 0.0179495 17.6649 0.0179495H15.6228C15.1073 0.0179495 14.8694 0.269031 14.7306 0.538115C14.7306 0.538115 13.6798 2.8339 12.2127 4.32255C11.7369 4.75302 11.5188 4.89651 11.2611 4.89651C11.1223 4.89651 10.9439 4.75302 10.9439 4.35845V0.681552C10.9439 0.215235 10.7853 0 10.3491 0H7.13733C6.82011 0 6.62187 0.215235 6.62187 0.430471C6.62187 0.878891 7.3554 0.986482 7.43471 2.24199V4.96826C7.43471 5.56017 7.31578 5.66776 7.05802 5.66776C6.36412 5.66776 4.67893 3.35402 3.66781 0.717451C3.46951 0.197286 3.27128 0 2.75583 0H0.693898C0.0991342 0 0 0.251134 0 0.520165C0 1.00443 0.693898 3.44371 3.2316 6.67219C4.91685 8.87828 7.31578 10.0621 9.4768 10.0621C10.7853 10.0621 10.9439 9.79302 10.9439 9.34465V7.67662C10.9439 7.1385 11.0628 7.04886 11.4792 7.04886C11.7766 7.04886 12.3119 7.1923 13.5212 8.25053C14.909 9.50604 15.147 10.08 15.9202 10.08H17.9623C18.557 10.08 18.8346 9.81097 18.676 9.29081C18.4975 8.77069 17.8235 8.0174 16.9511 7.12056C16.4753 6.61839 15.7616 6.06238 15.5435 5.7933C15.2461 5.43463 15.3254 5.29113 15.5435 4.96826C15.5237 4.96826 18.0217 1.77568 18.2795 0.699502Z" fill="currentColor" />
                 </svg>
             )
         case 'ok':
             return (
-                <svg width="11" height="18" viewBox="0 0 11 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="social-link__icon">
+                <svg className="social-link__icon" aria-label="ok" width="11" height="18" viewBox="0 0 11 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.24714 12.9023L9.90059 15.464C10.4442 15.9876 10.4442 16.838 9.90059 17.3622C9.35757 17.8863 8.47745 17.8863 7.935 17.3622L5.32614 14.8449L2.71955 17.3622C2.44776 17.624 2.09162 17.755 1.73548 17.755C1.3799 17.755 1.02433 17.624 0.752539 17.3622C0.209523 16.838 0.209523 15.9881 0.751971 15.464L3.4057 12.9023C2.43952 12.6899 1.50771 12.3203 0.649445 11.8006C-7.1612e-05 11.4052 -0.195182 10.577 0.214067 9.94953C0.622181 9.32118 1.48044 9.13202 2.13109 9.52734C4.07425 10.7073 6.57746 10.7075 8.52175 9.52734C9.1724 9.13202 10.0304 9.32118 10.4393 9.94953C10.8486 10.5765 10.6529 11.4052 10.0034 11.8006C9.14514 12.3209 8.21332 12.6899 7.24714 12.9023Z" fill="currentColor" />
                     <path fillRule="evenodd" clipRule="evenodd" d="M0.568359 4.58207C0.568359 7.10805 2.69725 9.16277 5.31492 9.16277C7.93315 9.16277 10.0615 7.10805 10.0615 4.58207C10.0615 2.05527 7.93315 0 5.31492 0C2.69725 0 0.568359 2.05527 0.568359 4.58207ZM7.28015 4.58158C7.28015 3.53544 6.3986 2.68477 5.31484 2.68477C4.23193 2.68477 3.34953 3.53544 3.34953 4.58158C3.34953 5.6269 4.23193 6.47812 5.31484 6.47812C6.3986 6.47812 7.28015 5.6269 7.28015 4.58158Z" fill="currentColor" />
                 </svg>
             )
         case 'youtube':
             return (
-                <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="social-link__icon">
+                <svg className="social-link__icon"aria-label="youtube"  width="16" height="12" viewBox="0 0 16 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd" d="M13.681 0.329597C14.3419 0.510956 14.8624 1.04533 15.039 1.72393C15.36 2.95382 15.36 5.52 15.36 5.52C15.36 5.52 15.36 8.08609 15.039 9.31607C14.8624 9.99467 14.3419 10.529 13.681 10.7105C12.4832 11.04 7.68 11.04 7.68 11.04C7.68 11.04 2.87677 11.04 1.67895 10.7105C1.01804 10.529 0.497542 9.99467 0.320902 9.31607C0 8.08609 0 5.52 0 5.52C0 5.52 0 2.95382 0.320902 1.72393C0.497542 1.04533 1.01804 0.510956 1.67895 0.329597C2.87677 0 7.68 0 7.68 0C7.68 0 12.4832 0 13.681 0.329597ZM6.23997 3.36023V8.16023L10.08 5.76033L6.23997 3.36023Z" fill="currentColor" />
                 </svg>
             )
         case 'star':
             return (
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="movie__icon">
+                <svg className="movie__icon" aria-label="star" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.00105 12.1734L3.29875 14.8055L4.34897 9.51997L0.392578 5.86124L5.74394 5.22675L8.00105 0.333374L10.2581 5.22675L15.6095 5.86124L11.6531 9.51997L12.7033 14.8055L8.00105 12.1734Z" fill="currentColor" />
                 </svg>
             )
         case 'heart':
             return (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="movie__icon">
+                <svg className="movie__icon" aria-label="heart" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16.5 3C19.5376 3 22 5.5 22 9C22 16 14.5 20 12 21.5C9.5 20 2 16 2 9C2 5.5 4.5 3 7.5 3C9.35997 3 11 4 12 5C13 4 14.64 3 16.5 3ZM12.9339 18.6038C13.8155 18.0485 14.61 17.4955 15.3549 16.9029C18.3337 14.533 20 11.9435 20 9C20 6.64076 18.463 5 16.5 5C15.4241 5 14.2593 5.56911 13.4142 6.41421L12 7.82843L10.5858 6.41421C9.74068 5.56911 8.5759 5 7.5 5C5.55906 5 4 6.6565 4 9C4 11.9435 5.66627 14.533 8.64514 16.9029C9.39 17.4955 10.1845 18.0485 11.0661 18.6038C11.3646 18.7919 11.6611 18.9729 12 19.1752C12.3389 18.9729 12.6354 18.7919 12.9339 18.6038Z" fill="currentColor" />
                 </svg>
             )
         case 'renew':
             return (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="movie__icon">
+                <svg className="movie__icon" aria-label="renew" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 4C14.7486 4 17.1749 5.38626 18.6156 7.5H16V9.5H22V3.5H20V5.99936C18.1762 3.57166 15.2724 2 12 2C6.47715 2 2 6.47715 2 12H4C4 7.58172 7.58172 4 12 4ZM20 12C20 16.4183 16.4183 20 12 20C9.25144 20 6.82508 18.6137 5.38443 16.5H8V14.5H2V20.5H4V18.0006C5.82381 20.4283 8.72764 22 12 22C17.5228 22 22 17.5228 22 12H20Z" fill="currentColor" />
+                </svg>
+            )
+        case 'back':
+            return (
+                <svg className="genre-page__icon" aria-label="back" width="40" height="40" viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.047 20.0012L26.2967 28.2507L23.9397 30.6077L13.333 20.0012L23.9397 9.39453L26.2967 11.7515L18.047 20.0012Z" fill="currentColor" />
+                </svg>
+            )
+        case 'cross':
+            return (
+                <svg className="auth__exit-icon" aria-label="cross" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z" fill="currentColor" />
                 </svg>
             )
     }

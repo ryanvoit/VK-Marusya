@@ -4,6 +4,7 @@ import { FC } from "react"
 import { MovieList } from "@/api/movies/types"
 import Link from "next/link"
 import Image from "next/image"
+import { Icon } from "@/components/Common/Icon/Icon"
 
 export interface GenrePageProps {
     movies: MovieList,
@@ -14,7 +15,7 @@ export const GenrePageComponent: FC<GenrePageProps> = ({ movies, genre }) => {
     return (
         <div className="genre-page">
             <Link href='/genres' className="genre-page__link" >
-                <Image src='/back.svg' alt="back" width={40} height={40}></Image>
+                <Icon role="back" />
                 <h1 className="genre-page__title">{genre[0].toUpperCase() + genre.slice(1)}</h1>
             </Link>
             

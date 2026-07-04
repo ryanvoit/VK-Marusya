@@ -5,6 +5,7 @@ import { useState } from "react"
 import { FormLogin }from "../FormLogin/FormLogin"
 import { FormRegister }from "../FormRegister/FormRegister"
 import { SuccessWindow } from "../SuccessWindow/SuccessWindow"
+import { Icon } from "@/components/Common/Icon/Icon"
 
 export const AuthComponent = () => {
     const [authState, setAuthState] = useState<'login' | 'register' | 'success'>('login')
@@ -30,7 +31,7 @@ export const AuthComponent = () => {
                 <SuccessWindow stateChangeFn={changeToLoginState} />
             )}
             <a href="#" className="auth__exit" aria-label="Закрыть">
-                <Image src={'/cross.svg'} alt={'cross'} width={24} height={24} className="auth__exit-icon" />
+                <Icon role="cross" />
             </a>
         </div>
     )
