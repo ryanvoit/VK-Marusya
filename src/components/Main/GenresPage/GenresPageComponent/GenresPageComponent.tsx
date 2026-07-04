@@ -1,16 +1,25 @@
-'use client'
+import { MovieGenres } from "@/api/movies/types";
+import { fetchMovieGenres } from "@/api/movies/fetches";
+import { GenreCard } from "../GenreCard/GenreCard";
 
-import { client } from '@/api/client'
-import { QueryClientProvider } from '@tanstack/react-query';
-import FetchGenresListComponent from '../FetchGenresListComponent/FetchGenresListComponent';
+const getGenres = async (): Promise<MovieGenres> => {
+    const data = fetchMovieGenres()
+    return data
+}
 
-export default function GenresPageComponent() {
+export default async function GenresPageComponent() {
+    const genres = await getGenres()
+
     return (
-        <QueryClientProvider client={client}>
-            <div className="genres-page">
-                <h1 className='genres-page__title'>Movie Genres</h1>
-                <FetchGenresListComponent />
-            </div>
-        </QueryClientProvider>
+        <div className="genres-page">
+            <h1 className='genres-page__title'>Movie Genres</h1>
+            <ul className="genres-page__list">
+                {genres.map((genre, index) => (
+                    <li className="genres-page__item" key={genre}>
+                        <GenreCard genre={genre} index={index} />
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
 }

@@ -1,12 +1,22 @@
 import { FC } from "react"
 import Link from "next/link"
+import { fetchGenreMovies } from "@/api/movies/fetches"
+import { MovieList } from "@/api/movies/types"
 
 export interface GenreCardProps {
     genre: string,
-    src: string,
+    index: number
 }
 
-export const GenreCard:FC<GenreCardProps> = ({ genre, src }) => {
+const getGenreMovies = async (genre: string): Promise<MovieList> => {
+    const data = await fetchGenreMovies(genre)
+    return data
+}
+
+export const GenreCard:FC<GenreCardProps> = async ({ genre, index }) => {
+    const movies = await getGenreMovies(genre)
+    const src = movies[index].backdropUrl as string
+
     return (
         <Link href={`/genres/${genre}`}>
             <div className="genre-card">

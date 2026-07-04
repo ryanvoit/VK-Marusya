@@ -22,7 +22,7 @@ export function fetchMovieGenres(): Promise<MovieGenres> {
     )
 }
 
-export function fetchGenreMovie(genre: string): Promise<MovieList> {
+export function fetchGenreMovies(genre: string): Promise<MovieList> {
     return (
         axios.get(`https://cinemaguide.skillbox.cc/movie?count=20&genre=${encodeURIComponent(genre)}`)
             .then((response) => movieListScheme.parse(response.data))

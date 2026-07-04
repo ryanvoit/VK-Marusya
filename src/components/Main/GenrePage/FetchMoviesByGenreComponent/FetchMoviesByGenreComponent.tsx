@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import { fetchGenreMovie } from "@/api/movies/fetches";
+import { fetchGenreMovies } from "@/api/movies/fetches";
 import { FC } from "react"
 import { GenrePageComponent } from "../GenrePageComponent/GenrePageComponent";
 
@@ -9,7 +9,7 @@ export interface MovieGenreProps {
 
 export const FetchMoviesByGenreComponent : FC<MovieGenreProps> = ({ genre }) => {
     const movieQuery = useQuery({
-        queryFn: () => fetchGenreMovie(genre),
+        queryFn: () => fetchGenreMovies(genre),
         queryKey: ['genreMovie', genre]
     })
 
