@@ -1,0 +1,7 @@
+.search-card { 
+    @apply py-[20px] px-[8px] h-full flex;
+
+    &__title {
+        @apply text-red-500
+    }
+}

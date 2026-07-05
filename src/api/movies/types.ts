@@ -38,4 +38,4 @@ export type MovieList = z.infer<typeof movieListScheme>
 
 export const movieGenresScheme = z.array(z.string())
  
-export type MovieGenres = z.infer<typeof movieGenresScheme>
+export type  hjbnm = z.infer<typeof movieGenresScheme>

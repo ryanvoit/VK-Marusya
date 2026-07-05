@@ -1,0 +1,16 @@
+.search-results {
+    transition: opacity $transition;
+    @apply w-[560px] bg-montana absolute top-[60px] right-0 z-30 rounded-[6px] p-[8px] opacity-100;
+
+    &--empty {
+        @apply opacity-0 pointer-events-none
+    }
+
+    &__list {
+        @apply flex flex-col 
+    }
+
+    &__item {
+        @apply min-h-[92px]
+    }
+}
