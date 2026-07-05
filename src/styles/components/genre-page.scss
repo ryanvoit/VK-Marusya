@@ -4,7 +4,12 @@
     @apply flex flex-col gap-[64px];
 
     &__link {
-        @apply flex gap-[16px] items-center cursor-pointer
+        transition: transform $transition;
+        @apply flex gap-[16px] items-center cursor-pointer;
+
+        &:hover {
+            transform: translateX(-10px)
+        }
     }
 
     &__icon {
@@ -21,18 +26,5 @@
 
     &__item {
         width: calc(20% - 32px)
-    }
-
-    &__inner {
-        @apply h-full
-    }
-
-    &__image {
-        object-fit: cover;
-        @apply rounded-[16px] h-auto
-    }
-
-    &__name {
-        @apply w-full h-full text-[20px] bg-white flex items-center justify-center text-black rounded-[16px]
     }
 }

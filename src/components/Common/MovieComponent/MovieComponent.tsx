@@ -6,7 +6,7 @@ import Link from "next/link";
 import { fetchRandomMovie } from "@/api/movies/fetches";
 import { Icon } from "../Icon/Icon";
 import round from 'lodash/round'
-import { Button } from "@/components/Common/Button/Button";
+import { ButtonRenew } from "@/components/Common/ButtonRenew/ButtonRenew";
 
 export type MovieProps =
     | { role: 'random' }
@@ -42,14 +42,14 @@ export const MovieComponent: FC<MovieProps> = async (props) => {
                     <p className="movie__plot">{movie.plot}</p>
                 </div>
                 <div className="movie__btns">
-                    <button className="movie__btn movie__btn--1">Trailer</button>
+                    <button className="movie__btn">Trailer</button>
                     {props.role !== 'about' && (
-                        <Link href={`${movie.id}`} className="movie__btn movie__btn--2">About the movie</Link>
+                        <Link href={`${movie.id}`} className="movie__btn movie__btn--1">About the movie</Link>
                     )}
-                    <button className="movie__btn movie__btn--3">
+                    <button className="movie__btn movie__btn--2">
                         <Icon role='heart' />
                     </button>
-                    {props.role == 'random' && <Button role='renew' /> }
+                    {props.role == 'random' && <ButtonRenew /> }
                 </div>
             </div>
             {movie.backdropUrl && (

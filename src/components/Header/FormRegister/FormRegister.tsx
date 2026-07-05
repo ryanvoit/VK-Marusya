@@ -2,10 +2,11 @@ import { CustomInput } from "../../Common/CustomInput/CustomInput"
 import { FC } from "react"
 
 export interface FormRegisterProps {
-    stateChangeFn: () => void
+    stateChangeFn: () => void,
+    stateSuccessChangeFn: () => void
 }
 
-export const FormRegister:FC<FormRegisterProps> = ({ stateChangeFn }) => {
+export const FormRegister:FC<FormRegisterProps> = ({ stateChangeFn, stateSuccessChangeFn }) => {
     return (
         <form className="auth__form">
             <div className="auth__fields">
@@ -15,7 +16,7 @@ export const FormRegister:FC<FormRegisterProps> = ({ stateChangeFn }) => {
                 <CustomInput role='password' btnType='password' id='password-confirmation' placeholder="Password" />
                 <CustomInput role='password' btnType='password' id='password' placeholder="Confirm the password" />
             </div>
-            <button className="auth__btn" type="submit">Создать аккаунт</button>
+            <button className="auth__btn" type="button" onClick={stateSuccessChangeFn}>Создать аккаунт</button>
             <button className="auth__btn auth__btn--link" type="button" onClick={stateChangeFn}>У меня есть пароль</button>
         </form>
     )

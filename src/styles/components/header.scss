@@ -18,7 +18,12 @@
 
   &__link {
     font-family: $ff-play;
+    transition: transform $transition;
     @apply text-white-custom text-[24px] flex items-center gap-[12px] bg-transparent border-none hover:text-white-custom p-0;
+
+    &:hover {
+      transform: scale(1.1)
+    }
 
     &--routing {
       @apply relative flex justify-center;
@@ -28,8 +33,11 @@
         @apply absolute w-full content-[''] bg-heliotrope h-[2px] bottom-0 opacity-0
       }
 
-      &:hover::before {
-        @apply opacity-100
+      &:hover {
+        transform: scale(1);
+        &::before {
+          @apply opacity-100
+        }
       }
     }
 

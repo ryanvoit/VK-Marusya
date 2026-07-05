@@ -24,7 +24,7 @@ export const AuthForm = () => {
                 authState === 'login' ? (
                     <FormLogin stateChangeFn={changeToRegistState} />
                 ) : authState === 'register' ? (
-                    <FormRegister stateChangeFn={changeToLoginState} />
+                    <FormRegister stateChangeFn={changeToLoginState} stateSuccessChangeFn={changeToSuccessState} />
                 ) : (
                     <SuccessWindow stateChangeFn={changeToLoginState} />
             )}

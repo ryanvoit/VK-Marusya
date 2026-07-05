@@ -7,29 +7,11 @@
         @apply text-[40px]/[48px] font-bold text-white-custom mb-[64px]
     }
 
-    &__inner {
-        @apply gap-y-[64px] flex flex-wrap justify-between gap-x-[40px] flex-wrap
+    &__list {
+        @apply flex flex-wrap justify-between gap-y-[64px] gap-x-[40px] 
     }
 
-    &__link {
+    &__item {
         width: calc(20% - 32px)
-    }
-
-    &__picture {
-        @apply relative bg-transparent rounded-[24px] h-full w-full
-    }
-
-    &__number {
-        @apply absolute w-[62px] h-[48px] flex justify-center items-center text-[24px]/[32px] top-[-12px] left-[-12px] 
-        rounded-[50px] bg-white-custom text-slate-blue font-bold
-    }
-
-    &__img {
-        object-fit: cover;
-        @apply rounded-[16px] h-auto
-    }
-
-    &__movie-name {
-        @apply w-full h-full text-[20px] bg-white-custom flex items-center justify-center text-black-custom rounded-[16px]
     }
 }

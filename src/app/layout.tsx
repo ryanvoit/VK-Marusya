@@ -1,5 +1,5 @@
 import "@/styles/styles.scss"
-import FooterComponent from "@/components/Footer/FooterComponent/FooterComponent";
+import FooterComponent from "@/components/Footer/FooterComponent";
 import { HeaderComponent } from "@/components/Header/HeaderComponent/HeaderComponent";
 
 export default function RootLayout({

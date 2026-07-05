@@ -1,7 +1,12 @@
 @import "tailwindcss";
 
 .genre-card {
+    transition: transform $transition;
     @apply rounded-[24px] overflow-hidden flex flex-col items-center;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 
     &__img {
         @apply w-full

@@ -1,0 +1,45 @@
+import Link from "next/link"
+import { FC } from "react"
+
+interface LinkMovieImageProps {
+    title: string,
+    posterUrl?: string | null
+}
+
+type LinkMovieProps = LinkMovieImageProps & (
+| {
+        role: 'genre-page',
+        id: number
+    }
+    | {
+        role: 'top-10',
+        index: number,
+        id: number
+    }
+)
+
+export const LinkMovieImage: FC<LinkMovieImageProps> = ({ title, posterUrl }) => {
+    return (
+        <>
+            {posterUrl ? (
+                <img className="link-movie__img" src={posterUrl} />
+            ) : (
+                <span className="link-movie__title"> {title} </span >
+            )}
+        </>
+    )
+}
+
+export const LinkMovie: FC<LinkMovieProps> = (props) => {
+    console.log(`/${props.id}`);
+    return (
+        <Link href={`/${props.id}`} className='link-movie'>
+            {props.role == 'top-10' && (
+                <div className="link-movie__number">
+                    {props.index + 1}
+                </div> 
+            )}
+            <LinkMovieImage posterUrl={props.posterUrl} title={props.title} />
+        </Link>
+    )
+}
