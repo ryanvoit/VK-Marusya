@@ -1,33 +1,37 @@
 'use client'
 
-import { useState } from "react"
 import { FormLogin } from "../FormLogin/FormLogin"
 import { FormRegister } from "../FormRegister/FormRegister"
 import { SuccessWindow } from "../SuccessWindow/SuccessWindow"
+import { useDispatch, useSelector } from "react-redux"
+import { RootState } from "@/store/store"
+import { toggleAuthFormState } from "@/store/authFormStateSlice"
 
 export const AuthForm = () => {
-    const [authState, setAuthState] = useState<'login' | 'register' | 'success'>('login')
+    const AuthStateRedux = useSelector((state: RootState) => state.authFormState)
+    const dispatch = useDispatch()
 
-    function changeToRegistState(): void {
-        setAuthState('register')
+    function changeToLoginState() {
+        dispatch(toggleAuthFormState('login'))
     }
-    function changeToLoginState(): void {
-        setAuthState('login')
+    function changeToSuccessState() {
+        dispatch(toggleAuthFormState('success'))
     }
-    function changeToSuccessState(): void {
-        setAuthState('success')
+    function changeToRegistState() {
+        dispatch(toggleAuthFormState('register'))
     }
 
     return (
         <>
             {
-                authState === 'login' ? (
+                AuthStateRedux === 'login' ? (
                     <FormLogin stateChangeFn={changeToRegistState} />
-                ) : authState === 'register' ? (
+                ) : AuthStateRedux === 'register' ? (
                     <FormRegister stateChangeFn={changeToLoginState} stateSuccessChangeFn={changeToSuccessState} />
                 ) : (
                     <SuccessWindow stateChangeFn={changeToLoginState} />
-            )}
+                )}
+
         </>
     )
 }

@@ -31,7 +31,6 @@ export const LinkMovieImage: FC<LinkMovieImageProps> = ({ title, posterUrl }) =>
 }
 
 export const LinkMovie: FC<LinkMovieProps> = (props) => {
-    console.log(`/${props.id}`);
     return (
         <Link href={`/${props.id}`} className='link-movie'>
             {props.role == 'top-10' && (

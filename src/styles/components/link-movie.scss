@@ -20,7 +20,7 @@
     &__number {
         transition: transform $transition;
         @apply absolute w-[62px] h-[48px] flex justify-center items-center text-[24px]/[32px] top-[-12px] left-[-12px] 
-        rounded-[50px] bg-white-custom text-slate-blue font-bold z-[30]
+        rounded-[50px] bg-white-custom text-slate-blue font-bold z-10
     }
 
     &__img {

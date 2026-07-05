@@ -5,7 +5,7 @@
 
     &__link {
         transition: transform $transition;
-        @apply flex gap-[16px] items-center cursor-pointer;
+        @apply flex gap-[16px] items-center cursor-pointer w-[200px];
 
         &:hover {
             transform: translateX(-10px)
