@@ -1,7 +1,27 @@
 .search-card { 
-    @apply py-[20px] px-[8px] h-full flex;
+    @apply py-[20px] px-[8px] h-full flex gap-[16px];
+
+    &__image {
+        @apply w-[40px] h-[52px] bg-white-custom text-black-custom text-[12px] rounded-[3px];
+
+        &--no {
+            @apply p-[2px]
+        }
+    }
+
+    &__content {
+        @apply flex flex-col gap-[8px]
+    }
+
+    &__basic-info {
+        @apply flex gap-[12px] text-[14px]/[20px] text-white-70-custom font-normal
+    }
+
+    &__rating {
+        @apply flex gap-[4px] text-white-custom items-center justify-center w-[47px] h-[20px] rounded-[16px] text-[12px]/[16px] font-bold
+    }
 
     &__title {
-        @apply text-red-500
+        @apply text-red-500 font-bold text-[18px]/[24px] text-white-custom
     }
 }

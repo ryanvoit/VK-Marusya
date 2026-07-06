@@ -24,6 +24,11 @@ export const CustomInput: FC<CustomInputProps> = ({ btnType, role, placeholder, 
         setInput(event.target.value)
     } 
 
+    const handleClear = () => {
+        setMovies([])
+        setInput('')
+    }
+
     useEffect(() => {
         if (role !== 'search' || input.trim() === '') {
             setMovies([])
@@ -40,9 +45,9 @@ export const CustomInput: FC<CustomInputProps> = ({ btnType, role, placeholder, 
 
     return (
         <div className={customInputClass}>
-            <input type={btnType} id={id} placeholder={placeholder} onChange={handleInput} className="custom-input__field" />
+            <input type={btnType} id={id} placeholder={placeholder} onChange={handleInput} value={input ?? ''} className="custom-input__field" />
             <Icon role={role} />
-            { role=='search' && <SearchDataComponent movies={movies} />}
+            { role=='search' && <SearchDataComponent movies={movies} onSelect={handleClear}/>}
         </div>
     )
 }

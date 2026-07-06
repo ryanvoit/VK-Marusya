@@ -1,7 +1,7 @@
 import { FC } from "react"
 
 export interface IconProps {
-    role: 'email' | 'password' | 'user' | 'telegram' | 'vk' | 'ok' | 'youtube' | 'star' | 'heart' | 'renew' |
+    role: 'email' | 'password' | 'user' | 'telegram' | 'vk' | 'ok' | 'youtube' | 'star' | 'star--little' | 'heart' | 'renew' |
     'back' | 'cross' | 'search'
 }
 
@@ -52,7 +52,7 @@ export const Icon: FC<IconProps> = ({ role }) => {
             )
         case 'youtube':
             return (
-                <svg className="social-link__icon"aria-label="youtube"  width="16" height="12" viewBox="0 0 16 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <svg className="social-link__icon" aria-label="youtube" width="16" height="12" viewBox="0 0 16 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd" d="M13.681 0.329597C14.3419 0.510956 14.8624 1.04533 15.039 1.72393C15.36 2.95382 15.36 5.52 15.36 5.52C15.36 5.52 15.36 8.08609 15.039 9.31607C14.8624 9.99467 14.3419 10.529 13.681 10.7105C12.4832 11.04 7.68 11.04 7.68 11.04C7.68 11.04 2.87677 11.04 1.67895 10.7105C1.01804 10.529 0.497542 9.99467 0.320902 9.31607C0 8.08609 0 5.52 0 5.52C0 5.52 0 2.95382 0.320902 1.72393C0.497542 1.04533 1.01804 0.510956 1.67895 0.329597C2.87677 0 7.68 0 7.68 0C7.68 0 12.4832 0 13.681 0.329597ZM6.23997 3.36023V8.16023L10.08 5.76033L6.23997 3.36023Z" fill="currentColor" />
                 </svg>
             )
@@ -60,6 +60,19 @@ export const Icon: FC<IconProps> = ({ role }) => {
             return (
                 <svg className="movie__icon" aria-label="star" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.00105 12.1734L3.29875 14.8055L4.34897 9.51997L0.392578 5.86124L5.74394 5.22675L8.00105 0.333374L10.2581 5.22675L15.6095 5.86124L11.6531 9.51997L12.7033 14.8055L8.00105 12.1734Z" fill="currentColor" />
+                </svg>
+            )
+        case 'star--little':
+            return (
+                <svg className="search-card__icon" width="10" height="10" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_73810_511)">
+                        <path d="M5.00041 7.60837L2.06148 9.25346L2.71786 5.95L0.245117 3.66329L3.58972 3.26673L5.00041 0.208374L6.41108 3.26673L9.75566 3.66329L7.28295 5.95L7.93933 9.25346L5.00041 7.60837Z" fill="currentColor" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_73810_511">
+                            <rect width="10" height="10" fill="currentColor" />
+                        </clipPath>
+                    </defs>
                 </svg>
             )
         case 'heart':
