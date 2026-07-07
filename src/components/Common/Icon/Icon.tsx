@@ -65,7 +65,7 @@ export const Icon: FC<IconProps> = ({ role }) => {
         case 'star--little':
             return (
                 <svg className="search-card__icon" width="10" height="10" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_73810_511)">
+                    <g clipPath="url(#clip0_73810_511)">
                         <path d="M5.00041 7.60837L2.06148 9.25346L2.71786 5.95L0.245117 3.66329L3.58972 3.26673L5.00041 0.208374L6.41108 3.26673L9.75566 3.66329L7.28295 5.95L7.93933 9.25346L5.00041 7.60837Z" fill="currentColor" />
                     </g>
                     <defs>

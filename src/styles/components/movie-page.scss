@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
 .movie-page {
-    @apply flex flex-col gap-[40px]
+    @apply flex flex-col gap-[40px];
+
+    &::before {
+      @apply w-[100vw] h-[100%] absolute z-10 bg-black-40-custom top-0 left-0 opacity-0 content-[''] pointer-events-none transition-opacity duration-300;
+    }
+
+    &:has(.trailer)::before {
+      @apply opacity-100 pointer-events-auto
+    }
 }

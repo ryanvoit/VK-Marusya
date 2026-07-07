@@ -6,7 +6,8 @@ import Link from "next/link";
 import { fetchRandomMovie } from "@/api/movies/fetches";
 import { Icon } from "../Icon/Icon";
 import round from 'lodash/round'
-import { ButtonRenew } from "@/components/Common/ButtonRenew/ButtonRenew";
+import { ButtonRenew } from "@/components/Common/MovieComponent/ButtonRenew";
+import { Trailer } from "./Trailer";
 
 export type MovieProps =
     | { role: 'random' }
@@ -25,6 +26,8 @@ export const MovieComponent: FC<MovieProps> = async (props) => {
         backgroundColor: `${colorRating(movie.tmdbRating)}`
     }
 
+    console.log(movie);
+
     return (
         <div className="movie">
             <div className="movie__content">
@@ -42,14 +45,14 @@ export const MovieComponent: FC<MovieProps> = async (props) => {
                     <p className="movie__plot">{movie.plot}</p>
                 </div>
                 <div className="movie__btns">
-                    <button className="movie__btn">Trailer</button>
+                    {movie.trailerYouTubeId && <Trailer url={movie.trailerYouTubeId} /> }
                     {props.role !== 'about' && (
                         <Link href={`${movie.id}`} className="movie__btn movie__btn--1">About the movie</Link>
                     )}
                     <button className="movie__btn movie__btn--2">
                         <Icon role='heart' />
                     </button>
-                    {props.role == 'random' && <ButtonRenew /> }
+                    {props.role == 'random' && <ButtonRenew/> }
                 </div>
             </div>
             {movie.backdropUrl && (
