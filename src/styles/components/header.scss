@@ -3,6 +3,10 @@
 .header {
   @apply mb-[30px] bg-transparent px-[80px] h-[96px];
 
+  &:has(.header__link--user-active) {
+      @apply mb-[64px]
+    }
+
   &__base {
     grid-template-columns: 144px 1fr 69px;
     @apply items-center grid gap-[80px] h-full w-full;
@@ -19,30 +23,28 @@
   &__link {
     font-family: $ff-play;
     transition: transform $transition;
-    @apply text-white-custom text-[24px] flex items-center gap-[12px] bg-transparent border-none hover:text-white-custom p-0;
+    @apply text-white-custom text-[24px] flex items-center gap-[12px] bg-transparent border-none hover:text-white-custom 
+    cursor-pointer p-0 relative flex justify-center;
 
-    &:hover {
-      transform: scale(1.1)
+    &::before {
+      transition: opacity $transition;
+      @apply absolute w-full content-[''] bg-heliotrope h-[2px] bottom-0 opacity-0
     }
 
-    &--routing {
-      @apply relative flex justify-center;
+    &:hover {
+      transform: scale(1);
 
       &::before {
-        transition: opacity $transition;
-        @apply absolute w-full content-[''] bg-heliotrope h-[2px] bottom-0 opacity-0
-      }
-
-      &:hover {
-        transform: scale(1);
-        &::before {
-          @apply opacity-100
-        }
+        @apply opacity-100
       }
     }
 
     &--active::before {
       @apply opacity-100
+    }
+
+    &--user {
+       @apply h-[48px]
     }
   }
 
