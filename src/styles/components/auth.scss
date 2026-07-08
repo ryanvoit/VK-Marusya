@@ -23,15 +23,27 @@
     }
 
     &__fields {
-        @apply flex flex-col gap-[12px] w-full
+        @apply flex flex-col gap-[12px] w-full;
+        transition: gap $transition;
     }
 
     &__btn {
+        transition: background-color $transition, color $transition, transform $transition;
         @apply flex justify-center items-center w-full text-[18px]/[24px] bg-cornflower-blue h-[56px] rounded-[28px] 
         text-white-custom;
 
+        &:hover {
+            @apply bg-east-bay text-white-50-custom
+        }
+
         &--link {
-            @apply h-[24px] bg-transparent text-black-custom
+            transform: scale(1);
+            @apply h-[24px] bg-transparent text-black-custom;
+
+            &:hover {
+                transform: scale(1.1);
+                @apply bg-transparent text-black-50-custom
+            }
         }
     }
 
@@ -41,5 +53,9 @@
 
     &__content {
         @apply text-[18px] text-center
+    }
+
+    &__error {
+        @apply text-red-500
     }
 }

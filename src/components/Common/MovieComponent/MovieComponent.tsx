@@ -26,8 +26,6 @@ export const MovieComponent: FC<MovieProps> = async (props) => {
         backgroundColor: `${colorRating(movie.tmdbRating)}`
     }
 
-    console.log(movie);
-
     return (
         <div className="movie">
             <div className="movie__content">

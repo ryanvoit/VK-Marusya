@@ -1,17 +1,51 @@
 @import "tailwindcss";
 
 .custom-input {
-    @apply relative h-[56px];
+    transition: margin-bottom $transition;
+    @apply relative h-[56px] mb-0;
+
+    &:has(.custom-input__error) {
+        @apply mb-[30px];
+        .custom-input__field {
+            transform: scaleY(1);
+            @apply border-red-500;
+
+            &:hover,
+            &:focus-visible {
+                @apply border-red-500;
+
+                &::placeholder {
+                    @apply text-red-500;
+                }
+
+                +.custom-input__image {
+                    @apply text-red-500;
+                }
+            }
+
+            &:focus-visible {
+                @apply text-red-500;
+            }
+        }
+
+        .custom-input__image {
+            @apply text-red-500;
+        }
+    }
 
     &__field {
-        transition: border $transition, outline $transition;
-        @apply w-full h-[100%] border-[1px] border-black-40-custom rounded-[8px] p-[16px] pl-[52px] hover:border-cornflower-blue focus-visible:outline-cornflower-blue focus-visible:outline-[2px] absolute top-0 left-0;
+        transition: border $transition, color $transition ;
+        @apply w-full h-[100%] border-[1px] border-black-40-custom outline-none rounded-[8px] p-[16px] pl-[52px] absolute top-0 
+        left-0;
 
         &::placeholder {
             transition: color $transition;
         }
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
+            @apply border-cornflower-blue;
+
             +.custom-input__image {
                 @apply text-cornflower-blue
             }
@@ -19,12 +53,21 @@
             &::placeholder {
                 @apply text-cornflower-blue
             }
+        
+        &:focus-visible {
+            @apply text-cornflower-blue
+        }
         }
     }
 
     &__image {
         transition: color $transition;
         @apply absolute top-[50%] translate-y-[-50%] left-[12px] text-black-40-custom pointer-events-none;
+    }
+
+    &__error {
+        @apply text-red-500 text-[18px]/[24px] pointer-events-none absolute bottom-[-28px];
+        animation: input-error-appear 0.3s ease-in forwards;
     }
 
     &--search {
@@ -38,7 +81,8 @@
                 @apply text-white-50-custom
             }
 
-            &:hover {
+            &:hover,
+            &:focus-visible {
                 +.custom-input__image {
                     @apply text-white-50-custom
                 }
@@ -53,5 +97,27 @@
             transition: none;
             @apply text-white-50-custom
         }
+    }
+}
+
+@keyframes input-error-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes input-error-disappear {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-4px);
     }
 }
