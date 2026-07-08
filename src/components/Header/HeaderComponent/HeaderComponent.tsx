@@ -3,6 +3,7 @@ import Image from "next/image"
 import MainNav from "../MainNav/MainNav"
 import { AuthComponent } from "@/components/Header/AuthComponent/AuthComponent"
 import { CustomInput } from "../../Common/CustomInput/CustomInput"
+import { ProfileButton } from "./ProfileButton/ProfileButton"
 
 export const HeaderComponent = () => {
     return (
@@ -14,7 +15,7 @@ export const HeaderComponent = () => {
                 <MainNav />
                 <CustomInput btnType="text" role="search" placeholder="Search" id="search"/>
             </div>
-            <a href="#auth" className="header__link">Log in</a>
+            <ProfileButton />
             <AuthComponent />
         </div>
     )

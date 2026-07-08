@@ -39,8 +39,7 @@ export const FormRegister: FC<FormRegisterProps> = ({ stateChangeFn, stateSucces
                 <CustomInput role='user' btnType='text' id='user-lastname' placeholder='Last name' {...register("surname")} errorMessage={errors.surname && errors.surname.message}/>
                 <CustomInput role='password' btnType='password' id='password' placeholder="Password" {...register("password")} errorMessage={errors.password && errors.password.message}/>
             </div>
-            <button className="auth__btn" type="submit" disabled={registerMutation.isPending}
-            >Создать аккаунт</button>
+            <button className="auth__btn" type="submit" disabled={registerMutation.isPending}>Создать аккаунт</button>
             {registerMutation.error && <span className="auth__error">{registerMutation.error.message}</span>}
             <button className="auth__btn auth__btn--link" type="button" onClick={stateChangeFn}>У меня есть пароль</button>
         </form>

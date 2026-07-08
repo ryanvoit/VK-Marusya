@@ -8,8 +8,8 @@ export const registerInfoScheme = z.object({
 })
 
 export const loginInfoScheme = z.object({
-    email: z.string(),
-    password: z.string(),
+    email: z.string().email('Некорректный Email').nonempty('Email обязателен'),
+    password: z.string().nonempty('Пароль обязателен'),
 })
 
 export const profileDataScheme = z.object({
@@ -18,6 +18,10 @@ export const profileDataScheme = z.object({
     name: z.string(),
     surname: z.string(),
 })
+
+// AuthData now: 
+// email: ryanvoit000@gmail.com
+// password: 123456789
 
 export type RegisterInfo = z.infer<typeof registerInfoScheme>
 export type LoginInfo = z.infer<typeof loginInfoScheme>
