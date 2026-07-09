@@ -32,7 +32,7 @@ export const FormRegister: FC<FormRegisterProps> = ({ stateChangeFn, stateSucces
     )
 
     return (
-        <form className="auth__form" onSubmit={handleSubmit((data) => { registerMutation.mutate(data) })}>
+        <form className="auth__form" noValidate={true} onSubmit={handleSubmit((data) => { registerMutation.mutate(data) })}>
             <div className="auth__fields">
                 <CustomInput role='email' btnType='email' id='email' placeholder="Email" {...register("email")} errorMessage={errors.email && errors.email.message}/>
                 <CustomInput role='user' btnType='text' id='user-name' placeholder='Name' {...register("name")} errorMessage={errors.name && errors.name.message}/>

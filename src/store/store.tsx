@@ -1,9 +1,11 @@
 import authFormStateReducer from './authFormStateSlice'
+import accountStateReducer from './accountStateSlice'
 import { configureStore } from "@reduxjs/toolkit";
 
 const store = configureStore({
     reducer: {
-        authFormState: authFormStateReducer
+        authFormState: authFormStateReducer,
+        accountState: accountStateReducer
     }
 })
 

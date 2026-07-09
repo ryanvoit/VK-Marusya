@@ -8,7 +8,7 @@ import { RootState } from "@/store/store"
 import { toggleAuthFormState } from "@/store/authFormStateSlice"
 
 export const AuthForm = () => {
-    const AuthStateRedux = useSelector((state: RootState) => state.authFormState)
+    const authState = useSelector((state: RootState) => state.authFormState)
     const dispatch = useDispatch()
 
     function changeToLoginState() {
@@ -24,9 +24,9 @@ export const AuthForm = () => {
     return (
         <>
             {
-                AuthStateRedux === 'login' ? (
+                authState === 'login' ? (
                     <FormLogin stateChangeFn={changeToRegistState} />
-                ) : AuthStateRedux === 'register' ? (
+                ) : authState === 'register' ? (
                     <FormRegister stateChangeFn={changeToLoginState} stateSuccessChangeFn={changeToSuccessState} />
                 ) : (
                     <SuccessWindow stateChangeFn={changeToLoginState} />

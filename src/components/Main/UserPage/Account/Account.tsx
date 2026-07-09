@@ -1,20 +1,34 @@
 'use client'
 
-import { useState } from "react"
 import { ButtonAccount } from "../ButtonAccount/ButtonAccount"
+import { useDispatch, useSelector } from "react-redux"
+import { RootState } from "@/store/store"
+import { toggleAccountState } from "@/store/accountStateSlice"
+import { FavouriteMoviesComponent } from "../FavouriteMoviesComponent/FavouriteMoviesComponent"
+import { AccountDetails } from "../AccountDetails/AccountDetails"
+
 
 export const Account = () => {
-    const [accountState, setAccountState] = useState<'favourites' | 'account'>('favourites')
+    const accountState = useSelector((state: RootState) => state.accountState)
+    const dispatch = useDispatch()
 
+    function changeToFavouritesState() {
+        dispatch(toggleAccountState('favourites'))
+    }
+
+    function changeToaccountState() {
+        dispatch(toggleAccountState('account'))
+    }
+    
     return (
         <>
-            <div className="text-white">
-                <ButtonAccount role='favourites' setter={() => setAccountState('favourites')} />
-                <ButtonAccount role='account' setter={() => setAccountState('account')} />
+            <div className="user-page__btns">
+                <ButtonAccount role='favourites' setter={changeToFavouritesState} active={accountState=='favourites'} />
+                <ButtonAccount role='account' setter={changeToaccountState} active={accountState=='account'}/>
             </div>
             {accountState == 'favourites' ?
-                <span className="text-white">F</span> :
-                <span className="text-white">A</span>
+                <FavouriteMoviesComponent /> :
+                <AccountDetails />
             }
         </>
 

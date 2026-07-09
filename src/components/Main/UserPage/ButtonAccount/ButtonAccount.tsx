@@ -3,12 +3,14 @@ import { FC } from "react"
 
 interface ButtonAccountProps {
     setter: () => void,
-    role: 'favourites' | 'account'
+    role: 'favourites' | 'account',
+    active: boolean
 }
 
-export const ButtonAccount: FC<ButtonAccountProps> = ({ setter, role }) => {
+export const ButtonAccount: FC<ButtonAccountProps> = ({ setter, role, active }) => {
     return (
         <button
+            className={active ? "user-page__btn user-page__btn--active" : "user-page__btn"}
             type="button"
             onClick={setter}
             id={role}

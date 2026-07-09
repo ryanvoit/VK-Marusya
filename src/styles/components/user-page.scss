@@ -4,4 +4,42 @@
     &__title {
         @apply m-0 font-bold text-white text-[48px]/[56px]
     }
+
+    &__btns {
+        @apply text-white flex gap-[64px] relative;
+
+        &::before {
+            transition: left $transition, width $transition, bottom $transition ;
+            @apply h-[2px] w-[100px] bg-heliotrope content-[''] absolute bottom-[-8px];
+        }
+
+        &:has(.user-page__btn--active:first-child)::before {
+            @apply left-0 w-[215px]
+        }
+
+        &:has(.user-page__btn--active:first-child:hover)::before {
+            width: calc(215px * 1.1);
+            left: calc((-1) * (215px * 1.1 - 215px) / 2);
+            @apply bottom-[-12px];
+        }
+
+        &:has(.user-page__btn--active:last-child)::before {
+            @apply left-[279px] w-[203px]
+        }
+
+        &:has(.user-page__btn--active:last-child:hover)::before {
+            width: calc(203px * 1.1);
+            left: calc(((-1) * (203px * 1.1 - 203px) / 2) + 279px);
+            @apply bottom-[-14px];
+        }
+    }
+
+    &__btn {
+        transition: transform $transition;
+        @apply text-white flex gap-[8px] items-center text-[24px]/[32px] relative;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }
