@@ -13,7 +13,7 @@ export const loginInfoScheme = z.object({
 })
 
 export const profileDataScheme = z.object({
-    favourites: z.array(z.string()),
+    favorites: z.array(z.string()),
     email: z.string(),
     name: z.string(),
     surname: z.string(),

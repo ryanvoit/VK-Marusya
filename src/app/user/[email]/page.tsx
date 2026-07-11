@@ -2,6 +2,8 @@ import { UserPageComponent } from "@/components/Main/UserPage/UserPageComponent/
 
 export default async function Page() {
     return (
-        <UserPageComponent/>
+        <div className="container">
+            <UserPageComponent />
+        </div>
     )
 }

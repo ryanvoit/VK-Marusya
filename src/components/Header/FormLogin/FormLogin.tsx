@@ -27,8 +27,8 @@ export const FormLogin: FC<FormLoginProps> = ({ stateChangeFn }) => {
         {
             mutationFn: fetchLogin,
             onSuccess: async () => {
-                await client.invalidateQueries({ queryKey: ['profile'] }),
-                router.push('#')
+                window.location.hash = ''
+                await client.invalidateQueries({ queryKey: ['profile'] })
             }
         },
         client

@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 .header {
-  @apply mb-[30px] bg-transparent px-[80px] h-[96px];
+  @apply mb-[30px] bg-transparent h-[96px] flex items-center;
 
   &:has(.header__link--user-active) {
-      @apply mb-[64px]
-    }
+    @apply mb-[64px]
+  }
 
   &__base {
     grid-template-columns: 144px 1fr 69px;
@@ -23,8 +23,7 @@
   &__link {
     font-family: $ff-play;
     transition: transform $transition;
-    @apply text-white-custom text-[24px] flex items-center gap-[12px] bg-transparent border-none hover:text-white-custom 
-    cursor-pointer p-0 relative flex justify-center;
+    @apply text-white-custom text-[24px] flex items-center gap-[12px] bg-transparent border-none hover:text-white-custom cursor-pointer p-0 relative flex justify-center;
 
     &::before {
       transition: opacity $transition;
@@ -44,7 +43,19 @@
     }
 
     &--user {
-       @apply h-[48px]
+      @apply h-[48px]
+    }
+
+    &--main {
+      transition: transform $transition;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &::before {
+        display: none;
+      }
     }
   }
 

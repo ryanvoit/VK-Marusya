@@ -1,5 +1,11 @@
+import { AccountContentComponent } from "../AccountContentComponent/AccountContentComponent"
+import { LogoutButton } from "../LogoutButton/LogoutButton"
+
 export const AccountDetails = () => {
     return (
-        <span className="text-white">A</span>
+        <div className="account">
+            <AccountContentComponent />
+            <LogoutButton />
+        </div>
     )
 }

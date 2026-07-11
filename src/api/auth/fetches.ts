@@ -26,6 +26,11 @@ export function fetchLogin(info: LoginInfo): Promise<void> {
     }).then(() => undefined)
 }
 
-export function fetchProfileData() {
-    return httpClient.get('/profile').then((response) => response.data)
+export function fetchProfileData(): Promise<ProfileInfo>  {
+    return httpClient.get('/profile')
+    .then((response) => profileDataScheme.parse(response.data))
+}
+
+export function fetchLogOut(): Promise<void> {
+    return httpClient.get('/auth/logout').then(() => undefined)
 }

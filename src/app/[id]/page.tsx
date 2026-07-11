@@ -8,7 +8,9 @@ export default async function Page({ params }: PageProps) {
     const { id } = await params
 
     return (
-        <MoviePageComponent id={id} />
+        <div className="container">
+            <MoviePageComponent id={id} />
+        </div>
     )
 }
 

@@ -19,7 +19,7 @@ export const ProfileButton = () => {
 
     switch (profileQuery.status) {
         case 'pending':
-            return <span>Loading...</span>
+            return <span className="text-white">Loading...</span>
 
         case 'success':
             return <Link

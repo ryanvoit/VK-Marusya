@@ -2,6 +2,8 @@ import MainPageComponent from "@/components/Main/MainPage/MainPageComponent/Main
 
 export default function Page() {
   return (
-    <MainPageComponent />
+    <div className="container">
+      <MainPageComponent />
+    </div>
   );
 }

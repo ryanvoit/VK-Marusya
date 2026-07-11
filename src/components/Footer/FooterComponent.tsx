@@ -9,26 +9,28 @@ interface LinkInfo {
 type LinkInfoList = LinkInfo[]
 
 export default function FooterComponent() {
-    const LinkInfo:LinkInfoList = [{
-        socialLinkInfo: 'vk', 
+    const LinkInfo: LinkInfoList = [{
+        socialLinkInfo: 'vk',
         href: '/'
     }, {
-        socialLinkInfo: 'youtube', 
+        socialLinkInfo: 'youtube',
         href: '/'
     }, {
-        socialLinkInfo: 'ok', 
+        socialLinkInfo: 'ok',
         href: '/'
     }, {
-        socialLinkInfo: 'telegram', 
+        socialLinkInfo: 'telegram',
         href: 'https://t.me/ryanvoit'
     }]
     return (
-        <div className="footer__wrapper">
-            {LinkInfo.map((link) => (
-                <Link href={link.href} className="social-link" key={link.socialLinkInfo}>
-                    <Icon role={link.socialLinkInfo} />
-                </Link>
-            ))}
+        <div className="container">
+            <div className="footer__wrapper">
+                {LinkInfo.map((link) => (
+                    <Link href={link.href} className="social-link" key={link.socialLinkInfo}>
+                        <Icon role={link.socialLinkInfo} />
+                    </Link>
+                ))}
+            </div>
         </div>
     )
 }

@@ -2,6 +2,8 @@ import GenresPageComponent from "@/components/Main/GenresPage/GenresPageComponen
 
 export default function Page() {
   return (
-    <GenresPageComponent />
+    <div className="container">
+      <GenresPageComponent />
+    </div>
   )
 }

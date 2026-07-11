@@ -7,7 +7,6 @@ import { toggleAccountState } from "@/store/accountStateSlice"
 import { FavouriteMoviesComponent } from "../FavouriteMoviesComponent/FavouriteMoviesComponent"
 import { AccountDetails } from "../AccountDetails/AccountDetails"
 
-
 export const Account = () => {
     const accountState = useSelector((state: RootState) => state.accountState)
     const dispatch = useDispatch()
@@ -21,7 +20,7 @@ export const Account = () => {
     }
     
     return (
-        <>
+        <div className="user-page__wrapper">
             <div className="user-page__btns">
                 <ButtonAccount role='favourites' setter={changeToFavouritesState} active={accountState=='favourites'} />
                 <ButtonAccount role='account' setter={changeToaccountState} active={accountState=='account'}/>
@@ -30,7 +29,7 @@ export const Account = () => {
                 <FavouriteMoviesComponent /> :
                 <AccountDetails />
             }
-        </>
+        </div>
 
     )
 }

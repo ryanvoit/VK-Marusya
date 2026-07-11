@@ -8,19 +8,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // <div className="layout">
   return (
     <html lang="en">
       <body>
         <Providers>
-          <div className="layout">
             <header className="header">
               <HeaderComponent />
             </header>
-            <div className="containner">{children}</div>
+            <main>{children}</main>
             <footer className="footer">
               <FooterComponent />
             </footer>
-          </div>
           </Providers>
       </body>
     </html>

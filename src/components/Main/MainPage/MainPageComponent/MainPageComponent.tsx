@@ -3,9 +3,9 @@ import { Top10MoviesComponent } from "../Top10MoviesComponent/Top10MoviesCompone
 
 export default function MainPageComponent() {
     return (
-            <div className="main-page">
-                <MovieComponent role="random" />
-                <Top10MoviesComponent />
-            </div>
+        <div className="main-page">
+            <MovieComponent role="random" />
+            <Top10MoviesComponent />
+        </div>
     )
 }

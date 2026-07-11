@@ -1,16 +1,27 @@
 @import "tailwindcss";
 
-html {
-  @apply h-full antialiased
+*, *::after, *::before {
+  @apply m-0 p-0;
+  box-sizing: border-box;
+}
+
+html{
+  @apply antialiased w-full
 }
 
 body {
-  @apply min-h-full flex flex-col
-}
-
-.layout {
   background: linear-gradient(180deg, $color-black 0%, $color-nero-70 100%), linear-gradient(180deg, $color-dodger-blue-90 0%, $color-biloba-flower-90 100%);
   font-family: $ff-play;
-  @apply relative min-h-[100vh]
+  @apply min-h-[100vh] w-full flex flex-col;
 }
+
+main {
+  flex-grow: 1
+}
+
+// .layout {
+  // background: linear-gradient(180deg, $color-black 0%, $color-nero-70 100%), linear-gradient(180deg, $color-dodger-blue-90 0%, $color-biloba-flower-90 100%);
+  // font-family: $ff-play;
+  // @apply relative min-h-[100vh]
+// }
 
