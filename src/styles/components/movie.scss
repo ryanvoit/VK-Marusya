@@ -43,10 +43,26 @@
         &--2 {
             @apply w-[68px] flex justify-center
         }
+
+        &:disabled {
+            @apply bg-white
+        }
+
+        &:has(.movie__icon--favourite):disabled {
+            @apply bg-perano
+        }
     }
 
     &__image {
         object-fit: cover;
         @apply absolute top-0 left-[685px] rounded-[16px]
+    }
+
+    &__icon {
+        @apply text-white;
+
+        &--favourite {
+            @apply text-perano
+        }
     }
 }

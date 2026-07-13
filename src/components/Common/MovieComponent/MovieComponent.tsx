@@ -8,6 +8,7 @@ import { Icon } from "../Icon/Icon";
 import round from 'lodash/round'
 import { ButtonRenew } from "@/components/Common/MovieComponent/ButtonRenew";
 import { Trailer } from "./Trailer";
+import { ButtonFavourite } from "./ButtonFavourite";
 
 export type MovieProps =
     | { role: 'random' }
@@ -47,14 +48,12 @@ export const MovieComponent: FC<MovieProps> = async (props) => {
                     {props.role !== 'about' && (
                         <Link href={`${movie.id}`} className="movie__btn movie__btn--1">About the movie</Link>
                     )}
-                    <button className="movie__btn movie__btn--2">
-                        <Icon role='heart' />
-                    </button>
+                    <ButtonFavourite idMovie={String(movie.id)} />
                     {props.role == 'random' && <ButtonRenew/> }
                 </div>
             </div>
             {movie.backdropUrl && (
-                <img src={movie.backdropUrl} className="movie__image" width={680}></img>
+                <img src={movie.backdropUrl} className="movie__image" width={680} alt='Movie image'/>
             )}
         </div>
     )

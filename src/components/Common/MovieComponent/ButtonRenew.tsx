@@ -3,10 +3,9 @@
 import { useRouter } from 'next/navigation'
 import { useTransition } from 'react'
 import { Icon } from '@/components/Common/Icon/Icon'
-// import { FC } from 'react'
 
 // export type ButtonProps = {
-    // role: 'renew'
+// role: 'renew'
 // }
 
 export const ButtonRenew = () => {
@@ -18,15 +17,13 @@ export const ButtonRenew = () => {
     }
 
     return (
-        <>
-            <button
-                className='movie__btn movie__btn--2'
-                disabled={isPending}
-                onClick={refresh}
-            >
-                <Icon role='renew' /> 
-            </button>
-        </>
+        <button
+            className='movie__btn movie__btn--2'
+            disabled={isPending}
+            onClick={refresh}
+        >
+            <Icon role='renew' />
+        </button>
     )
 }
 
