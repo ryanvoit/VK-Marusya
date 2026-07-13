@@ -1,10 +1,10 @@
-import { AccountContentComponent } from "../AccountContentComponent/AccountContentComponent"
+import { FetchAccountContentComponent } from "../FetchAccountContentComponent/FetchAccountContentComponent"
 import { LogoutButton } from "../LogoutButton/LogoutButton"
 
 export const AccountDetails = () => {
     return (
         <div className="account">
-            <AccountContentComponent />
+            <FetchAccountContentComponent />
             <LogoutButton />
         </div>
     )

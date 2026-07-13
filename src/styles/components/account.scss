@@ -22,4 +22,32 @@
     &__error {
         @apply text-red-500
     }
+
+    &__content {
+        @apply flex flex-col gap-[40px]
+    }
+
+    &__content-line {
+        @apply flex gap-[16px]
+    }
+
+    &__image {
+        @apply flex justify-center items-center w-[60px] h-[60px] rounded-[50%] bg-white-50-custom
+    }
+
+    &__initials {
+        @apply font-bold text-[24px]/[32px]
+    }
+
+    &__content-text {
+        @apply flex flex-col justify-between
+    }
+
+    &__content-title {
+        @apply font-normal text-[18px]/[24px]
+    }
+
+    &__content-data {
+        @apply font-bold text-[24px]/[32px]
+    }
 }

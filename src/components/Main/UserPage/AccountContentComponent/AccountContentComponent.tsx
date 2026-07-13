@@ -1,21 +1,24 @@
-'use client'
+import { FC } from "react"
+import { AccountLineComponent } from "../AccountLineComponent/AccountLineComponent"
+import { Icon } from "@/components/Common/Icon/Icon"
 
-import { useQuery } from "@tanstack/react-query"
-import { fetchProfileData } from "@/api/auth/fetches"
-import { client } from "@/api/client"
+interface AccountContentComponentProps {
+    data: AccountContent
+}
 
-export const AccountContentComponent = () => {
-    const profileQuery = useQuery(
-        { queryFn: () => fetchProfileData(), queryKey: ['profile'] },
-        client
+interface AccountContent {
+    email: string
+    name: string
+    surname: string
+}
+
+export const AccountContentComponent:FC<AccountContentComponentProps> = ({ data }) => {
+    return (
+        <div className="account__content">
+            <AccountLineComponent role="first" name={data.name} surname={data.surname} 
+            elem={<p className="account__initials">{`${data.name.slice(0, 1)}${data.surname.slice(0, 1)}`}</p>} />
+            <AccountLineComponent role="second" email={data.email} 
+            elem={<Icon role="email-line"/>} />
+        </div>
     )
-
-    switch (profileQuery.status) {
-        case 'pending':
-            return <span className="text-white">Loading...</span>
-        case 'success':
-            return <span className="account__content">{profileQuery.data.email}</span>
-        case 'error':
-            return null
-    }
 }
