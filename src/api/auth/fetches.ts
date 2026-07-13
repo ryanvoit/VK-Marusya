@@ -1,4 +1,4 @@
-import { RegisterInfo, LoginInfo, ProfileInfo, profileDataScheme } from "./types"
+import { RegisterPayload, LoginInfo, ProfileInfo, profileDataScheme } from "./types"
 import axios from "axios";
 
 export const httpClient = axios.create({
@@ -6,7 +6,7 @@ export const httpClient = axios.create({
     withCredentials: true
 })
 
-export function fetchRegister(info: RegisterInfo): Promise<void> {
+export function fetchRegister(info: RegisterPayload): Promise<void> {
     return httpClient.post('/user', {
         email: info.email,
         password: info.password,
