@@ -45,16 +45,11 @@ export const ButtonFavourite:FC<ButtonFavouriteProps> = ({ idMovie }) => {
     )
 
     function favourite(idMovie: string, data: ProfileInfo) {
-        console.log(idMovie);
-        console.log(data.favorites);
         const datafav = data.favorites.filter((fav) => fav == idMovie)
-        console.log(datafav);
 
         if (datafav.length !== 0) {
-            console.log('Favourite');
             DeleteFavoriteMutation.mutate()
         } else {
-            console.log('Not Favourite');
             AddFavoriteMutation.mutate()
         }
     }

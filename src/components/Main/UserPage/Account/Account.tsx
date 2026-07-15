@@ -4,7 +4,7 @@ import { ButtonAccount } from "../ButtonAccount/ButtonAccount"
 import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "@/store/store"
 import { toggleAccountState } from "@/store/accountStateSlice"
-import { FavouriteMoviesComponent } from "../FavouriteMoviesComponent/FavouriteMoviesComponent"
+import { FetchAccountContentComponent } from "../FetchAccountContentComponent/FetchAccountContentComponent"
 import { AccountDetails } from "../AccountDetails/AccountDetails"
 
 export const Account = () => {
@@ -26,7 +26,7 @@ export const Account = () => {
                 <ButtonAccount role='account' setter={changeToaccountState} active={accountState=='account'}/>
             </div>
             {accountState == 'favourites' ?
-                <FavouriteMoviesComponent /> :
+                <FetchAccountContentComponent role='favourite'/> :
                 <AccountDetails />
             }
         </div>

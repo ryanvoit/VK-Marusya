@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { FC } from "react"
+import { ButtonDeleteFavourite } from "../ButtonDeleteFavourite/ButtonDeleteFavourite"
 
 interface LinkMovieImageProps {
     title: string,
@@ -7,8 +8,8 @@ interface LinkMovieImageProps {
 }
 
 type LinkMovieProps = LinkMovieImageProps & (
-| {
-        role: 'genre-page',
+    | {
+        role: 'genre-page' | 'favourite',
         id: number
     }
     | {
@@ -38,6 +39,7 @@ export const LinkMovie: FC<LinkMovieProps> = (props) => {
                     {props.index + 1}
                 </div> 
             )}
+            { props.role == 'favourite' && <ButtonDeleteFavourite id={String(props.id)} />}
             <LinkMovieImage posterUrl={props.posterUrl} title={props.title} />
         </Link>
     )

@@ -4,7 +4,7 @@ import { LogoutButton } from "../LogoutButton/LogoutButton"
 export const AccountDetails = () => {
     return (
         <div className="account">
-            <FetchAccountContentComponent />
+            <FetchAccountContentComponent role='account' />
             <LogoutButton />
         </div>
     )

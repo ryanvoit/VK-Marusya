@@ -21,7 +21,7 @@
     }
 
     &__list {
-        @apply flex flex-wrap gap-y-[64px] gap-x-[40px] justify-between;
+        @apply flex flex-wrap gap-y-[64px] gap-x-[40px];
     }
 
     &__item {

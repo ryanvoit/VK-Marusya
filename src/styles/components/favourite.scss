@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.favourite {
+    &__list {
+        @apply flex flex-wrap gap-y-[64px] gap-x-[40px];
+    }
+
+    &__item {
+        width: calc(20% - 32px)
+    }
+}

@@ -15,6 +15,10 @@
         .link-movie__number {
             transform: scale(1.05) translateX(-10px) translateY(-10px);
         }
+
+        .link-movie__delete-fav {
+             @apply opacity-100 pointer-events-auto
+        }
     }
 
     &__number {
@@ -32,5 +36,20 @@
     &__title {
         transition: transform $transition;
         @apply w-full h-full text-[20px] bg-white-custom flex items-center justify-center text-black-custom rounded-[16px]
+    }
+
+    &__delete-fav {
+        transform: translate(50%, -50%);
+        transition: transform $transition, background-color $transition, opacity $transition;
+        @apply absolute top-0 cursor-pointer w-[40px] h-[40px] bg-white rounded-[50%] flex justify-center items-center right-0 
+        opacity-0 z-20 pointer-events-none;
+
+        &:hover {
+            transform: scale(1.2) translate(40%, -40%);
+        }
+    }
+
+    &__delete-icon {
+        @apply text-black
     }
 }
