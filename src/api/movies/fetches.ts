@@ -22,9 +22,9 @@ export function fetchMovieGenres(): Promise<MovieGenres> {
     )
 }
 
-export function fetchGenreMovies(genre: string): Promise<MovieList> {
+export function fetchGenreMovies(genre: string, count: number = 20): Promise<MovieList> {
     return (
-        axios.get(`https://cinemaguide.skillbox.cc/movie?count=20&genre=${encodeURIComponent(genre)}`)
+        axios.get(`https://cinemaguide.skillbox.cc/movie?count=${count}&genre=${encodeURIComponent(genre)}`)
             .then((response) => movieListScheme.parse(response.data))
     )
 }
@@ -39,6 +39,13 @@ export function fetchMovieById(id: string): Promise<Movie> {
 export function fetchMoviesbySearch(title: string): Promise<MovieList> {
     return (
         axios.get(`https://cinemaguide.skillbox.cc/movie?count=5&title=${title}`)
+            .then((response) => movieListScheme.parse(response.data))
+    )
+}
+
+export function fetchGenreMoviesFull(genre: string, page: number, count: number = 20): Promise<MovieList> {
+    return (
+        axios.get(`https://cinemaguide.skillbox.cc/movie?count=${count}&page=${page}&genre=${encodeURIComponent(genre)}`)
             .then((response) => movieListScheme.parse(response.data))
     )
 }

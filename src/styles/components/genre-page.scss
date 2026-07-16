@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .genre-page {
-    @apply flex flex-col gap-[64px];
+    @apply flex flex-col gap-[64px] mb-[160px];
 
     &__link {
         transition: transform $transition;
@@ -26,5 +26,15 @@
 
     &__item {
         width: calc(20% - 32px)
+    }
+
+    &__btn {
+        transition: background-color $transition, color $transition, transform $transition;
+        @apply flex justify-center items-center w-[218px] text-[18px]/[24px] bg-cornflower-blue h-[56px] rounded-[28px] 
+        text-white-custom m-auto;
+
+        &:hover {
+            @apply bg-east-bay text-white-50-custom
+        }
     }
 }

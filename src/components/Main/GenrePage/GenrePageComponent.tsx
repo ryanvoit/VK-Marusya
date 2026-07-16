@@ -1,40 +1,42 @@
+'use client'
+
+import { GenreMoviesList } from "./GenreMoviesList"
 import { FC } from "react"
-import { MovieList } from "@/api/movies/types"
-import Link from "next/link"
-import { fetchGenreMovies } from "@/api/movies/fetches"
-import { Icon } from "@/components/Common/Icon/Icon"
-import { LinkMovie } from "@/components/Common/LinkMovie/LinkMovie"
+import { useInfiniteQuery } from "@tanstack/react-query"
+import { fetchGenreMoviesFull } from "@/api/movies/fetches"
+import { client } from '@/api/client'
 
 export interface GenrePageProps {
     genre: string
 }
 
-const getMovies = async (genre: string): Promise<MovieList> => {
-    const data = await fetchGenreMovies(genre)
-    return data
-}
-
-export const GenrePageComponent: FC<GenrePageProps> = async ({ genre }) => {
-    const movies = await getMovies(genre)
-
-    return (
-        <div className="genre-page">
-            <Link href='/genres' className='genre-page__link'>
-                <Icon role='back' />
-                <h1 className="genre-page__title">{genre[0].toUpperCase() + genre.slice(1)}</h1>
-            </Link>
-            <ul className="genre-page__list">
-                {movies.map((movie) => (
-                    <li className="genre-page__item" key={movie.id}>
-                        <LinkMovie
-                            id={movie.id}
-                            title={movie.title}
-                            posterUrl={movie.posterUrl}
-                            role='genre-page'
-                        />
-                    </li>
-                ))}
-            </ul>
-        </div>
+export const GenrePageComponent: FC<GenrePageProps> = ({ genre }) => {
+    const moviesQuery = useInfiniteQuery(
+        {
+            queryKey: ['genreMovies', genre],
+            queryFn: ({ pageParam }) => fetchGenreMoviesFull(genre, pageParam, 10),
+            initialPageParam: 0,
+            getNextPageParam: (lastPage, allPages) => {
+                if (lastPage.length < 10) return undefined
+                return allPages.length
+            },
+        },
+    client
     )
+
+    switch (moviesQuery.status) {
+        case 'pending':
+            return <span className="text-white">Loading...</span>
+        case 'error':
+            return null
+        case 'success':
+            return (
+                <GenreMoviesList
+                    genre={genre}
+                    movies={moviesQuery.data.pages.flat()}
+                    addFn={() => moviesQuery.fetchNextPage()}
+                    hasMore={moviesQuery.hasNextPage}
+                />
+            )
+    }
 }
