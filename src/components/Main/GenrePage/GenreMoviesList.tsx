@@ -31,7 +31,7 @@ export const GenreMoviesList: FC<GenreMoviesListProps> = ({ movies, genre, addFn
                 ))}
             </ul>
             {hasMore && (
-                <button className="genre-page__btn" onClick={addFn}>Показать ещё</button>
+                <button className="genre-page__btn" onClick={addFn}>Show more</button>
             )}
         </div>
     )

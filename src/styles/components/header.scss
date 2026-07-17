@@ -12,7 +12,7 @@
     @apply items-center grid gap-[80px] h-full w-full;
 
     &::before {
-      @apply w-[100vw] h-[100%] absolute z-10 bg-black-40-custom top-0 left-0 opacity-0 content-[''] pointer-events-none transition-opacity duration-300;
+      @apply w-full h-full absolute z-10 bg-black-40-custom top-0 left-0 opacity-0 content-[''] pointer-events-none transition-opacity duration-300;
     }
 
     &:has(.auth:target)::before {
@@ -62,5 +62,104 @@
   &__center {
     grid-template-columns: 80px 80px 1fr;
     @apply grid gap-[40px]
+  }
+
+  &__link-icon {
+    display: none;
+  }
+
+  &__center-icon {
+    display: none;
+  }
+
+  &__search-btn {
+    display: none;
+  }
+
+  @include vp-desktop {
+    &__link--home {
+      display: none;
+    }
+
+    &__center {
+      grid-template-columns: 80px 1fr;
+      align-items: center;
+    }
+  }
+
+  @include vp-tablet {
+    &__link {
+      &::before {
+        display: none;
+      }
+    }
+
+    &__link-icon {
+      display: block;
+      color: $color-white;
+      transition: color $transition;
+
+      &:hover {
+        color: $color-white-75
+      }
+    }
+
+    &__search-btn {
+      display: block;
+      cursor: pointer;
+    }
+
+    &__link-search-icon {
+      display: block;
+      color: $color-white;
+      transition: color $transition;
+
+      &:hover {
+        color: $color-white-75
+      }
+    }
+
+    &__link--main {
+      @apply flex justify-start;
+
+      &:hover {
+        transform: scale(1);
+      }
+    }
+
+    &__link-text {
+      display: none;
+    }
+
+    &__center {
+      grid-template-columns: 24px 24px;
+      gap: 20px;
+    }
+
+    &__base {
+      display: grid;
+      grid-template-columns: 1fr 68px 24px;
+      gap: 20px;
+
+      .custom-input--search {
+        clip: rect(0 0 0 0);
+        clip-path: inset(100%);
+        @apply absolute w-[1px] h-[1px] m-[-1px] p-0 overflow-hidden whitespace-nowrap border-none
+      }
+    }
+
+    &__center-icon {
+      display: block;
+      color: white
+    }
+
+    .header__search-input {
+      display: none;
+    }
+
+    &__search-btn--open ~ .header__search-input {
+      width: calc(100% - 80px);
+      @apply left-[40px] top-[16px] absolute flex h-[56px] bg-montana z-10 rounded-[8px]
+    }
   }
 }

@@ -1,11 +1,29 @@
-@mixin vp-1023 {
+@mixin vp-desktop {
+  @media (max-width: $vp-lg) {
+    @content;
+  }
+}
+
+@mixin vp-tablet {
   @media (max-width: $vp-tablet) {
     @content;
   }
 }
 
-@mixin vp-767 {
+@mixin vp-mobile {
   @media (max-width: $vp-mobile) {
     @content;
+  }
+}
+
+@mixin responsive($breakpoint-one, $breakpoint-two: null) {
+  @if $breakpoint-two == null {
+    @media (max-width: $breakpoint-one) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $breakpoint-one) and (max-width: $breakpoint-two) {
+      @content;
+    }
   }
 }

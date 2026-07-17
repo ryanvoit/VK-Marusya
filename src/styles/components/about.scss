@@ -32,6 +32,34 @@
 
     &__name,
     &__value {
-        @apply text-[18px] text-white-custom;
+        @apply text-[18px]/[24px] text-white-custom;
+    }
+
+    @include vp-desktop {
+        &__content-list {
+            gap: 12px;
+        }
+
+        &__line {
+            position: static;
+            align-items: stretch;
+            @apply flex flex-col gap-[4px];
+
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &__name {
+            position: static;
+            @apply p-0 text-[14px]/[20px] text-white-50-custom;
+        }
+
+        &__value {
+            position: static;
+            width: unset;
+            @apply p-0;
+        }
     }
 }

@@ -58,4 +58,13 @@
     &__error {
         @apply text-red-500
     }
+
+    @include vp-tablet {
+        @apply w-[350px];
+
+        &__exit {
+            box-shadow: 0 0 12px 0 $color-nero-70;
+            @apply right-[12px] top-[12px]
+        }
+    }
 }

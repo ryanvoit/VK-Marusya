@@ -50,4 +50,26 @@
     &__content-data {
         @apply font-bold text-[24px]/[32px]
     }
+
+    @include responsive($vp-sm) {
+        &__btn {
+            @apply w-full
+        }
+
+        &__content-title {
+        @apply font-normal text-[14px]/[20px] text-white-50-custom
+    }
+
+    &__content-data {
+        @apply font-bold text-[18px]/[24px]
+    }
+
+    &__content-text {
+        @apply flex flex-col justify-center gap-[4px]
+    }
+
+    &__image {
+        @apply flex justify-center items-center w-[48px] h-[48px] rounded-[50%] bg-white-50-custom
+    }
+    }
 }

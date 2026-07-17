@@ -18,7 +18,7 @@ export const ButtonRenew = () => {
 
     return (
         <button
-            className='movie__btn movie__btn--2'
+            className='movie__btn movie__btn--3'
             disabled={isPending}
             onClick={refresh}
         >

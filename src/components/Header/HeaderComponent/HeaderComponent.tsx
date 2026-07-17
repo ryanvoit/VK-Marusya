@@ -4,6 +4,7 @@ import MainNav from "../MainNav/MainNav"
 import { AuthComponent } from "@/components/Header/AuthComponent/AuthComponent"
 import { CustomInput } from "../../Common/CustomInput/CustomInput"
 import { ProfileButton } from "../ProfileButton/ProfileButton"
+import { ButtonSearchMobile } from "../ButtonSearchMobile/ButtonSearchMobile"
 
 export const HeaderComponent = () => {
     return (
@@ -15,6 +16,7 @@ export const HeaderComponent = () => {
                 <div className="header__center">
                     <MainNav />
                     <CustomInput btnType="text" role="search" placeholder="Search" id="search" />
+                    <ButtonSearchMobile />
                 </div>
                 <ProfileButton />
                 <AuthComponent />

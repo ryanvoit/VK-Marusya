@@ -4,6 +4,12 @@
     @apply bg-transparent py-[40px];
 
     &__wrapper {
-        @apply flex justify-end gap-[24px] 
+        @apply flex justify-end gap-[24px];
+    }
+
+    @include vp-tablet {
+        &__wrapper {
+            @apply justify-start;
+        }
     }
 }

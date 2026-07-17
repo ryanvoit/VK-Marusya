@@ -10,4 +10,8 @@
     &:has(.trailer)::before {
       @apply opacity-100 pointer-events-auto
     }
+
+     @include responsive($vp-sm) {
+      @apply gap-[56px];
+     }
 }

@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 .movie {
-    @apply relative min-h-[400px] flex items-center gap-[20px];
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    @apply relative min-h-[400px] grid items-start gap-[20px];
 
     &__content {
-        @apply w-[665px] flex-col flex gap-[60px]
+        @apply max-w-[665px] flex-col flex gap-[60px] w-full
     }
 
     &__info {
@@ -33,14 +34,13 @@
 
     &__btn {
         transition: background-color $transition;
-        @apply bg-[#333333] rounded-[28px] font-bold text-white-custom text-[18px] border-black-40-custom border-[1px] 
-        hover:bg-cornflower-blue flex justify-center items-center cursor-pointer w-[171px];
+        @apply bg-[#333333] rounded-[28px] font-bold text-white-custom text-[18px] border-black-40-custom border-[1px] hover:bg-cornflower-blue flex justify-center items-center cursor-pointer w-[171px];
 
-        &--1 {
+        &--2 {
             @apply w-[183px] flex justify-center items-center hover:text-white-custom
         }
 
-        &--2 {
+        &--3 {
             @apply w-[68px] flex justify-center
         }
 
@@ -54,8 +54,7 @@
     }
 
     &__image {
-        object-fit: cover;
-        @apply absolute top-0 left-[685px] rounded-[16px]
+        @apply rounded-[16px] w-full max-w-[680px] justify-self-start;
     }
 
     &__icon {
@@ -63,6 +62,78 @@
 
         &--favourite {
             @apply text-perano
+        }
+    }
+
+    &--no-backdropURL {
+        @apply flex flex-col-reverse min-h-0;
+
+        .movie__content {
+            max-width: 100%;
+        }
+    }
+
+    @include responsive($vp-lg, 1100px) {
+        &__btn {
+            @apply text-[14px]
+        }
+    }
+
+    @include vp-desktop {
+        &__content {
+            @apply gap-[32px]
+        }
+
+        &__title {
+            @apply text-[32px]/[40px]
+        }
+
+        &__plot {
+            @apply text-[21px]/[27px]
+        }
+
+        &__btns {
+            grid-template-rows: 56px 56px;
+            grid-template-columns: 1fr 68px 68px;
+
+            @apply grid h-[128px];
+
+            &--about {
+                grid-template-columns: 1fr 68px;
+                grid-template-rows: 56px;
+                @apply h-[56px];
+
+                .movie__btn--1 {
+                    grid-column: 1 / 1;
+                }
+            }
+        }
+
+        &__btn--1 {
+            grid-column: 1 / 4;
+            @apply w-full
+        }
+
+        &__btn--2 {
+            @apply w-full
+        }
+    }
+
+    @include responsive(760px) {
+        @apply flex flex-col-reverse
+    }
+
+    @mixin vp-tablet {
+        &__title {
+            @apply text-[24px]/[32px]
+        }
+
+        &__plot {
+            @apply text-[18px]/[24px]
+        }
+
+        &__basic-info {
+            @apply text-[14px]/[20px] gap-[16px]
         }
     }
 }

@@ -13,7 +13,7 @@ export const Trailer: FC<TrailerProps> = ({ url }) => {
 
     return (
         <>
-            <button className="movie__btn" onClick={() => setIsOpen(true)}>
+            <button className="movie__btn movie__btn--1" onClick={() => setIsOpen(true)}>
                 Trailer
             </button>
 

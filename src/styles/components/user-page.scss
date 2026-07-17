@@ -46,4 +46,42 @@
             transform: scale(1.1);
         }
     }
+
+    @include responsive($vp-sm) {
+        @apply gap-[40px];
+
+        &__title {
+            @apply text-[32px]/[24px]
+        }
+
+        &__wrapper {
+            @apply gap-[48px];
+        }
+
+        &__btns {
+            @apply gap-[24px];
+
+            &:has(.user-page__btn--active:last-child)::before,
+            &:has(.user-page__btn--active:last-child:hover)::before {
+                @apply left-[239px] w-[203px]
+            }
+        }
+    }
+
+    @include responsive(482px) {
+        &__btns {
+            @apply w-full;
+
+            &:has(.user-page__btn--active:first-child)::before,
+            &:has(.user-page__btn--active:first-child:hover)::before {
+                @apply left-0 w-[48%]
+            }
+
+            &:has(.user-page__btn--active:last-child)::before, &:has(.user-page__btn--active:last-child:hover)::before {
+                @apply left-[54%] w-[46%]
+            }
+        }
+    }
+
+
 }

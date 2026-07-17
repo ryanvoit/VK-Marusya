@@ -2,4 +2,12 @@
 
 .container {
   @apply w-full px-[80px] box-border max-w-[1920px] mx-auto h-full;
+
+  @include vp-desktop {
+    @apply px-[40px]
+  }
+
+  @include responsive ($vp-sm) {
+    @apply px-[20px]
+  }
 }

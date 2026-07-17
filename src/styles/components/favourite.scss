@@ -8,4 +8,48 @@
     &__item {
         width: calc(20% - 32px)
     }
+
+    @include responsive(1200px) {
+        &__list {
+            @apply gap-y-[32px]
+        }
+
+        &__item {
+            width: calc(25% - 30px)
+        }
+    }
+
+    @include vp-desktop {
+        &__item {
+            width: calc(33% - 26px)
+        }
+    }
+
+    @include vp-tablet {
+        &__list {
+            @apply gap-y-[24px]
+        }
+
+        &__item {
+            width: calc(50% - 20px)
+        }
+    }
+
+    @include responsive($vp-sm) {
+        &__list {
+            overflow: auto;
+            @apply flex-nowrap;
+            margin: 0 -20px;
+            padding: 0 20px;
+
+            &::-webkit-scrollbar { 
+                display: none; 
+            }
+        }
+
+        &__item {
+            width: 224px;
+            @apply shrink-0;
+        }
+    }
 }

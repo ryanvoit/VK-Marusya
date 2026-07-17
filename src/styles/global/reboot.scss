@@ -12,16 +12,16 @@ html{
 body {
   background: linear-gradient(180deg, $color-black 0%, $color-nero-70 100%), linear-gradient(180deg, $color-dodger-blue-90 0%, $color-biloba-flower-90 100%);
   font-family: $ff-play;
-  @apply min-h-[100vh] w-full flex flex-col;
+  @apply min-h-[100vh] w-full flex flex-col relative;
 }
 
 main {
   flex-grow: 1
 }
 
-// .layout {
-  // background: linear-gradient(180deg, $color-black 0%, $color-nero-70 100%), linear-gradient(180deg, $color-dodger-blue-90 0%, $color-biloba-flower-90 100%);
-  // font-family: $ff-play;
-  // @apply relative min-h-[100vh]
-// }
+img {
+  object-fit: cover;
+  height: auto;
+  @apply block max-w-full 
+}
 

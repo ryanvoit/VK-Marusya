@@ -17,14 +17,13 @@
         }
 
         .link-movie__delete-fav {
-             @apply opacity-100 pointer-events-auto
+            @apply opacity-100 pointer-events-auto
         }
     }
 
     &__number {
         transition: transform $transition;
-        @apply absolute w-[62px] h-[48px] flex justify-center items-center text-[24px]/[32px] top-[-12px] left-[-12px] 
-        rounded-[50px] bg-white-custom text-slate-blue font-bold z-10
+        @apply absolute w-[62px] h-[48px] flex justify-center items-center text-[24px]/[32px] top-[-12px] left-[-12px] rounded-[50px] bg-white-custom text-slate-blue font-bold z-10
     }
 
     &__img {
@@ -41,8 +40,7 @@
     &__delete-fav {
         transform: translate(50%, -50%);
         transition: transform $transition, background-color $transition, opacity $transition;
-        @apply absolute top-0 cursor-pointer w-[40px] h-[40px] bg-white rounded-[50%] flex justify-center items-center right-0 
-        opacity-0 z-20 pointer-events-none;
+        @apply absolute top-0 cursor-pointer w-[40px] h-[40px] bg-white rounded-[50%] flex justify-center items-center right-0 opacity-0 z-20 pointer-events-none;
 
         &:hover {
             transform: scale(1.2) translate(40%, -40%);
@@ -51,5 +49,17 @@
 
     &__delete-icon {
         @apply text-black
+    }
+
+    @include vp-tablet {
+        &__delete-fav {
+            display: none;
+        }
+    }
+
+    @include responsive($vp-sm) {
+        &:hover .link-movie__img {
+            transform: scale(1);
+        }
     }
 }

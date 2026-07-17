@@ -31,10 +31,34 @@
     &__btn {
         transition: background-color $transition, color $transition, transform $transition;
         @apply flex justify-center items-center w-[218px] text-[18px]/[24px] bg-cornflower-blue h-[56px] rounded-[28px] 
-        text-white-custom m-auto;
+        text-white-custom m-auto cursor-pointer;
 
         &:hover {
             @apply bg-east-bay text-white-50-custom
+        }
+    }
+
+    @include vp-desktop {
+        &__list {
+            @apply gap-y-[32px]
+        }
+
+        &__item {
+            width: calc(50% - 20px)
+        }
+    }
+
+    @include responsive($vp-sm) {
+        &__list {
+            @apply gap-y-[24px]
+        }
+
+        &__item {
+            width: 100%
+        }
+
+        &__btn {
+            @apply w-full
         }
     }
 }

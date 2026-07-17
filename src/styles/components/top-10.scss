@@ -8,10 +8,44 @@
     }
 
     &__list {
-        @apply flex flex-wrap justify-between gap-y-[64px] gap-x-[40px] 
+        @apply flex flex-wrap justify-between gap-y-[64px] gap-x-[40px]
     }
 
     &__item {
         width: calc(20% - 32px)
+    }
+
+    @include vp-desktop {
+        &__list {
+            @apply gap-y-[32px]
+        }
+
+        &__item {
+            width: calc(50% - 20px)
+        }
+    }
+
+    @include responsive($vp-sm) {
+        @apply mb-[32px];
+
+        &__title {
+            @apply mb-[28px]
+        }
+
+        &__list {
+            overflow: auto;
+            @apply flex-nowrap;
+            margin: 0 -20px;
+            padding: 12px 20px;
+
+            &::-webkit-scrollbar { 
+                display: none; 
+            }
+        }
+
+        &__item {
+            width: 224px;
+            @apply shrink-0;
+        }
     }
 }

@@ -61,7 +61,7 @@ export const ButtonFavourite:FC<ButtonFavouriteProps> = ({ idMovie }) => {
             const isFavourite = profileQuery.data.favorites.some((fav) => fav === idMovie)
             return (
             <button 
-                className="movie__btn movie__btn--2"
+                className="movie__btn movie__btn--3"
                 onClick={() => favourite(idMovie, profileQuery.data)}
                 disabled={AddFavoriteMutation.isPending || DeleteFavoriteMutation.isPending}
             >
@@ -70,7 +70,7 @@ export const ButtonFavourite:FC<ButtonFavouriteProps> = ({ idMovie }) => {
             )
         case 'error':
             return (
-                <a href="#auth" className="movie__btn movie__btn--2">
+                <a href="#auth" className="movie__btn movie__btn--3">
                     <Icon role='heart' />
                 </a>
             )

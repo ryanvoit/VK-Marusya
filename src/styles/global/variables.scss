@@ -4,6 +4,7 @@
 
 $color-white: #ffffff;
 $color-white-25: rgba(255, 255, 255, 0.25);
+$color-white-75: rgba(255, 255, 255, 0.75);
 $color-white-80: rgba(255, 255, 255, 0.8);
 $color-black: #000000;
 $color-nero-70: rgba(39, 36, 36, 0.7);
@@ -34,9 +35,13 @@ $ff-play: 'Play', 'Arial', sans-serif;
 
 // Viewport
 
-$vp-tablet: 1023px;
-$vp-mobile: 767px;
+$vp-mobile: 375px;
+$vp-sm: 576px;
+$vp-tablet: 768px;
+$vp-lg: 1024px;
+$vp-desktop: 1440px;
 
 // Transition
+
 $transition: ease 0.3s;
 // $transition-animation: ease-in 1s
