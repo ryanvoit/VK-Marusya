@@ -1,7 +1,5 @@
 'use client'
 
-// import { useRouter } from 'next/navigation'
-// import { useTransition } from 'react'
 import { Icon } from '@/components/Common/Icon/Icon'
 import { FC  } from 'react'
 import { useQuery, useMutation } from '@tanstack/react-query'
@@ -9,10 +7,6 @@ import { fetchProfileData } from '@/api/auth/fetches'
 import { client } from "@/api/client"
 import { ProfileInfo } from '@/api/auth/types'
 import { fetchFavouriteAdd, fetchFavouriteDelete } from '@/api/favourite/fetches'
-
-// export type ButtonProps = {
-// role: 'renew'
-// }
 
 interface ButtonFavouriteProps {
     idMovie: string

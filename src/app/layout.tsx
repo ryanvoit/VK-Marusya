@@ -8,7 +8,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // <div className="layout">
   return (
     <html lang="en">
       <body>

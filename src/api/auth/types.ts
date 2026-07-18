@@ -32,10 +32,6 @@ export const profileDataScheme = z.object({
     surname: z.string(),
 })
 
-// AuthData now: 
-// email: ryanvoit000@gmail.com
-// password: 123456789
-
 export type LoginInfo = z.infer<typeof loginInfoScheme>
 export type ProfileInfo = z.infer<typeof profileDataScheme>
 

@@ -43,7 +43,9 @@
     }
 
     &--user {
-      @apply h-[48px]
+      @apply h-[48px];
+
+
     }
 
     &--main {
@@ -96,6 +98,10 @@
 
     &__link {
       height: 100%;
+
+      &--user {
+        height: 48px;
+      }
     }
   }
 
@@ -166,6 +172,10 @@
 
     &__search-btn--open ~ .custom-input--search {
       @apply flex opacity-100 z-[20]
+    }
+
+    &__background {
+      @apply w-full h-full absolute z-10 bg-black-40-custom top-0 left-0 opacity-100 content-[''] pointer-events-none transition-opacity duration-300;
     }
   }
 }

@@ -103,6 +103,11 @@
         width: calc(100% - 80px);
         @apply left-[40px] top-[16px] absolute h-[56px] bg-montana z-10 rounded-[8px];
 
+        @include responsive($vp-sm) {
+            width: calc(100% - 40px);
+            @apply left-[20px];
+        }
+
         .custom-input__btn-exit {
             flex-shrink: 1;
             z-index: 20;

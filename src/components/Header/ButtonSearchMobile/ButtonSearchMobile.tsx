@@ -15,8 +15,6 @@ export const ButtonSearchMobile = () => {
         setOpen(true)
     }
 
-    //<input className="header__search-input"></input>
-
     return (
         <>
             <button
@@ -32,6 +30,7 @@ export const ButtonSearchMobile = () => {
                 id="search-mobile"
                 additionalFn={handleClickFalse}
             />
+            <div className={isOpen ? "header__background" : "visually-hidden"}></div>
         </>
     )
 }
