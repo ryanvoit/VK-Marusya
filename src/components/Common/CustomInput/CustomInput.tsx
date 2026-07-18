@@ -7,7 +7,7 @@ import { MovieList } from "@/api/movies/types"
 import { SearchDataComponent } from "@/components/Header/SearchDataComponent/SearchDataComponent"
 
 export interface CustomInputProps {
-    btnType: 'email' | 'password' | 'text',
+    inputType: 'email' | 'password' | 'text',
     role: 'email' | 'password' | 'user' | 'search',
     placeholder: string,
     id: string,
@@ -15,12 +15,14 @@ export interface CustomInputProps {
     name?: string,
     onBlur?: ChangeEventHandler<HTMLInputElement>,
     onChange?: ChangeEventHandler<HTMLInputElement>,
-    errorMessage?: string
+    errorMessage?: string,
+    additionalFn?: () => void
 }
 
 export const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
-    ({ btnType, role, placeholder, id, setter, name, onBlur, onChange, errorMessage }, ref) => {
-        const customInputClass = role === 'search' ? 'custom-input custom-input--search' : 'custom-input'
+    ({ inputType, role, placeholder, id, setter, name, onBlur, onChange, errorMessage, additionalFn }, ref) => {
+        const customInputClass = id === 'search' ? 'custom-input custom-input--search' : 
+        id === 'search-mobile' ? 'custom-input custom-input--search custom-input--search-2' : 'custom-input'
 
         const [input, setInput] = useState('')
         const [movies, setMovies] = useState<MovieList>([])
@@ -54,7 +56,7 @@ export const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
             <div className={customInputClass}>
                 <input
                     ref={ref}
-                    type={btnType}
+                    type={inputType}
                     id={id}
                     name={name}
                     placeholder={placeholder}
@@ -65,6 +67,11 @@ export const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
                 />
                 <Icon role={role} />
                 {errorMessage && <span className="custom-input__error">{errorMessage}</span>}
+                {id === 'search-mobile' && 
+                    <button className="custom-input__btn-exit" onClick={additionalFn}>
+                        <Icon role="cross-exit" />
+                    </button>
+                }
                 {role === 'search' && <SearchDataComponent movies={movies} onSelect={handleClear} />}
             </div>
         )

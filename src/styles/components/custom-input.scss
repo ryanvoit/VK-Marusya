@@ -6,6 +6,7 @@
 
     &:has(.custom-input__error) {
         @apply mb-[30px];
+
         .custom-input__field {
             transform: scaleY(1);
             @apply border-red-500;
@@ -35,8 +36,7 @@
 
     &__field {
         transition: border $transition, color $transition ;
-        @apply w-full h-[100%] border-[1px] border-black-40-custom outline-none rounded-[8px] p-[16px] pl-[52px] absolute top-0 
-        left-0;
+        @apply w-full h-[100%] border-[1px] border-black-40-custom outline-none rounded-[8px] p-[16px] pl-[52px] absolute top-0 left-0;
 
         &::placeholder {
             transition: color $transition;
@@ -53,10 +53,10 @@
             &::placeholder {
                 @apply text-cornflower-blue
             }
-        
-        &:focus-visible {
-            @apply text-cornflower-blue
-        }
+
+            &:focus-visible {
+                @apply text-cornflower-blue
+            }
         }
     }
 
@@ -98,6 +98,25 @@
             @apply text-white-50-custom
         }
     }
+
+    &--search-2 {
+        width: calc(100% - 80px);
+        @apply left-[40px] top-[16px] absolute h-[56px] bg-montana z-10 rounded-[8px];
+
+        .custom-input__btn-exit {
+            flex-shrink: 1;
+            z-index: 20;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 16px;
+            cursor: pointer;
+        }
+
+        .custom-input__btn-exit-icon {
+            color: white;
+        }
+    }
 }
 
 @keyframes input-error-appear {
@@ -105,6 +124,7 @@
         opacity: 0;
         transform: translateY(-4px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -116,6 +136,7 @@
         opacity: 1;
         transform: translateY(0);
     }
+
     to {
         opacity: 0;
         transform: translateY(-4px);

@@ -15,7 +15,7 @@ export const HeaderComponent = () => {
                 </Link>
                 <div className="header__center">
                     <MainNav />
-                    <CustomInput btnType="text" role="search" placeholder="Search" id="search" />
+                    <CustomInput inputType="text" role="search" placeholder="Search" id="search" />
                     <ButtonSearchMobile />
                 </div>
                 <ProfileButton />

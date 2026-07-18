@@ -37,8 +37,8 @@ export const FormLogin: FC<FormLoginProps> = ({ stateChangeFn }) => {
     return (
         <form className="auth__form" noValidate={true} onSubmit={handleSubmit((data) => { loginMutation.mutate(data) })}>
             <div className="auth__fields">
-                <CustomInput role='email' btnType='email' id='email' placeholder="Email" {...register("email")} errorMessage={errors.email && errors.email.message} />
-                <CustomInput role='password' btnType='password' id='password' placeholder="Password" {...register("password")} errorMessage={errors.password && errors.password.message} />
+                <CustomInput role='email' inputType='email' id='email' placeholder="Email" {...register("email")} errorMessage={errors.email && errors.email.message} />
+                <CustomInput role='password' inputType='password' id='password' placeholder="Password" {...register("password")} errorMessage={errors.password && errors.password.message} />
             </div>
             <button className="auth__btn" type="submit" disabled={loginMutation.isPending}>Войти</button>
             {loginMutation.error && <span className="auth__error">{loginMutation.error.message}</span>}

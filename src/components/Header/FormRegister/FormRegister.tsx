@@ -37,11 +37,11 @@ export const FormRegister: FC<FormRegisterProps> = ({ stateChangeFn, stateSucces
             registerMutation.mutate(payload)
         })}>
             <div className="auth__fields">
-                <CustomInput role='email' btnType='email' id='email' placeholder="Email" {...register("email")} errorMessage={errors.email && errors.email.message} />
-                <CustomInput role='user' btnType='text' id='user-name' placeholder='Name' {...register("name")} errorMessage={errors.name && errors.name.message} />
-                <CustomInput role='user' btnType='text' id='user-lastname' placeholder='Last name' {...register("surname")} errorMessage={errors.surname && errors.surname.message} />
-                <CustomInput role='password' btnType='password' id='password' placeholder="Password" {...register("password")} errorMessage={errors.password && errors.password.message} />
-                <CustomInput role='password' btnType='password' id='password-confirmation' placeholder="Confirm password" {...register("passwordConfirmation")} errorMessage={errors.passwordConfirmation && errors.passwordConfirmation.message} />
+                <CustomInput role='email' inputType='email' id='email' placeholder="Email" {...register("email")} errorMessage={errors.email && errors.email.message} />
+                <CustomInput role='user' inputType='text' id='user-name' placeholder='Name' {...register("name")} errorMessage={errors.name && errors.name.message} />
+                <CustomInput role='user' inputType='text' id='user-lastname' placeholder='Last name' {...register("surname")} errorMessage={errors.surname && errors.surname.message} />
+                <CustomInput role='password' inputType='password' id='password' placeholder="Password" {...register("password")} errorMessage={errors.password && errors.password.message} />
+                <CustomInput role='password' inputType='password' id='password-confirmation' placeholder="Confirm password" {...register("passwordConfirmation")} errorMessage={errors.passwordConfirmation && errors.passwordConfirmation.message} />
             </div>
             <button className="auth__btn" type="submit" disabled={registerMutation.isPending}>Создать аккаунт</button>
             {registerMutation.error && <span className="auth__error">{registerMutation.error.message}</span>}
